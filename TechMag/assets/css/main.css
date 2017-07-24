@@ -1,6 +1,6 @@
 
 @import url(https://fonts.googleapis.com/css?family=El+Messiri);
-
+@import url(https://fonts.googleapis.com/css?family=Harmattan);
 /*
 	Spatial by TEMPLATED
 	templated.co @templatedco
@@ -1713,6 +1713,10 @@
 		font-size: 0.7em;
 		line-height: 1.5em;
 	}
+	p {
+
+		font-family: 'Harmattan', sans-serif ;
+	}
 
 	sub {
 		font-size: 0.8em;
@@ -3116,7 +3120,7 @@
 		}
 
 		#banner p {
-			color: #aaa;
+			color: black ;
 			font-size: 1.5em;
 			margin-bottom: 1.75em;
 			text-transform: uppercase;
