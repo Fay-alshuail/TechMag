@@ -3117,10 +3117,12 @@
 			font-size: 3.5em;
 			line-height: 1.35;
 			margin-bottom: 0.5em;
+			font-weight: bold;
 		}
 
 		#banner p {
-			color: black ;
+			color: #004080;
+			font-weight: bold;
 			font-size: 1.5em;
 			margin-bottom: 1.75em;
 			text-transform: uppercase;
