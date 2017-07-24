@@ -1,6 +1,7 @@
 
 @import url(https://fonts.googleapis.com/css?family=El+Messiri);
 @import url(https://fonts.googleapis.com/css?family=Harmattan);
+@import url(https://fonts.googleapis.com/css?family=Acme);
 /*
 	Spatial by TEMPLATED
 	templated.co @templatedco
@@ -115,6 +116,10 @@
 		font-family: 'El Messiri', sans-serif;
 
 
+	}
+	h2
+	{
+		font-family: 'Acme', sans-serif;
 	}
 
 	@media screen and (max-width: 1280px) {
