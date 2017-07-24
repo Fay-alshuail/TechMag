@@ -1,6 +1,8 @@
 @import url(font-awesome.min.css);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
 
+<link href="https://fonts.googleapis.com/css?family=El+Messiri" rel="stylesheet">
+
 /*
 	Spatial by TEMPLATED
 	templated.co @templatedco
@@ -108,6 +110,12 @@
 		.container {
 			width: 80em;
 		}
+
+	}
+	h3
+	{
+		font-family: 'El Messiri', sans-serif;
+
 
 	}
 
