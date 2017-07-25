@@ -1140,6 +1140,7 @@ a {
 
 	}
 
+
 	@media screen and (max-width: 736px) {
 
 		.row > * {
@@ -2426,12 +2427,14 @@ text-align: center;
 		position: relative;
 		margin: 0 0 1.5em 0;
 		text-transform: uppercase;
+
 	}
 
 	header h2 + p {
 		font-size: 1.25em;
 		margin-top: -1em;
 		line-height: 1.5em;
+		text-align: center;
 	}
 
 	header h3 + p {
@@ -2464,6 +2467,7 @@ text-align: center;
 		header.major p {
 			font-size: 1.7em;
 			margin-bottom: 0;
+			text-align: center;
 		}
 
 	@media screen and (max-width: 1280px) {
@@ -2486,10 +2490,12 @@ text-align: center;
 
 		header.major h2 {
 			font-size: 2em;
+
 		}
 
 		header.major p {
 			font-size: 1.1em;
+
 		}
 
 	}
@@ -2585,7 +2591,7 @@ text-align: center;
 	}
 
 	.wrapper {
-		padding: 6em 0 4em 0;
+		padding: 3em 0 0 0;
 	}
 
 		.wrapper > .inner {
@@ -3085,7 +3091,10 @@ text-align: center;
 					margin-left: 0;
 					padding-left: 0;
 				}
-
+ #section1 {
+	text-align: right;
+	font-size: 150%;
+}
 		@media screen and (max-width: 980px) {
 
 			#footer {
