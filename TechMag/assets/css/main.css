@@ -2015,7 +2015,7 @@ a {
 		.feature-grid .feature {
 			display: inline-block;
 			float: left;
-			margin-bottom: 3em;
+			margin-bottom: 0em;
 			width: 50%;
 		}
 
@@ -2170,10 +2170,10 @@ a {
 
 				width: 200px;
 				height: 200px;
-				margin: auto;
+
 			}
 	.flip-container{
-
+	margin:auto;
 	}
 
 
@@ -2653,6 +2653,7 @@ text-align: center;
 
 		#header h1 {
 			color: #ffffff;
+			font-size:300% ;
 			font-weight: 400;
 			height: inherit;
 			left: 1.25em;
@@ -2939,7 +2940,7 @@ text-align: center;
 	}
 
 	#banner {
-		padding: 10em 0 13em 0;
+		padding: 15em 0 13em 0;
 		background-attachment: fixed;
 		background-image: url("images/overlay.png"), url("../../images/banner.jpg");
 		background-position: center top;
