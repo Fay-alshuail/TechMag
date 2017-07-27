@@ -61,6 +61,7 @@
 						resetForms: true,
 						side: 'right'
 					});
+/*nav js*/
 
 			// Fix: Remove transitions on WP<10 (poor/buggy performance).
 				if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
