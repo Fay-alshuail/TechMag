@@ -1,7 +1,6 @@
 
 <!DOCTYPE html>
 <html >
-
 <head>
   <meta charset="UTF-8">
   <title>Random Login Form</title>
@@ -185,21 +184,25 @@ body {
 		</div>
 		<br>
 		<div class="login">
-			<form action = "login.php" method ="post">
+			<form action = "logcheck.php" method ="post">
 				<input type="text" placeholder="اسم المستخدم" name="user_name"><br>
 				<input type="password" placeholder="الرقم السري " name="password"><br>
-				<input type="submit"  value="تسجيل الدخول" >
+				<input type="button" id="btn1" value="تسجيل الدخول" >
 			</form>
 		</div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
 
-
+	<script type="text/javascript">
+	    document.getElementById("").onclick = function () {
+	        location.href = "logcheck.php";
+	    };
+	</script>
 
 </body>
 </html>
 <?php
-session_start();
+btn1 onclick {
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $username = $_POST["user_name"];
@@ -210,19 +213,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $dbpass = "root";
 
     $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die ("Error connecting to database");
+$dbname = "fixmin";
+    if {
+    //You need to redirect
 
-    $dbname = "fixmin";
 
     mysql_select_db($dbname);
 
     $query = "SELECT الايميل FROM المشرف WHERE الايميل = '$username' AND الجوال1 = '$password'";
 
-    $result = mysql_query($query) or die ("Failed Query of " . $query);
+    header("location.href = "prices.html""); /* Redirect browser */
+    exit();
+     }
+    else{
+    // do some
 
-
-    while($row = mysql_fetch_assoc($result))
-    {
-            $_SESSION["user"] = $username;
+        header("location.href = "homepage.html"");
     }
+}
 }
 ?>
