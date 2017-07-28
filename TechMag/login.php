@@ -184,7 +184,8 @@ body {
 		</div>
 		<br>
 		<div class="login">
-			<form action = "logcheck.php" method ="post">
+      <form method="post" action="logcheck.php" >
+
 				<input type="text" placeholder="اسم المستخدم" name="user_name"><br>
 				<input type="password" placeholder="الرقم السري " name="password"><br>
 				<input type="button" id="btn1" value="تسجيل الدخول" >
@@ -192,44 +193,5 @@ body {
 		</div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-
-	<script type="text/javascript">
-	    document.getElementById("").onclick = function () {
-	        location.href = "logcheck.php";
-	    };
-	</script>
-
 </body>
 </html>
-<?php
-btn1 onclick {
-if ($_SERVER['REQUEST_METHOD'] == 'POST')
-{
-    $username = $_POST["user_name"];
-    $password = $_POST["password"];
-
-    $dbhost = "localhost";
-    $dbuser = "root";
-    $dbpass = "root";
-
-    $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die ("Error connecting to database");
-$dbname = "fixmin";
-    if {
-    //You need to redirect
-
-
-    mysql_select_db($dbname);
-
-    $query = "SELECT الايميل FROM المشرف WHERE الايميل = '$username' AND الجوال1 = '$password'";
-
-    header("location.href = "prices.html""); /* Redirect browser */
-    exit();
-     }
-    else{
-    // do some
-
-        header("location.href = "homepage.html"");
-    }
-}
-}
-?>
