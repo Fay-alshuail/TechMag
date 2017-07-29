@@ -34,12 +34,21 @@
   left: calc(50% - 255px);
   z-index: 2;
 }
-
 .login{
   text-align: right;
   position: absolute;
   top: calc(30% - 20px);
-  left: calc(38% - 50px);
+  left: calc(65% - 50px);
+  height: 150px;
+  width: 600px;
+  padding: 10px;
+  z-index: 2;
+}
+.login2{
+  text-align: right;
+  position: absolute;
+  top: calc(30% - 20px);
+  left: calc(10% - 50px);
   height: 150px;
   width: 600px;
   padding: 10px;
@@ -72,7 +81,8 @@
       </div>
 		</div>
 		<br>
-		<div class="login">
+
+    <div class="login">
       <form>
     <div class="style18">
       <div class="contentform">
@@ -82,21 +92,21 @@
               <div class="form-group">
                 <p>الجوال 1 <span>*</span></p>
                 <span class="icon-case"></i></span>
-                  <input type="text" name="nom" id="nom" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Nom' doit être renseigné."/>
+                  <input type="text" name="phone" id="nom" data-rule="required" data-msg="لو ماعبى التيكست"/>
                   <div class="validation"></div>
          </div>
 
               <div class="form-group">
               <p>الجوال2 <span>*</span></p>
               <span class="icon-case"></span>
-          <input type="text" name="prenom" id="prenom" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Prénom' doit être renseigné."/>
+          <input type="text" name="phone2" id="prenom" data-rule="required" data-msg="لو ماعبى التيكست"/>
                   <div class="validation"></div>
         </div>
 
         <div class="form-group">
         <p>الإيميل <span>*</span></p>
         <span class="icon-case"></span>
-                  <input type="email" name="email" id="email" data-rule="email" data-msg="Vérifiez votre saisie sur les champs : Le champ 'E-mail' est obligatoire."/>
+                  <input type="email" name="email" id="email" data-rule="email" data-msg="لو ماعبى التيكست"/>
                   <div class="validation"></div>
         </div>
     </div>
@@ -106,21 +116,21 @@
         <div class="form-group">
         <p>الاسم <span>*</span></p>
         <span class="icon-case"></span>
-          <input type="text" name="ville" id="ville" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Ville' doit être renseigné."/>
+          <input type="text" name="name" id="ville" data-rule="required" data-msg="لو ماعبى التيكست"/>
                   <div class="validation"></div>
         </div>
 
         <div class="form-group">
         <p>المسمى الوظيفي <span>*</span></p>
         <span class="icon-case"></span>
-          <input type="text" name="phone" id="phone" data-rule="maxlen:10" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Téléphone' doit être renseigné. Minimum 10 chiffres"/>
+          <input type="text" name="job" id="phone" data-rule="maxlen:10" data-msg="لو ماعبى التيكست"/>
                   <div class="validation"></div>
         </div>
 
         <div class="form-group">
         <p>عنوان السكن <span>*</span></p>
         <span class="icon-case"></span>
-          <input type="text" name="fonction" id="fonction" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Fonction' doit être renseigné."/>
+          <input type="text" name="address" id="fonction" data-rule="required" data-msg="لو ماعبى التيكست"/>
           <div class="validation"></div>
         </div>
     </div>
@@ -128,8 +138,52 @@
     <button type="submit" class="bouton-contact"> إرسال </button>
     </div>
     </form>
-		</div>
+    </div>
 
+
+    <div class="login2">
+      <form>
+    <div class="style18">
+      <div class="contentform">
+        <div id="sendmessage"> تم التسجيل بنجاح </div>
+
+        <div class="leftcontact">
+              <div class="form-group">
+                <p>تاريخ الإنتهاء  <span>*</span></p>
+                <span class="icon-case"></i></span>
+                  <input type="text" name="phone" id="nom" data-rule="required" data-msg="لو ماعبى التيكست"/>
+                  <div class="validation"></div>
+         </div>
+
+              <div class="form-group">
+              <p>رقم الأمان  <span>*</span></p>
+              <span class="icon-case"></span>
+          <input type="text" name="phone2" id="prenom" data-rule="required" data-msg="لو ماعبى التيكست"/>
+                  <div class="validation"></div>
+        </div>
+    </div>
+
+    <div class="rightcontact">
+
+        <div class="form-group">
+        <p>رقم البطاقة  <span>*</span></p>
+        <span class="icon-case"></span>
+          <input type="text" name="name" id="ville" data-rule="required" data-msg="لو ماعبى التيكست"/>
+                  <div class="validation"></div>
+        </div>
+
+        <div class="form-group">
+        <p>نوع البطاقة  <span>*</span></p>
+        <span class="icon-case"></span>
+          <input type="text" name="job" id="phone" data-rule="maxlen:10" data-msg="لو ماعبى التيكست"/>
+                  <div class="validation"></div>
+        </div>
+    </div>
+    </div>
+    <button type="submit" class="bouton-contact"> إرسال </button>
+    </div>
+    </form>
+    </div>
 
 </body>
 </html>
