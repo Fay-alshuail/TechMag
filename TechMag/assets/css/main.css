@@ -88,6 +88,10 @@
 	.container {
 		width: 80em;
 	}
+	.border-radius
+	{
+		border-radius: 7px 7px 7px 7px;
+	}
 
 	@media screen and (max-width: 1680px) {
 
