@@ -47,6 +47,19 @@
 }
 .text{text-align:right;}
 .left{text-align: center;}
+
+.buttonsub{
+  background-color: #5ab2c4;
+  color: #FFF;
+  text-align: center;
+  width:84%;
+  border:0;
+  padding: 4px 4px;
+  border-radius: 4px 4px 4px 4px;
+  cursor: pointer;
+  margin-top: 5px;
+  font-size: 18px;
+}
 </style>
 <head>
   <title>اشتراك</title><meta charset="utf-8" />
@@ -72,7 +85,7 @@
 		</div>
 		<br>
 		<div class="box">
-      <form>
+      <form method="post" action="formsub.php">
       <div class="contentform">
 				<div>
 				    <table>
@@ -163,14 +176,19 @@
 				        </tr>
 				        <tr>
 				            <td class="left">
-				                <button id="Button2" type="submit"/>إشتراك</td>
+				                <button id="Button2" type="submit" class="buttonsub"/>إشتراك</td>
 				            <td class="left">
-				                <button id="Button1" type="submit" location="formsub.php"/>إشتراك</td>
+				                <button id="Button1" type="submit" class="buttonsub"/>إشتراك</td>
 				            <td class="text">
 				                الخطة الحالية</td>
 				        </tr>
+                <tr>
+                    <td class="text">
+                      9.99$ في الشهر</td>
+                    <td class="text">
+                          30$ في الشهر</td>
+                </tr>
 				    </table>
-						<button type="submit" class="bouton-contact"> إرسال </button>
 				    </div>
     </div>
     </form>
