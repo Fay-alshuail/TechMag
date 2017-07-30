@@ -10,8 +10,8 @@
 		<nav id="nav">
 			<ul>
 				<li><a href="homepage.html">الصفحة الرئيسية </a></li>
-				<li><a href="generic.html">خطط الإشتراك  </a></li>
-				<li><a href="login.html">تسجيل الدخول  </a></li>
+				<li><a href="prices.php">خطط الإشتراك  </a></li>
+				<li><a href="login.php">تسجيل الدخول  </a></li>
 			</ul>
 		</nav>
 	</div>

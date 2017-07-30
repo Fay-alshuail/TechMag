@@ -64,15 +64,15 @@
 <head>
   <title>اشتراك</title><meta charset="utf-8" />
   <header id="header" class="alt">
-        <div id="nav2">
-        <nav id="nav">
-            <ul>
-                <li><a href="index.html">الصفحة الرئيسية </a></li>
-                <li><a href="generic.html">الأسعار </a></li>
-                <li><a href="elements.html">تسجيل الدخول </a></li>
-            </ul>
-        </nav>
-    </div>
+    <div id="nav2">
+    <nav id="nav">
+      <ul>
+        <li><a href="homepage.html">الصفحة الرئيسية </a></li>
+        <li><a href="prices.php">خطط الإشتراك  </a></li>
+        <li><a href="login.php">تسجيل الدخول  </a></li>
+      </ul>
+    </nav>
+  </div>
    </header>
     <a href="#menu" class="navPanelToggle"></a>
 <link rel="stylesheet" href="css.css" />
