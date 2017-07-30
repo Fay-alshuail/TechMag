@@ -16,22 +16,19 @@ else {
 
 
 
-
 $username = mysql_real_escape_string($username);
-$db = mysql_select_db("techmag",$conn)or die( mysql_error());
+$db = mysql_select_db("fixmin",$conn)or die( mysql_error());
 mysql_query("SET NAMES 'utf8'");
 mysql_query('SET CHARACTER SET utf8');
-$sql =("SELECT * FROM `المستخدمين` WHERE `اسم_المستخدم` = '$username' AND `الرقم_السري` ='$password'");
+$sql =("SELECT * FROM `المشرف` WHERE `البريد` = '$username' AND `الرقم_السري` ='$password'");
 
 $result = mysql_query($sql) or die(mysql_error());
 $num = mysql_num_rows($result);
 
 
 if ($row = mysql_fetch_assoc($result)) {
-  header('Location: supervisor.php');
-  echo '<script language="javascript" >';
-  echo 'alert("مرحباً ")';
-  echo '</script>';
+  header('Location: supervisor/supervisor.php');
+
 
 
   } else {

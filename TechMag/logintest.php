@@ -1,45 +1,25 @@
 
-<!DOCTYPE html>
+<?php
+function randomPassword() {
+    $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+    $pass = array(); //remember to declare $pass as an array
+    $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+    for ($i = 0; $i < 8; $i++) {
+        $n = rand(0, $alphaLength);
+        $pass[] = $alphabet[$n];
+    }
+    return implode($pass); //turn the array into a string
+}
+
+ ?>
 <html >
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
 <body>
-<div class="container">
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2">
-            <div class="well well-sm">
-              <form class="form-horizontal" action="logcheck.php" method="post">
-              <fieldset>
-                <legend class="text-center">Sign In</legend>
+<form>
 
 
-                <!-- Message body -->
-                <div class="form-group">
-                  <label class="col-md-4 control-label" for="Username">Username</label>
-                  <div class="col-md-8">
-                    <input id="username" name="username" type="text" placeholder="Your email" class="form-control">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-md-4 control-label" for="Password">Password</label>
-                  <div class="col-md-8">
-                    <input id="password" name="password" type="text" placeholder="Your email" class="form-control">
-                  </div>
-                </div>
-
-                <!-- Form actions -->
-                <div class="form-group">
-                  <div class="col-md-12 text-right">
-                    <button onClick="return validateForm()" type="submit" class="btn btn-primary btn-lg">Submit</button>
-                 ` </div>
-                </div>
-              </fieldset>
+    <button onClick="randomPassword()" type="submit" >Submit</button>
+  <input name="text1" type="text" value ="<?php echo randomPassword(); ?>" />
               </form>
-            </div>
-          </div>
-        </div>
-    </div>
 </body>
 </html>
