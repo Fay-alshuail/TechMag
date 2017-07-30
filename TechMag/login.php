@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <head>
   <meta charset="UTF-8">
   <title>Random Login Form</title>
@@ -184,11 +185,12 @@ body {
 		</div>
 		<br>
 		<div class="login">
-      <form method="post" action="logcheck.php" >
+      <form action="logcheck.php" method="post">
 
-				<input type="text" placeholder="اسم المستخدم" name="user_name"><br>
+				<input type="text" placeholder="اسم المستخدم" name="username"><br>
 				<input type="password" placeholder="الرقم السري " name="password"><br>
-				<input type="button" id="btn1" value="تسجيل الدخول" >
+				<button onClick="return validateForm()" type="submit" class="btn btn-primary btn-lg">"تسجيل الدخول"</button>
+
 			</form>
 		</div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

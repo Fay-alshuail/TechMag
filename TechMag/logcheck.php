@@ -16,18 +16,24 @@ else {
   echo "good";
 }
 
-mysql_query("SET NAMES 'utf8'");
+
 $username = mysql_real_escape_string($username);
 $db = mysql_select_db("techmag",$conn)or die( mysql_error());
-
-$sql = sprintf("SELECT `اسم_المستخدم` , `الرقم_السري`FROM `المستخدمين` WHERE `اسم_المستخدم` = '$username' AND `الرقم_السري`='$password'");
+mysql_query("SET NAMES 'utf8'");
+mysql_query('SET CHARACTER SET utf8');
+$sql =("SELECT * FROM `المستخدمين` WHERE `اسم_المستخدم` = '$username' AND `الرقم_السري` ='$password'");
 
 $result = mysql_query($sql) or die(mysql_error());
-$row = mysql_fetch_array($result);
+$num = mysql_num_rows($result);
 
-if($row[`اسم_المستخدم`]==$username && $row[`الرقم_السري`]==$password)
-    echo"You are a validated user.";
-else
-    echo"Sorry, your credentials are not valid, Please try again.";
+
+if ($row = mysql_fetch_assoc($result)) {
+    echo "تم تسجيل الدخول بنجاح ";
+
+  } else {
+    echo "خطأ في الرقم السري او اسم المستخدم ";
+  }
+
+
 mysql_close($conn);
 ?>
