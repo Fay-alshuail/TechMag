@@ -10,11 +10,11 @@ $password = filter_input(INPUT_POST,"password");
 
 $conn = mysql_connect("localhost", "root", "");
 if (!$conn) {
-  echo "bad";
+  die( mysql_error());
 }
 else {
-  echo "good";
-}
+
+
 
 
 $username = mysql_real_escape_string($username);
@@ -28,12 +28,19 @@ $num = mysql_num_rows($result);
 
 
 if ($row = mysql_fetch_assoc($result)) {
-    echo "تم تسجيل الدخول بنجاح ";
+  header('Location: supervisor.php');
+  echo '<script language="javascript" >';
+  echo 'alert("مرحباً ")';
+  echo '</script>';
+
 
   } else {
-    echo "خطأ في الرقم السري او اسم المستخدم ";
-  }
 
+  echo '<script language="javascript" >';
+  echo 'alert("خطأ في اسم المستخدم أو الرقم السري ")';
+  echo '</script>';
 
+exit;}
+}
 mysql_close($conn);
 ?>
