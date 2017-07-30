@@ -18,7 +18,7 @@ function randomPassword() {
 <form>
 
 
-    <button onClick="randomPassword()" type="submit" >Submit</button>
+    <button onClick="randomPassword()" type="submit" >تغيير الرقم السري </button>
   <input name="text1" type="text" value ="<?php echo randomPassword(); ?>" />
               </form>
 </body>

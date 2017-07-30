@@ -115,13 +115,23 @@
           <input type="text" name="job" id="phone" data-rule="maxlen:10" data-msg="لو ماعبى التيكست"/>
                   <div class="validation"></div>
         </div>
-
         <div class="form-group">
         <p>عنوان السكن <span>*</span></p>
         <span class="icon-case"></span>
           <input type="text" name="address" id="fonction" data-rule="required" data-msg="لو ماعبى التيكست"/>
           <div class="validation"></div>
         </div>
+
+        <div class="form-group">
+        <p>الرقم السري <span>*</span></p>
+        <span class="icon-case"></span>
+
+          <input type="text" name="password1" id="fonction" data-rule="required" value ="<?php echo randomPassword(); ?>"  data-msg="لو ماعبى التيكست"/>
+<center>
+<button onClick="randomPassword()" type="submit" >تغيير الرقم السري </button>
+          <div class="validation"></div>
+        </div>
+      </center>
     </div>
     </div>
     <button type="submit" class="bouton-contact"> إرسال </button>
@@ -131,3 +141,16 @@
 
 </body>
 </html>
+<?php
+function randomPassword() {
+    $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+    $pass = array(); //remember to declare $pass as an array
+    $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+    for ($i = 0; $i < 8; $i++) {
+        $n = rand(0, $alphaLength);
+        $pass[] = $alphabet[$n];
+    }
+    return implode($pass); //turn the array into a string
+}
+
+ ?>
