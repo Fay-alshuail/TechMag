@@ -136,7 +136,7 @@ h1{
 	}
 a {
 	font-family: 'Lemonada', cursive;
-	font-size:90%;
+	font-size:100%;
 }
 	@media screen and (max-width: 1280px) {
 
@@ -2766,7 +2766,7 @@ text-align: center;
 		#nav2 nav {
 margin-left:auto;
 margin-right:auto;
-width: auto;
+width: 500px;
 text-align:center;
 background-color: #5ab2c4;
 		}

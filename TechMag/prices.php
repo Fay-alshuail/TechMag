@@ -38,12 +38,13 @@
 .box{
   text-align: right;
   position: absolute;
-  top: calc(30% - 20px);
-  left: calc(38% - 50px);
-  height: 100px;
+  top: calc(3% - 5px);
+  left: calc(15% - 5px);
+  height: 60px;
   width: 500px;
-  padding: 10px;
+  padding: -20px;
   z-index: 2;
+
 }
 .text{text-align:right;}
 .left{text-align: center;}
@@ -85,7 +86,7 @@
 		</div>
 		<br>
 		<div class="box">
-      <form method="post" action="formsub.php">
+      <form method="post" action="formsub.html">
       <div class="contentform">
 				<div>
 				    <table>
@@ -193,7 +194,5 @@
     </div>
     </form>
 		</div>
-
-
 </body>
 </html>
