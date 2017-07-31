@@ -15,12 +15,10 @@ if (!$conn) {
 else {
 
 
-
-$username = mysql_real_escape_string($username);
-$db = mysql_select_db("fixmin",$conn)or die( mysql_error());
+$db = mysqli_select_db($conn,"fixmin");
+$sql =("SELECT * FROM `المشرف` WHERE `البريد` = '$username' AND `الاسم` ='$password'");
 mysql_query("SET NAMES 'utf8'");
 mysql_query('SET CHARACTER SET utf8');
-$sql =("SELECT * FROM `المشرف` WHERE `البريد` = '$username' AND `الرقم_السري` ='$password'");
 
 $result = mysql_query($sql) or die(mysql_error());
 $num = mysql_num_rows($result);
@@ -39,5 +37,5 @@ if ($row = mysql_fetch_assoc($result)) {
 
 exit;}
 }
-mysql_close($conn);
+mysqli_close($conn);
 ?>
