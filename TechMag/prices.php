@@ -38,9 +38,9 @@
 .box{
   text-align: right;
   position: absolute;
-  top: calc(30% - 20px);
+  top: calc(10% - 20px);
   left: calc(38% - 50px);
-  height: 100px;
+  height: 90px;
   width: 500px;
   padding: 10px;
   z-index: 2;
@@ -85,7 +85,7 @@
 		</div>
 		<br>
 		<div class="box">
-      <form method="post" action="formsub.php">
+      <form method="post" action="formsub.html">
       <div class="contentform">
 				<div>
 				    <table>

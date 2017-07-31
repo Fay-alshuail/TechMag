@@ -131,8 +131,12 @@ font-family: 'Changa', sans-serif;
 }
 h1{
 		font-family: 'Acme', sans-serif;
-		font-size: 200%;
+		font-size: 400%;
 		color: #ffffff;
+	}
+	#pbanner p{
+		text-align: center;
+		margin :5%  20% 5%  20%;
 	}
 a {
 	font-family: 'Lemonada', cursive;
@@ -2844,7 +2848,7 @@ background-color: #5ab2c4;
 		}
 
 		#banner p {
-			color:  #336699;
+			color:  white ;
 			font-weight: bold;
 			font-size: 1.5em;
 			margin-bottom: 1.75em;
