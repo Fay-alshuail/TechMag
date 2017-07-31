@@ -22,7 +22,6 @@
 
     <style>
 
-      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
       @import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
 
@@ -127,7 +126,7 @@ body {
 	text-align: right;
 }
 
-.login input[type=button]{
+.login input[type=submit]{
 	width: 250px;
 	height: 35px;
 	background: #fff;
@@ -189,7 +188,7 @@ body {
 
 				<input type="text" placeholder="اسم المستخدم" name="username"><br>
 				<input type="password" placeholder="الرقم السري " name="password"><br>
-				<button onClick="return validateForm()" type="submit" class="btn btn-primary btn-lg">"تسجيل الدخول"</button>
+        <input type="submit" onClick="return validateForm()" value="تسجيل الدخول">
 
 			</form>
 		</div>
