@@ -38,11 +38,11 @@
 .login{
   text-align: right;
   position: absolute;
-  top: calc(23% - 20px);
-  left: calc(33% - 50px);
-  height: 100px;
-  width: 550px;
-  padding: 10px;
+  top: calc(10% - 5px);
+  left: calc(15% - 5px);
+  height: 60px;
+  width: 500px;
+  padding: -20px;
   z-index: 2;
 }
 </style>
