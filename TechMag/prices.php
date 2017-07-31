@@ -38,12 +38,13 @@
 .box{
   text-align: right;
   position: absolute;
-  top: calc(10% - 20px);
-  left: calc(38% - 50px);
-  height: 90px;
+  top: calc(3% - 5px);
+  left: calc(15% - 5px);
+  height: 60px;
   width: 500px;
-  padding: 10px;
+  padding: -20px;
   z-index: 2;
+
 }
 .text{text-align:right;}
 .left{text-align: center;}
@@ -193,7 +194,5 @@
     </div>
     </form>
 		</div>
-
-
 </body>
 </html>
