@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <head>
   <meta charset="UTF-8">
-  <title>Random Login Form</title>
+  <title>تسجيل الدخول</title>
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<header id="header" class="alt">
 		<div id="nav2">
