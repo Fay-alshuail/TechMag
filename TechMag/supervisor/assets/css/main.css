@@ -1,5 +1,5 @@
 @import url(font-awesome.min.css);
-
+@import url(https://fonts.googleapis.com/css?family=Lemonada);
 /*
 	Hyperspace by HTML5 UP
 	html5up.net | @ajlkn
@@ -1640,7 +1640,7 @@
 
 	body, input, select, textarea {
 		color: rgba(255, 255, 255, 0.55);
-		font-family: Arial, Helvetica, sans-serif;
+		font-family: ;
 		font-size: 16.5pt;
 		font-weight: normal;
 		line-height: 1.75;
@@ -1809,7 +1809,7 @@
 		background: rgba(255, 255, 255, 0.05);
 		border-radius: 0.25em;
 		border: solid 1px rgba(255, 255, 255, 0.15);
-		font-family: "Courier New", monospace;
+		font-family: ;
 		font-size: 0.9em;
 		margin: 0 0.25em;
 		padding: 0.25em 0.65em;
@@ -1817,7 +1817,7 @@
 
 	pre {
 		-webkit-overflow-scrolling: touch;
-		font-family: "Courier New", monospace;
+		font-family: ;
 		font-size: 0.9em;
 		margin: 0 0 2em 0;
 	}
@@ -2381,7 +2381,7 @@
 		.select-wrapper:before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
-			font-family: FontAwesome;
+			font-family: ;
 			font-style: normal;
 			font-weight: normal;
 			text-transform: none !important;
@@ -2456,7 +2456,7 @@
 			input[type="radio"] + label:before {
 				-moz-osx-font-smoothing: grayscale;
 				-webkit-font-smoothing: antialiased;
-				font-family: FontAwesome;
+				font-family: ;
 				font-style: normal;
 				font-weight: normal;
 				text-transform: none !important;
@@ -2536,7 +2536,7 @@
 		.icon:before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
-			font-family: FontAwesome;
+			font-family: ;
 			font-style: normal;
 			font-weight: normal;
 			text-transform: none !important;
@@ -2567,7 +2567,7 @@
 				}
 
 				.wrapper.style1-alt .icon.major:before {
-					color: #493382;
+					color: #ffffff;
 				}
 
 				.wrapper.style2 .icon.major:before {
@@ -2700,7 +2700,7 @@
 					ul.icons li > a:before, ul.icons li > span:before {
 						-moz-osx-font-smoothing: grayscale;
 						-webkit-font-smoothing: antialiased;
-						font-family: FontAwesome;
+						font-family: ;
 						font-style: normal;
 						font-weight: normal;
 						text-transform: none !important;
@@ -3175,7 +3175,7 @@
 			font-size: 1em;
 			font-weight: bold;
 			padding: 0 0.75em 0.75em 0.75em;
-			text-align: left;
+			text-align:right;
 		}
 
 		table thead {
@@ -3257,20 +3257,54 @@
 		}
 
 		.wrapper.style1-alt {
-			background-color: #493382;
+			background-color: #e3ecf2;
 		}
 
 		.wrapper.style2 {
-			background-color: #5052b5;
+			background-color: #a6cbe2;
 		}
+
 
 		.wrapper.style2-alt {
 			background-color: #3e4094;
 		}
 
 		.wrapper.style3 {
-			background-color: #b74e91;
+			background-color: #c6ced3;
 		}
+		.wrapper.style4 .icon.major:before {
+			color: #4e5387;
+		}
+		.wrapper.style4 {
+			background-color:#9fdaea;}
+			.wrapper.style5 .icon.major:before {
+				color:#75609b ;
+			}
+			.wrapper.style5 {
+				background-color: #5a81a8;}
+				.wrapper.style6 .icon.major:before {
+					color:#97a378 ;
+				}
+				.wrapper.style6 {
+					background-color: #8ab1d8;}
+					.wrapper.style7 .icon.major:before {
+						color:#318476 ;
+					}
+					.wrapper.style7{
+						background-color: #6f8caa;}
+						.wrapper.style8 .icon.major:before {
+							color:#4f71af;
+						}
+						.wrapper.style8{
+							background-color: #9aabbc;}
+							.wrapper.style9 .icon.major:before {
+								color:#825a84;
+							}
+							.wrapper.style9{
+								background-color: #498596;}
+								.wrapper.style10{
+									background-color: #b3cfe0;}
+
 
 		.wrapper.style3-alt {
 			background-color: #953d75;
@@ -3448,7 +3482,7 @@
 			#header {
 				display: block;
 				padding: 0 2em;
-				text-align: left;
+				text-align:right;
 			}
 
 				#header .title {
@@ -3523,7 +3557,7 @@
 
 	#footer > .inner .menu {
 		font-size: 0.8em;
-		color: rgba(255, 255, 255, 0.15);
+		color: #ffff;
 	}
 
 	#header + #wrapper + #footer > .inner {
@@ -3533,14 +3567,14 @@
 /* Sidebar */
 
 	#sidebar {
-		padding: 2.5em 2.5em 0.5em 2.5em ;
+		padding: 2em 2.5em 0 2em ;
 		background:rgb(206, 227, 239);
 		cursor: default;
 		height: 100vh;
 		left: 0;
 		overflow-x: hidden;
 		overflow-y: auto;
-		position: fixed;
+		position:fixed;
 		text-align: right;
 		top: 0;
 		width: 18em;
@@ -3742,22 +3776,19 @@
 				}
 
 		#sidebar nav a {
-			-moz-transition: color 0.2s ease;
-			-webkit-transition: color 0.2s ease;
-			-ms-transition: color 0.2s ease;
+
 			transition: color 0.2s ease;
 			border: 0;
 			color: rgb(89, 131, 140);
 			display: block;
-			font-size: 0.6em;
+			font-size: 0.7em;
 			font-weight: bold;
-			letter-spacing: 0.25em;
-			line-height: 1.75;
+			line-height: 0.5;
 			outline: 0;
 			padding: 1.35em 0;
 			position: relative;
 			text-decoration: none;
-			text-transform: uppercase;
+			font-family: Lemonada;
 		}
 
 			#sidebar nav a:before, #sidebar nav a:after {
@@ -3787,11 +3818,11 @@
 			}
 
 			#sidebar nav a:hover {
-				color:gray;
+				color:#a1c2f4;
 			}
 
 			#sidebar nav a.active {
-				color: black;
+				color: #263977;
 			}
 
 				#sidebar nav a.active:after {
