@@ -2916,6 +2916,26 @@ background-color: #5ab2c4;
 			}
 
 		}
+/* Map */
+.mapback {
+	background-color: #5ab2c4;
+  width: 100%;
+}
+.dno{
+	text-align: right;
+  position: absolute;
+  left: calc(60% - 50px);
+	margin-top: 40px;
+  height: 100px;
+  width: 500px;
+  padding: 10px;
+  z-index: 2;
+}
+.map {
+	margin-left: 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
 
 /* Footer */
 

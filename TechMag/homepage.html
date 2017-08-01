@@ -176,10 +176,24 @@
 					</div>
 				</section>
 
-
-
+<div class="mapback" >
+	<div class="dno">
+		<p>الـوصـف</p>
+	</div>
+				<div class="map" id="googleMap" style="width:40%;height:400px;"></div>
+				<script>
+				function myMap() {
+				var mapProp= {
+						center:new google.maps.LatLng(51.508742,-0.120850),
+						zoom:5,
+				};
+				var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+				}
+				</script>
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABmebxNurA4SnIZoEXtQ3DdHuHVJlsmX0&callback=myMap"></script>
+</div>
 		<!-- Footer -->
-			<footer id="footer">
+			<footer >
 				<div class="container">
 					<ul class="copyright">
 						<li>&copy; Untitled</li>
