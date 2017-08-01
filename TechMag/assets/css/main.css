@@ -2825,7 +2825,7 @@ background-color: #5ab2c4;
 	}
 
 	#banner {
-		padding: 12em 0 13em 0;
+		padding: 11em 0 5em 0;
 		background-attachment: fixed;
 		background-image: url("images/overlay.png"), url("../../images/banner.jpg");
 		background-position: center top;

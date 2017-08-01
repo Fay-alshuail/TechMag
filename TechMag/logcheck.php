@@ -8,15 +8,13 @@ $password = filter_input(INPUT_POST,"password");
 
 //Call the database and check to make sure the password matches
 
-$conn = mysql_connect("localhost", "root", "");
+$conn = mysql_connect(`148.66.136.120`, `fixmincp`, `!m[s3LrAE3nw`);
 if (!$conn) {
   die( mysql_error());
 }
-else {
 
-
-$db = mysqli_select_db($conn,"fixmin");
-$sql =("SELECT * FROM `المشرف` WHERE `البريد` = '$username' AND `الاسم` ='$password'");
+$db = mysql_select_db('fixmin',$conn) or die(mysql_error());
+$sql =("SELECT * FROM `المشرف` WHERE `البريد` = '$username' AND `الرقم_السري` ='$password'");
 mysql_query("SET NAMES 'utf8'");
 mysql_query('SET CHARACTER SET utf8');
 
@@ -29,13 +27,13 @@ if ($row = mysql_fetch_assoc($result)) {
 
 
 
-  } else {
+  } else  {
 
   echo '<script language="javascript" >';
   echo 'alert("خطأ في اسم المستخدم أو الرقم السري ")';
   echo '</script>';
 
 exit;}
-}
+
 mysqli_close($conn);
 ?>
