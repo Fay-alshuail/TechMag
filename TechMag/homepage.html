@@ -176,32 +176,45 @@
 					</div>
 				</section>
 
-<div class="mapback" >
-	<div class="dno">
-		<p>الـوصـف</p>
-	</div>
-				<div class="map" id="googleMap" style="width:40%;height:400px;"></div>
-				<script>
-				function myMap() {
-				var mapProp= {
-						center:new google.maps.LatLng(51.508742,-0.120850),
-						zoom:5,
-				};
-				var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-				}
-				</script>
-				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABmebxNurA4SnIZoEXtQ3DdHuHVJlsmX0&callback=myMap"></script>
-</div>
-		<!-- Footer -->
-			<footer >
-				<div class="container">
-					<ul class="copyright">
-						<li>&copy; Untitled</li>
-						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
-						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
-					</ul>
-				</div>
-			</footer>
+				<footer class="parallax-section">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.6s">
+								<h2 class="heading">Contact Info.</h2>
+								<div class="ph">
+									<p><i class="fa fa-phone"></i> Phone</p>
+									<h4>090-080-0760</h4>
+								</div>
+								<div class="address">
+									<p><i class="fa fa-map-marker"></i> Our Location</p>
+									<h4>RIYADH</h4>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.6s">
+								<h2 class="heading">Open Hours</h2>
+									<p>Sunday <span>10:30 AM - 10:00 PM</span></p>
+									<p>Mon-Fri <span>9:00 AM - 8:00 PM</span></p>
+									<p>Saturday <span>11:30 AM - 10:00 PM</span></p>
+							</div>
+							<div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.6s">
+								<h2 class="heading">Follow Us</h2>
+								<div class="map" id="googleMap" style="width:300%;height:150px;">
+									<script>
+									function myMap() {
+									var mapProp= {
+									    center:new google.maps.LatLng(51.508742,-0.120850),
+									    zoom:5,
+									};
+									var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+									}
+									</script>
+									<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABmebxNurA4SnIZoEXtQ3DdHuHVJlsmX0&callback=myMap"></script>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</footer>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
