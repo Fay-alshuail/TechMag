@@ -8,7 +8,7 @@ $password = filter_input(INPUT_POST,"password");
 
 //Call the database and check to make sure the password matches
 
-$conn = mysql_connect(`148.66.136.120`, `fixmincp`, `!m[s3LrAE3nw`);
+$conn = mysql_connect('148.66.136.120', 'fixmincp', 'dmQgpIJ$UfMO5O');
 if (!$conn) {
   die( mysql_error());
 }
@@ -23,7 +23,7 @@ $num = mysql_num_rows($result);
 
 
 if ($row = mysql_fetch_assoc($result)) {
-  header('Location: supervisor/supervisor.php');
+  header('Location: supervisor/supervisor.html');
 
 
 

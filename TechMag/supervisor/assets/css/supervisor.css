@@ -3781,9 +3781,9 @@
 			border: 0;
 			color: rgb(89, 131, 140);
 			display: block;
-			font-size: 0.7em;
+			font-size: 0.6em;
 			font-weight: bold;
-			line-height: 0.5;
+			line-height: 0;
 			outline: 0;
 			padding: 1.35em 0;
 			position: relative;
@@ -3925,6 +3925,7 @@
 		background-position: top right;
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
+		
 	}
 
 		#intro p {

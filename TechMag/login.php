@@ -180,7 +180,7 @@ body {
   <div class="body"></div>
 		<div class="grad"></div>
 		<div class="header">
-			<div>Tech<span>Mag</span></div>
+			<div>Fix<span>Min</span></div>
 		</div>
 		<br>
 		<div class="login">
