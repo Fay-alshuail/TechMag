@@ -3927,7 +3927,17 @@
 		background-size: 100% 100%;
 
 	}
-
+#info{
+	background-color: red;
+}
+#quick{
+	margin: 0 0 2 1;
+	height: 3.5em;
+	background-color: blue;
+}
+#chart{
+	background-color: yellow;
+}
 		#intro p {
 			font-size: 1.25em;
 		}
