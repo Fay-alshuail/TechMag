@@ -64,6 +64,9 @@
 
 
 								<div class="inner">
+									<center>
+									 <img src="images/pic11.png" width="100" height="100">
+								 </center>
 <h1>الإشتراك </h1>
 <p> البيانات الشخصية </p>
 									<table id = "table2" class ="align-center">
@@ -174,16 +177,22 @@
 					</section>
 								<section id="five" class="wrapper style5 fade-up">
 									<div class="inner">
+										<center>
+										 <img src="images/pic12.png" width="100" height="100">
+									 </center>
 										<h2>العملاء </h2>
 										<section style="text-align=right">
 											<table>
 									<tr>
 										<th ><center><input type="submit" value="بحث"> </center></th>
 									<th><input type="text" name="search" placeholder=" ... بحث" style="text-align :right"></th>
-									<th > <select name="branches">
-						  <option> </option>
-							<option> </option>
-						</select></th>
+									<th >
+										<select name="branches">
+										 <option value="" style="display:none">الفرع</option>
+									 <option> </option>
+									 <option> </option>
+									 </select>
+									</th>
 									</tr>
 								</table>
 
@@ -204,6 +213,9 @@
 								</section>
 											<section id="six" class="wrapper style6 fade-up">
 												<div class="inner">
+													<center>
+													 <img src="images/pic10.png" width="100" height="100">
+												 </center>
 													<h2>لوحة التحكم بالطلبات </h2>
 													<section style="text-align=right">
 														<table >
@@ -214,6 +226,7 @@
 														<th style="padding: 0 0 0 0 ;"><input type="button" value="تم الإصلاح "></th>
 														<th style="padding: 0 0 0 0 ;"><input type="button" value="مغلق"></th>
 														<th > <select name="branches">
+															<option value="" style="display:none">الفرع</option>
 														<option> </option>
 														<option> </option>
 														</select></th>
