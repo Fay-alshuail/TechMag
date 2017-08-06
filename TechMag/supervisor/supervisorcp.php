@@ -53,10 +53,32 @@
 
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
 
+                                <div class="inner">
+                                    <h2>الوصول السريع</h2>
+                                    <section>
+                                        <table style="width:20% text-align:center ">
+      <tr>
+                <th><center><a href = "prices.php"><h3>تجديد الإشتراك </h3><img src="images/pic15.png" width="100" height="100"></a></center></td>
+                <th><center><a href="branchcontrol.php"><h3>مراقبة الفروع </h3><img src="images/pic01.png" width="100" height="100"></a></center></td>
+                <th><center><a href = "addproduct.php "><h3>إضافة منتج</h3><img src="images/pic04.png" width="100" height="100"></a></center></td>
+  </tr>
+	<tr>
+								<td><center><a href="addwarehouse.php"><h3>إضافة مخزن </h3><img src="images/pic06.png" width="100" height="100"></a></center></td>
+                <td><center><a href = "addstaff.php"><h3>إضافة موظف </h3><img src="images/pic07.png" width="100" height="100"></a></center></td>
+                <td><center><a href="#five "><h3>قائمة العملاء</h3><img src="images/pic13.png" width="100" height="100"></a></center></td>
+  </tr>
+<tr>
+								<td><center><a href="#nine "><h3>الإعدادات</h3><img src="images/pic16.png" width="100" height="100"></a></center></td>
+            <td><center><a href = "#six "><h3>لوحة الطلبات  </h3><img src="images/pic10.png" width="100" height="100"></a></center></td>
 
-						</div>
+        <td><center><a href="#seven "><h3>قائمة الفواتير </h3><img src="images/pic14.png" width="100" height="100"></a></center></td>
+
+      </tr>
+    </table>
+</section>
+</div>
+                        </section>
 					</section>
 
 				<!-- One -->
@@ -178,7 +200,7 @@
 								<section id="five" class="wrapper style5 fade-up">
 									<div class="inner">
 										<center>
-										 <img src="images/pic12.png" width="100" height="100">
+										 <img src="images/pic13.png" width="100" height="100">
 									 </center>
 										<h2>العملاء </h2>
 										<section style="text-align=right">
@@ -232,7 +254,7 @@
 														</select></th>
 														</tr>
 														</table>
-														<table  style="border: 1px solid red;">
+														<table  style="border: 1px solid black;">
 											<tr >
 
 												<th style="border: 1px solid #c2d9ed;">مشكلة إضافية </th>
@@ -262,43 +284,114 @@
 						</div>
 											</section>
 														<section id="seven" class="wrapper style7 fade-up">
+
 															<div class="inner">
-																<h2>What we do</h2>
-																<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-																<div class="features">
-																	<section>
-																		<span class="icon major fa-code"></span>
-																		<h3>Lorem ipsum amet</h3>
-																		<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+																<center>
+																 <img src="images/pic14.png" width="100" height="100">
+															 </center>
+																<h2>الفواتير </h2>
+																<section style="text-align=right">
+																	<p> رفع نموذج فاتورة</p>
+																	<table>
+															<tr>
+																<th ><center><input type="submit" value="بحث"> </center></th>
+															<th><input type="text" name="search" placeholder="" style="text-align :right"></th>
+															<th >
+																<center><input type="submit" value="استعراض"> </center>
+															</th>
+															</tr>
+														</table>
 																	</section>
-																</div>
-															</div>
+
+																	<section style="text-align=right">
+<p>قائمة الفواتير </p>
+<table>
+<tr>
+<th ><center><input type="submit" value="بحث"> </center></th>
+<th><input type="text" name="search" placeholder=" ... بحث" style="text-align :right"></th>
+<th >
+<select name="branches">
+<option value="" style="display:none">الفرع</option>
+<option> </option>
+<option> </option>
+</select>
+</th>
+</tr>
+</table>
+
+
+
+
+												<table>
+									<tr>
+									<th>التفاصيل </th>
+									<th>رقم الفاتورة </th>
+									</tr>
+
+
+										<td></td>
+										<td></td>
+									</tr>
+													</table>
+														</div>
+												</section>
+
 														</section>
 																	<section id="eight" class="wrapper style8 fade-up">
 																		<div class="inner">
-																			<h2>What we do</h2>
-																			<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-																			<div class="features">
-																				<section>
-																					<span class="icon major fa-code"></span>
-																					<h3>Lorem ipsum amet</h3>
-																					<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-																				</section>
-																			</div>
+																				<center>
+																				 <img src="images/pic14.png" width="100" height="100">
+																			 </center>
+																				<h2>التقارير</h2>
+
+
+																					<section style="text-align=right">
+
+				<table>
+				<tr>
+				<th ><center><input type="submit" value="بحث"> </center></th>
+				<th><input type="text" name="search" placeholder=" ... بحث" style="text-align :right"></th>
+				<th >
+				<select name="branches">
+				<option value="" style="display:none">نوع التقرير</option>
+				<option> </option>
+				<option> </option>
+				</select>
+				</th>
+				</tr>
+				</table>
+
+
+
+<p>قائمة التقارير</p>
+																<table>
+													<tr>
+													<th>التفاصيل </th>
+													<th>عنوان التقرير </th>
+													</tr>
+
+
+														<td></td>
+														<td></td>
+													</tr>
+																	</table>
 																		</div>
+																</section>
+
 																	</section>
 																				<section id="nine" class="wrapper style9 fade-up">
 																					<div class="inner">
-																						<h2>What we do</h2>
-																						<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-																						<div class="features">
-																							<section>
-																								<span class="icon major fa-code"></span>
-																								<h3>Lorem ipsum amet</h3>
-																								<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-																							</section>
-																						</div>
-																					</div>
+																						<h2>الإعدادات </h2>
+																						<section style="text-align=right">
+
+																								<table style="width:70% text-align:center ">
+																	<tr>
+																		<th><center><a href=".php"><h3>إعدادات الأدوار</h3><img src="images/pic16.png" width="100" height="100"></a></center></th>
+																		<th><center><a href = "prices.php"><h3>تحديث خطة الاشتراك </h3><img src="images/pic15.png" width="100" height="100"></a></center></th>
+																	</tr>
+																</table>
+															</section>
+															</div>
 																				</section>
 
 					</section>
