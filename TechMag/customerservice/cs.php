@@ -11,7 +11,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="cs.css" />
-		<link rel="stylesheet" href="form.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
@@ -50,88 +49,40 @@
 					</section>
 
 					<!-- zero -->
-						<section id="zero" class="wrapper style3 fade-up">
-							<div class="inner">
-								<h2>What we do</h2>
-								<div class="form-style-9">
-								<form>
-								<ul>
-								<li>
-									<p>معلومات الاتصال</p>
-								    <input type="text" name="field1" class="field-style field-split align-right" placeholder="الاسـم" />
-								    <input type="text" name="field2" class="field-style field-split align-left" placeholder="رقم الجوال"/>
-										</li>
+					<section id="zero" class="wrapper style5 fade-up">
+						<div class="inner">
+							<center>
+							 <img src="pic13.png" width="100" height="100">
+						 </center>
+							<h2>العملاء </h2>
+							<section style="text-align=right">
+								<table>
+						<tr>
+							<th ><center><input type="submit" value="بحث"> </center></th>
+						<th><input type="text" name="search" placeholder=" ... بحث" style="text-align :right"></th>
+						<th >
+							<select name="branches">
+								<option value="" style="display:none">الفرع</option>
+						 </select>
+						</th>
+						</tr>
+					</table>
 
-										<li>
-											<p>معلومات الجهاز</p>
-										<select name="brand" class="field-style field-split align-left">
-											<option value="volvo">اختر نوع الجهاز</option>
-											<option value="saab">Saab</option>
-											<option value="mercedes">Mercedes</option>
-											<option value="audi">Audi</option>
-										</select>
+<table>
+<tr>
+<th>رقم الجوال </th>
+<th>اسم العميل </th>
+</tr>
 
-								<select name="brand2" class="field-style field-split align-right">
-									<option value="volvo">اختر شركة الجهاز</option>
-									<option value="saab">Saab</option>
-									<option value="mercedes">Mercedes</option>
-									<option value="audi">Audi</option>
-								</select>
 
-								<select name="brand2" class="field-style field-split align-right">
-									<option value="volvo">اختر موديل الجهاز</option>
-									<option value="saab">Saab</option>
-									<option value="mercedes">Mercedes</option>
-									<option value="audi">Audi</option>
-								</select>
+<td></td>
+<td></td>
+</tr>
+	</table>
 
-								<select name="brand2" class="field-style field-split align-left">
-									<option value="volvo">اختر لون الجهاز</option>
-									<option value="saab">Saab</option>
-									<option value="mercedes">Mercedes</option>
-									<option value="audi">Audi</option>
-								</select>
-
-						</li>
-
-								<li>
-									<p>المشكلة</p>
-									<select name="brand2" class="field-style field-split align-left">
-										<option value="volvo">نوع المشكلة</option>
-										<option value="saab">Saab</option>
-										<option value="mercedes">Mercedes</option>
-										<option value="audi">Audi</option>
-									</select>
-									<select name="brand2" class="field-style field-split align-right">
-										<option value="volvo">نوع قطعة الغيار</option>
-										<option value="saab">Saab</option>
-										<option value="mercedes">Mercedes</option>
-										<option value="audi">Audi</option>
-									</select>
-								    <input type="text" name="field3" class="field-style field-split align-left" value="تفاصيل المشكلة"/>
-								    <input type="date" name="field4" class="field-style field-split align-right" placeholder="تاريخ الاستحقاق" />
-								</li>
-								<li>
-									<p>السعـر</p>
-								<input type="text" name="field3" class="field-style field-split align-right" placeholder="سعر القطعة" />
-								<input type="text" name="field5" class="field-style field-split align-left" placeholder="شغل اليد"/>
-								</li>
-								<li>
-								<input type="text" name="field5" class="field-style field-split align-right" placeholder="الخصم"/>
-								<input type="text" name="field5" class="field-style field-split align-left" placeholder="المجموع"/>
-								</li>
-								<li>
-								<input type="submit" value="Send Message" margin-top="2em" />
-								</li>
-								</ul>
-								</form>
-							</div>
-							<ul class="actions">
-								<li><a href="#" class="button">Learn more</a></li>
-							</ul>
-							</div>
-						</section>
-
+</section>
+</div>
+					</section>
 				<!-- One -->
 						<section id="one" class="wrapper style2 spotlights">
 								<div class="inner">
