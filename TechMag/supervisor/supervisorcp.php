@@ -9,12 +9,24 @@
 		<title>Hyperspace by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/supervisor.css" />
+		<link rel="stylesheet" href="css.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<script>
+    if (!Modernizr.touch || !Modernizr.inputtypes.date) {
+        $('input[type=date]')
+            .attr('type', 'text')
+            .datepicker({
+                // Consistent format with the HTML5 picker
+                dateFormat: 'yy-mm-dd'
+            });
+    }
+</script>
 	</head>
-	<body>
+	<body class="align-right">
 
 		<!-- Sidebar -->
 			<section id="sidebar">
@@ -43,37 +55,78 @@
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
 
-		
+
 						</div>
 					</section>
 
 				<!-- One -->
 					<section id="one" class="wrapper style2 spotlights">
-						<section>
-							<div class="content">
+
+
 								<div class="inner">
-									<h2>Sed ipsum dolor</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="#" class="button">Learn more</a></li>
-									</ul>
+<h1>الإشتراك </h1>
+<p> البيانات الشخصية </p>
+									<table id = "table2" class ="align-center">
+									<td>
+									  <ul>
+
+									<p> : الجوال <input type="text" name="phone" id="nom" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
+									<p> : الجوال 2 <input type="text" name="phone2" id="prenom" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
+									<p> : عنوان السكن <input type="text" name="address" id="fonction" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
+
+									  </ul>
+
+									</td>
+									<td>
+
+									    <ul>
+									    <p> : الاسم <input type="text" name="phone" id="nom" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
+									    <p> : المسمى الوظيفي <input type="text" name="phone2" id="prenom" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
+									    <p> : البريد الالكتروني <input type="text" name="address" id="fonction" data-rule="required" data-msg="لو ماعبى التيكست"/>  </p>
+
+									    </ul>
+									  </td>
+									</table>
+<p>بيانات الحساب البنكي </p>
+<table id = "table2" class ="align-center">
+<td>
+	<ul>
+<p> : تاريخ الانتهاء <input type="date"></p>
+	<p> : رقم الأمان  <input type="text" name="phone2" id="prenom" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p> <br>
+<p> <input type="submit" value="حـفـظ"></p>
+</ul>
+
+</td>
+<td>
+
+		<ul>
+
+			<p> :رقم البطاقة  <input type="text" name="phone" id="nom" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
+			<p> : نوع البطاقة  <select name="cards">
+  <option value="creditcard"> بطاقة ائتمان</option>
+  <option value="paypal"> باي بال</option>
+</select> </p>
+			<br>
+			<p> <input type="button" value="تـعـديـل "></p>
+		</ul>
+	</td>
+</table>
 								</div>
-							</div>
-						</section>
+
+
 
 					</section>
 
 				<!-- Two -->
 					<section id="two" class="wrapper style3 fade-up">
 						<div class="inner">
-							<h2>What we do</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+							<h2>الفروع</h2>
 							<div class="features">
-								<section>
-									<span class="icon major fa-code"></span>
-									<h3>Lorem ipsum amet</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
+								<section style="text-align=right">
+									 <a href="TechMag/supervisor/branchcontrol.php"><h3>مراقبة الفروع </h3></a>
+									 <a href="supervisor/addbranch.php"><h3>إضافة فرع جديد </h3></a>
+									  <a href="supervisor/branchproductivity.php"><h3>انتاجية الفروع</h3></a>
+										</section>
 
 							</div>
 							<ul class="actions">
