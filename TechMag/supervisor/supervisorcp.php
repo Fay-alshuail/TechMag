@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <!--
 	Hyperspace by HTML5 UP
@@ -53,10 +54,32 @@
 
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
 
+                                <div class="inner">
+                                    <h2>الوصول السريع</h2>
+                                    <section>
+                                        <table style="width:20% text-align:center ">
+      <tr>
+                <th><center><a href = "prices.php"><h3>تجديد الإشتراك </h3><img src="images/pic15.png" width="100" height="100"></a></center></td>
+                <th><center><a href="branchcontrol.php"><h3>مراقبة الفروع </h3><img src="images/pic01.png" width="100" height="100"></a></center></td>
+                <th><center><a href = "addproduct.php "><h3>إضافة منتج</h3><img src="images/pic04.png" width="100" height="100"></a></center></td>
+  </tr>
+	<tr>
+								<td><center><a href="addwarehouse.php"><h3>إضافة مخزن </h3><img src="images/pic06.png" width="100" height="100"></a></center></td>
+                <td><center><a href = "addstaff.php"><h3>إضافة موظف </h3><img src="images/pic07.png" width="100" height="100"></a></center></td>
+                <td><center><a href="#five "><h3>قائمة العملاء</h3><img src="images/pic13.png" width="100" height="100"></a></center></td>
+  </tr>
+<tr>
+								<td><center><a href="#nine "><h3>الإعدادات</h3><img src="images/pic16.png" width="100" height="100"></a></center></td>
+            <td><center><a href = "#six "><h3>لوحة الطلبات  </h3><img src="images/pic10.png" width="100" height="100"></a></center></td>
 
-						</div>
+        <td><center><a href="#seven "><h3>قائمة الفواتير </h3><img src="images/pic14.png" width="100" height="100"></a></center></td>
+
+      </tr>
+    </table>
+</section>
+</div>
+                        </section>
 					</section>
 
 				<!-- One -->
@@ -64,7 +87,10 @@
 
 
 								<div class="inner">
-<h1>الإشتراك </h1>
+									<center>
+									 <img src="images/pic11.png" width="100" height="100">
+								 </center>
+<h2>الإشتراك </h2>
 <p> البيانات الشخصية </p>
 									<table id = "table2" class ="align-center">
 									<td>
@@ -102,7 +128,7 @@
 		<ul>
 
 			<p> :رقم البطاقة  <input type="text" name="phone" id="nom" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
-			<p> : نوع البطاقة  <select name="cards">
+			<p> : نوع البطاقة  <select name="cards  ">
   <option value="creditcard"> بطاقة ائتمان</option>
   <option value="paypal"> باي بال</option>
 </select> </p>
@@ -121,16 +147,22 @@
 					<section id="two" class="wrapper style3 fade-up">
 						<div class="inner">
 							<h2>الفروع</h2>
-							<div class="features">
+
 								<section style="text-align=right">
-									<a href="TechMag/supervisor/branchcontrol.php"><h3>مراقبة الفروع </h3>
-<img src="supervisor/images/148723.png" width="100" height="100">
-</a>
-									 <a href="TechMag/supervisor/branchcontrol.php"><h3>مراقبة الفروع </h3></a>
-									 <a href="supervisor/addbranch.php"><h3>إضافة فرع جديد </h3></a>
-									  <a href="supervisor/branchproductivity.php"><h3>انتاجية الفروع</h3></a>
-										</section>
-</div>
+
+										<table style="width:70% text-align:center ">
+
+										  <tr>
+
+										    <th> <center>	<a href="branchcontrol.php"><h3>مراقبة الفروع </h3><img src="images/pic01.png" width="100" height="100"></a> </center></th>
+										    <th> <center>	<a href="branchproductivity.php"><h3>إنتاجية الفروع  </h3><img src="images/pic02.png" width="100" height="100"></a></center></</th>
+										    <th> <center>	<a href="addbranch.php"><h3>إضافة فرع جديد</h3><img src="images/pic03.png" width="100" height="100"></a></center></</th>
+
+										  </tr>
+
+										</table>
+									</section>
+
 </div>
 
 					</section>
@@ -138,94 +170,242 @@
 				<!-- Three -->
 					<section id="three" class="wrapper style10 fade-up">
 						<div class="inner">
-							<h2>الفروع</h2>
-							<div class="features">
-								<section style="text-align=right">
+							<h2>المخازن</h2>
+							<section style="text-align=right">
 
-									 <a href="TechMag/supervisor/branchcontrol.php"><h3>مراقبة الفروع </h3></a>
-									 <a href="supervisor/addbranch.php"><h3>إضافة فرع جديد </h3></a>
-										<a href = "branchproductivity.php"><h3>انتاجية الفروع</h3></a>
-										</section>
-</div>
+									<table style="width:70% text-align:center ">
+	  <tr>
+	    <th> <center><a href="newwarehouse.php"><h3>إضافة مخزن جديد </h3><img src="images/pic06.png" width="100" height="100"></a></center></th>
+	    <th><center><a href="addwarwhouse.php"><h3>مراقبة المخازن  </h3><img src="images/pic05.png" width="100" height="100"></a></center></th>
+	    <th><center><a href = "addproduct.php"><h3>إضافة منتج </h3><img src="images/pic04.png" width="100" height="100"></a></center></th>
+	  </tr>
+	</table>
+</section>
 </div>
 					</section>
 					<section id="four" class="wrapper style4 fade-up">
 						<div class="inner">
-							<h2>What we do</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="features">
-								<section>
-									<span class="icon major fa-code"></span>
-									<h3>Lorem ipsum amet</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-							</div>
-						</div>
+							<h2>الموظفين</h2>
+							<section style="text-align=right">
+
+									<table style="width:70% text-align:center ">
+	  <tr>
+	    <th> <center><a href="addstaff.php"><h3>إضافة موظف </h3><img src="images/pic07.png" width="100" height="100"></a></center></th>
+	    <th><center><a href="staff.php"><h3>الموظفين </h3><img src="images/pic08.png" width="100" height="100"></a></center></th>
+	    <th><center><a href = "staffproductivity.php"><h3>إنتاجية الموظف </h3><img src="images/pic09.png" width="100" height="100"></a></center></th>
+	  </tr>
+	</table>
+</section>
+</div>
 					</section>
 								<section id="five" class="wrapper style5 fade-up">
 									<div class="inner">
-										<h2>What we do</h2>
-										<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-										<div class="features">
-											<section>
-												<span class="icon major fa-code"></span>
-												<h3>Lorem ipsum amet</h3>
-												<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-											</section>
-										</div>
-									</div>
+										<center>
+										 <img src="images/pic13.png" width="100" height="100">
+									 </center>
+										<h2>العملاء </h2>
+										<section style="text-align=right">
+											<table>
+									<tr>
+										<th ><center><input type="submit" value="بحث"> </center></th>
+									<th><input type="text" name="search" placeholder=" ... بحث" style="text-align :right"></th>
+									<th >
+										<select name="branches">
+											<option value="" style="display:none">الفرع</option>
+											<?php
+											include_once ("logcheck.php");
+											mysql_query("SET NAMES 'utf8'");
+											mysql_query('SET CHARACTER SET utf8');
+
+$query = $db->query($con,"SELECT `الوصف` FROM `الفرع` ");
+      echo '<select name="DROP DOWN NAME">';
+			while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+			   echo '<option value="'.$row[`الوصف`].'">'.$row[`الوصف`].'</option>';
+			}
+
+			echo '</select>';// Close your drop down box
+	?>
+
+
+									 </select>
+									</th>
+									</tr>
+								</table>
+
+			<table>
+<tr>
+<th>رقم الجوال </th>
+<th>اسم العميل </th>
+</tr>
+
+
+	<td></td>
+	<td></td>
+</tr>
+				</table>
+
+			</section>
+			</div>
 								</section>
 											<section id="six" class="wrapper style6 fade-up">
 												<div class="inner">
-													<h2>What we do</h2>
-													<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-													<div class="features">
-														<section>
-															<span class="icon major fa-code"></span>
-															<h3>Lorem ipsum amet</h3>
-															<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-														</section>
-													</div>
-												</div>
+													<center>
+													 <img src="images/pic10.png" width="100" height="100">
+												 </center>
+													<h2>لوحة التحكم بالطلبات </h2>
+													<section style="text-align=right">
+														<table >
+														<tr>
+														<th style="padding: 0 0 0 0 ;"><input type="button" value="مقبول"></th>
+														<th style="padding: 0 0 0 0 ;" ><input type="button" value=" مرفوض"></th>
+														<th style="padding: 0 0 0 0 ;"><input type="button" value="قيد الانتظار"></th>
+														<th style="padding: 0 0 0 0 ;"><input type="button" value="تم الإصلاح "></th>
+														<th style="padding: 0 0 0 0 ;"><input type="button" value="مغلق"></th>
+														<th > <select name="branches">
+															<option value="" style="display:none">الفرع</option>
+														<option> </option>
+														<option> </option>
+														</select></th>
+														</tr>
+														</table>
+														<table  style="border: 1px solid black;">
+											<tr >
+
+												<th style="border: 1px solid #c2d9ed;">مشكلة إضافية </th>
+												<th style="border: 1px solid #c2d9ed;">تاريخ الاستحقاق </th>
+												<th style="border: 1px solid #c2d9ed;">تاريخ الاستلام </th>
+												<th style="border: 1px solid #c2d9ed;">الحالة </th>
+												<th style="border: 1px solid #c2d9ed;">الفني المسؤول </th>
+												<th style="border: 1px solid #c2d9ed;"> تم إرسال الطلب بواسطة </th>
+												<th style="border: 1px solid #c2d9ed;"> التفصيل</th>
+												<th style="border: 1px solid #c2d9ed;"> نوع المشكلة</th>
+											<th style="border: 1px solid #c2d9ed;"> رقم الطلب </th>
+											</tr>
+
+
+												<td style="border: 1px solid #073660;"></td>
+												<td style="border: 1px solid #073660;"></td>
+												<td style="border: 1px solid #073660;"></td>
+												<td style="border: 1px solid #073660;"></td>
+												<td style="border: 1px solid #073660;"></td>
+												<td style="border: 1px solid #073660;"></td>
+												<td style="border: 1px solid #073660;"></td>
+												<td style="border: 1px solid #073660;"></td>
+												<td style="border: 1px solid #073660;"></td>
+											</tr>
+															</table>
+						</section>
+						</div>
 											</section>
 														<section id="seven" class="wrapper style7 fade-up">
+
 															<div class="inner">
-																<h2>What we do</h2>
-																<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-																<div class="features">
-																	<section>
-																		<span class="icon major fa-code"></span>
-																		<h3>Lorem ipsum amet</h3>
-																		<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+																<center>
+																 <img src="images/pic14.png" width="100" height="100">
+															 </center>
+																<h2>الفواتير </h2>
+																<section style="text-align=right">
+																	<p> رفع نموذج فاتورة</p>
+																	<table>
+															<tr>
+																<th ><center><input type="submit" value="بحث"> </center></th>
+															<th><input type="text" name="search" placeholder="" style="text-align :right"></th>
+															<th >
+																<center><input type="submit" value="استعراض"> </center>
+															</th>
+															</tr>
+														</table>
 																	</section>
-																</div>
-															</div>
+
+																	<section style="text-align=right">
+<p>قائمة الفواتير </p>
+<table>
+<tr>
+<th ><center><input type="submit" value="بحث"> </center></th>
+<th><input type="text" name="search" placeholder=" ... بحث" style="text-align :right"></th>
+<th >
+<select name="branches">
+<option value="" style="display:none">الفرع</option>
+<option> </option>
+<option> </option>
+</select>
+</th>
+</tr>
+</table>
+
+
+
+
+												<table>
+									<tr>
+									<th>التفاصيل </th>
+									<th>رقم الفاتورة </th>
+									</tr>
+
+
+										<td></td>
+										<td></td>
+									</tr>
+													</table>
+														</div>
+												</section>
+
 														</section>
 																	<section id="eight" class="wrapper style8 fade-up">
 																		<div class="inner">
-																			<h2>What we do</h2>
-																			<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-																			<div class="features">
-																				<section>
-																					<span class="icon major fa-code"></span>
-																					<h3>Lorem ipsum amet</h3>
-																					<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-																				</section>
-																			</div>
+																				<center>
+																				 <img src="images/pic14.png" width="100" height="100">
+																			 </center>
+																				<h2>التقارير</h2>
+
+
+																					<section style="text-align=right">
+
+				<table>
+				<tr>
+				<th ><center><input type="submit" value="بحث"> </center></th>
+				<th><input type="text" name="search" placeholder=" ... بحث" style="text-align :right"></th>
+				<th >
+				<select name="branches">
+				<option value="" style="display:none">نوع التقرير</option>
+				<option> </option>
+				<option> </option>
+				</select>
+				</th>
+				</tr>
+				</table>
+
+
+
+<p>قائمة التقارير</p>
+																<table>
+													<tr>
+													<th>التفاصيل </th>
+													<th>عنوان التقرير </th>
+													</tr>
+
+
+														<td></td>
+														<td></td>
+													</tr>
+																	</table>
 																		</div>
+																</section>
+
 																	</section>
 																				<section id="nine" class="wrapper style9 fade-up">
 																					<div class="inner">
-																						<h2>What we do</h2>
-																						<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-																						<div class="features">
-																							<section>
-																								<span class="icon major fa-code"></span>
-																								<h3>Lorem ipsum amet</h3>
-																								<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-																							</section>
-																						</div>
-																					</div>
+																						<h2>الإعدادات </h2>
+																						<section style="text-align=right">
+
+																								<table style="width:70% text-align:center ">
+																	<tr>
+																		<th><center><a href=".php"><h3>إعدادات الأدوار</h3><img src="images/pic16.png" width="100" height="100"></a></center></th>
+																		<th><center><a href = "prices.php"><h3>تحديث خطة الاشتراك </h3><img src="images/pic15.png" width="100" height="100"></a></center></th>
+																	</tr>
+																</table>
+															</section>
+															</div>
 																				</section>
 
 					</section>
