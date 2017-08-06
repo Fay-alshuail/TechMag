@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <!--
 	Hyperspace by HTML5 UP
@@ -89,7 +90,7 @@
 									<center>
 									 <img src="images/pic11.png" width="100" height="100">
 								 </center>
-<h1>الإشتراك </h1>
+<h2>الإشتراك </h2>
 <p> البيانات الشخصية </p>
 									<table id = "table2" class ="align-center">
 									<td>
@@ -210,9 +211,22 @@
 									<th><input type="text" name="search" placeholder=" ... بحث" style="text-align :right"></th>
 									<th >
 										<select name="branches">
-										 <option value="" style="display:none">الفرع</option>
-									 <option> </option>
-									 <option> </option>
+											<option value="" style="display:none">الفرع</option>
+											<?php
+											include_once ("logcheck.php");
+											mysql_query("SET NAMES 'utf8'");
+											mysql_query('SET CHARACTER SET utf8');
+
+$query = $db->query($con,"SELECT `الوصف` FROM `الفرع` ");
+      echo '<select name="DROP DOWN NAME">';
+			while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+			   echo '<option value="'.$row[`الوصف`].'">'.$row[`الوصف`].'</option>';
+			}
+
+			echo '</select>';// Close your drop down box
+	?>
+
+
 									 </select>
 									</th>
 									</tr>

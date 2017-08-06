@@ -1,5 +1,10 @@
 @import url(font-awesome.min.css);
 @import url(https://fonts.googleapis.com/css?family=Lemonada);
+@import url(https://fonts.googleapis.com/css?family=El+Messiri);
+@import url(https://fonts.googleapis.com/css?family=Harmattan);
+@import url(https://fonts.googleapis.com/css?family=Acme);
+@import url(https://fonts.googleapis.com/css?family=Changa);
+@import url(https://fonts.googleapis.com/css?family=Lemonada);
 /*
 	Hyperspace by HTML5 UP
 	html5up.net | @ajlkn
@@ -1712,6 +1717,7 @@
 
 	h1 {
 		font-size: 2.75em;
+		font-family: 'Acme', sans-serif;
 	}
 
 		h1.major {
@@ -1740,14 +1746,17 @@
 
 	h2 {
 		font-size: 1.75em;
+		font-family: 'Changa', sans-serif;
 	}
 
 	h3 {
 		font-size: 1.1em;
+		font-family: 'El Messiri', sans-serif;
 	}
 
 	h4 {
 		font-size: 1em;
+		font-family: 'El Messiri', sans-serif;
 	}
 
 	h5 {
