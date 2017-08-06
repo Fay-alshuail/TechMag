@@ -23,7 +23,7 @@ $num = mysql_num_rows($result);
 
 
 if ($row = mysql_fetch_assoc($result)) {
-  header('Location: supervisor/supervisor.html');
+  header('Location: supervisor/supervisorcp.php');
 
 
 
