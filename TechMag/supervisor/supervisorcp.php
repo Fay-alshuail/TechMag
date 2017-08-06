@@ -176,33 +176,77 @@
 									<div class="inner">
 										<h2>العملاء </h2>
 										<section style="text-align=right">
-		
-												<table style="width:100%  ">
-					<tr>
-						<th>رقم الجوال </th>
-						<th>اسم العميل </th>
-					</tr>
-					<tr>
-	<td></td>
+											<table>
+									<tr>
+										<th ><center><input type="submit" value="بحث"> </center></th>
+									<th><input type="text" name="search" placeholder=" ... بحث" style="text-align :right"></th>
+									<th > <select name="branches">
+						  <option> </option>
+							<option> </option>
+						</select></th>
+									</tr>
+								</table>
+
+			<table>
+<tr>
+<th>رقم الجوال </th>
+<th>اسم العميل </th>
+</tr>
+
+
 	<td></td>
 	<td></td>
 </tr>
 				</table>
+
 			</section>
 			</div>
 								</section>
 											<section id="six" class="wrapper style6 fade-up">
 												<div class="inner">
-													<h2>What we do</h2>
-													<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-													<div class="features">
-														<section>
-															<span class="icon major fa-code"></span>
-															<h3>Lorem ipsum amet</h3>
-															<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-														</section>
-													</div>
-												</div>
+													<h2>لوحة التحكم بالطلبات </h2>
+													<section style="text-align=right">
+														<table >
+														<tr>
+														<th style="padding: 0 0 0 0 ;"><input type="button" value="مقبول"></th>
+														<th style="padding: 0 0 0 0 ;" ><input type="button" value=" مرفوض"></th>
+														<th style="padding: 0 0 0 0 ;"><input type="button" value="قيد الانتظار"></th>
+														<th style="padding: 0 0 0 0 ;"><input type="button" value="تم الإصلاح "></th>
+														<th style="padding: 0 0 0 0 ;"><input type="button" value="مغلق"></th>
+														<th > <select name="branches">
+														<option> </option>
+														<option> </option>
+														</select></th>
+														</tr>
+														</table>
+														<table  style="border: 1px solid red;">
+											<tr >
+
+												<th style="border: 1px solid #c2d9ed;">مشكلة إضافية </th>
+												<th style="border: 1px solid #c2d9ed;">تاريخ الاستحقاق </th>
+												<th style="border: 1px solid #c2d9ed;">تاريخ الاستلام </th>
+												<th style="border: 1px solid #c2d9ed;">الحالة </th>
+												<th style="border: 1px solid #c2d9ed;">الفني المسؤول </th>
+												<th style="border: 1px solid #c2d9ed;"> تم إرسال الطلب بواسطة </th>
+												<th style="border: 1px solid #c2d9ed;"> التفصيل</th>
+												<th style="border: 1px solid #c2d9ed;"> نوع المشكلة</th>
+											<th style="border: 1px solid #c2d9ed;"> رقم الطلب </th>
+											</tr>
+
+
+												<td style="border: 1px solid #073660;"></td>
+												<td style="border: 1px solid #073660;"></td>
+												<td style="border: 1px solid #073660;"></td>
+												<td style="border: 1px solid #073660;"></td>
+												<td style="border: 1px solid #073660;"></td>
+												<td style="border: 1px solid #073660;"></td>
+												<td style="border: 1px solid #073660;"></td>
+												<td style="border: 1px solid #073660;"></td>
+												<td style="border: 1px solid #073660;"></td>
+											</tr>
+															</table>
+						</section>
+						</div>
 											</section>
 														<section id="seven" class="wrapper style7 fade-up">
 															<div class="inner">
