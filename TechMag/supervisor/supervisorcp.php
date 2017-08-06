@@ -102,7 +102,7 @@
 		<ul>
 
 			<p> :رقم البطاقة  <input type="text" name="phone" id="nom" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
-			<p> : نوع البطاقة  <select name="cards">
+			<p> : نوع البطاقة  <select name="cards  ">
   <option value="creditcard"> بطاقة ائتمان</option>
   <option value="paypal"> باي بال</option>
 </select> </p>
@@ -121,16 +121,22 @@
 					<section id="two" class="wrapper style3 fade-up">
 						<div class="inner">
 							<h2>الفروع</h2>
-							<div class="features">
+
 								<section style="text-align=right">
-									<a href="TechMag/supervisor/branchcontrol.php"><h3>مراقبة الفروع </h3>
-<img src="supervisor/images/148723.png" width="100" height="100">
-</a>
-									 <a href="TechMag/supervisor/branchcontrol.php"><h3>مراقبة الفروع </h3></a>
-									 <a href="supervisor/addbranch.php"><h3>إضافة فرع جديد </h3></a>
-									  <a href="supervisor/branchproductivity.php"><h3>انتاجية الفروع</h3></a>
-										</section>
-</div>
+
+										<table style="width:70% text-align:center ">
+
+										  <tr>
+
+										    <th> <center>	<a href="branchcontrol.php"><h3>مراقبة الفروع </h3><img src="images/pic01.png" width="100" height="100"></a> </center></th>
+										    <th> <center>	<a href="branchproductivity.php"><h3>إنتاجية الفروع  </h3><img src="images/pic02.png" width="100" height="100"></a></center></</th>
+										    <th> <center>	<a href="addbranch.php"><h3>إضافة فرع جديد</h3><img src="images/pic03.png" width="100" height="100"></a></center></</th>
+
+										  </tr>
+
+										</table>
+									</section>
+
 </div>
 
 					</section>
@@ -138,42 +144,52 @@
 				<!-- Three -->
 					<section id="three" class="wrapper style10 fade-up">
 						<div class="inner">
-							<h2>الفروع</h2>
-							<div class="features">
-								<section style="text-align=right">
+							<h2>المخازن</h2>
+							<section style="text-align=right">
 
-									 <a href="TechMag/supervisor/branchcontrol.php"><h3>مراقبة الفروع </h3></a>
-									 <a href="supervisor/addbranch.php"><h3>إضافة فرع جديد </h3></a>
-										<a href = "branchproductivity.php"><h3>انتاجية الفروع</h3></a>
-										</section>
-</div>
+									<table style="width:70% text-align:center ">
+	  <tr>
+	    <th> <center><a href="newwarehouse.php"><h3>إضافة مخزن جديد </h3><img src="images/pic06.png" width="100" height="100"></a></center></th>
+	    <th><center><a href="addwarwhouse.php"><h3>مراقبة المخازن  </h3><img src="images/pic05.png" width="100" height="100"></a></center></th>
+	    <th><center><a href = "addproduct.php"><h3>إضافة منتج </h3><img src="images/pic04.png" width="100" height="100"></a></center></th>
+	  </tr>
+	</table>
+</section>
 </div>
 					</section>
 					<section id="four" class="wrapper style4 fade-up">
 						<div class="inner">
-							<h2>What we do</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="features">
-								<section>
-									<span class="icon major fa-code"></span>
-									<h3>Lorem ipsum amet</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-							</div>
-						</div>
+							<h2>الموظفين</h2>
+							<section style="text-align=right">
+
+									<table style="width:70% text-align:center ">
+	  <tr>
+	    <th> <center><a href="addstaff.php"><h3>إضافة موظف </h3><img src="images/pic07.png" width="100" height="100"></a></center></th>
+	    <th><center><a href="staff.php"><h3>الموظفين </h3><img src="images/pic08.png" width="100" height="100"></a></center></th>
+	    <th><center><a href = "staffproductivity.php"><h3>إنتاجية الموظف </h3><img src="images/pic09.png" width="100" height="100"></a></center></th>
+	  </tr>
+	</table>
+</section>
+</div>
 					</section>
 								<section id="five" class="wrapper style5 fade-up">
 									<div class="inner">
-										<h2>What we do</h2>
-										<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-										<div class="features">
-											<section>
-												<span class="icon major fa-code"></span>
-												<h3>Lorem ipsum amet</h3>
-												<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-											</section>
-										</div>
-									</div>
+										<h2>العملاء </h2>
+										<section style="text-align=right">
+		
+												<table style="width:100%  ">
+					<tr>
+						<th>رقم الجوال </th>
+						<th>اسم العميل </th>
+					</tr>
+					<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+				</table>
+			</section>
+			</div>
 								</section>
 											<section id="six" class="wrapper style6 fade-up">
 												<div class="inner">
