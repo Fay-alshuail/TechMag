@@ -1645,10 +1645,14 @@
 
 	body, input, select, textarea {
 		color: rgba(255, 255, 255, 0.55);
-		font-family: ;
+		font-family: Changa;
 		font-size: 16.5pt;
 		font-weight: normal;
 		line-height: 1.75;
+		text-align: center;
+	}
+	select {
+		text-align: center;
 	}
 
 		@media screen and (max-width: 1680px) {
@@ -1717,7 +1721,7 @@
 
 	h1 {
 		font-size: 2.75em;
-		font-family: 'Acme', sans-serif;
+		font-family: Lemonada;
 	}
 
 		h1.major {
@@ -1746,21 +1750,22 @@
 
 	h2 {
 		font-size: 1.75em;
-		font-family: 'Changa', sans-serif;
+		font-family: Changa;
 	}
 
 	h3 {
 		font-size: 1.1em;
-		font-family: 'El Messiri', sans-serif;
+		font-family: Changa;
 	}
 
 	h4 {
 		font-size: 1em;
-		font-family: 'El Messiri', sans-serif;
+		font-family: Acme;
 	}
 
 	h5 {
 		font-size: 0.8em;
+		font-family: Harmattan;
 	}
 
 	h6 {
@@ -1883,7 +1888,6 @@
 		}
 		#adcontainer {padding: 0px 0 0 0;margin:0 0 0 20px;width: 40px;}
 		#adboxes{padding: 0 0 0px 0px;width:50px;    height: 30px; float: right; position: relative;}
-
 
 
 /* Button */
@@ -2353,6 +2357,7 @@ input[type="date"],
 	input[type="tel"],
 	select,
 	textarea {
+		text-align: center;
 		-moz-appearance: none;
 		-webkit-appearance: none;
 		-ms-appearance: none;
@@ -2392,9 +2397,11 @@ input[type="date"]:focus,
 		text-decoration: none;
 		display: block;
 		position: relative;
+		text-align: center;
 	}
 
 		.select-wrapper:before {
+			text-align: center;
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
 			font-family: ;
@@ -2424,6 +2431,7 @@ input[type="date"]:focus,
 	select option {
 		background-color: #e1eaf2;
 		color: #236daf;
+		text-align: center;
 	}
 input[type="date"],
 	input[type="text"],

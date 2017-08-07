@@ -8,7 +8,7 @@ $password = filter_input(INPUT_POST,"password");
 
 //Call the database and check to make sure the password matches
 
-$conn = mysql_connect('148.66.145.135', 'fixmincp', 'dmQgpIJ$UfMO5O');
+$conn = mysql_connect('148.66.136.120', 'fixmincp', 'dmQgpIJ$UfMO5O');
 if (!$conn) {
   die( mysql_error());
 }

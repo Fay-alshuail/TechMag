@@ -7,13 +7,14 @@
 -->
 <html>
 	<head>
-		<title>Hyperspace by HTML5 UP</title>
+		<title>المشرف </title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/supervisor.css" />
 		<link rel="stylesheet" href="css.css" />
+
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<script>
@@ -106,9 +107,9 @@
 									<td>
 
 									    <ul>
-									    <p> : الاسم <input type="text" name="phone" id="nom" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
-									    <p> : المسمى الوظيفي <input type="text" name="phone2" id="prenom" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
-									    <p> : البريد الالكتروني <input type="text" name="address" id="fonction" data-rule="required" data-msg="لو ماعبى التيكست"/>  </p>
+									    <p> : الاسم <input type="text" name="name" id="name" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
+									    <p> : المسمى الوظيفي <input type="text" name="job" id="job" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
+									    <p> : البريد الالكتروني <input type="email" name="email" id="fonction" data-rule="required" data-msg="لو ماعبى التيكست"/>  </p>
 
 									    </ul>
 									  </td>
@@ -118,7 +119,7 @@
 <td>
 	<ul>
 <p> : تاريخ الانتهاء <input type="date"></p>
-	<p> : رقم الأمان  <input type="text" name="phone2" id="prenom" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p> <br>
+	<p> : رقم الأمان  <input type="text" name="securityno" id="securityno" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p> <br>
 <p> <input type="submit" value="حـفـظ"></p>
 </ul>
 
@@ -127,7 +128,7 @@
 
 		<ul>
 
-			<p> :رقم البطاقة  <input type="text" name="phone" id="nom" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
+			<p> :رقم البطاقة  <input type="text" name="cardno" id="cardno" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
 			<p> : نوع البطاقة  <select name="cards  ">
   <option value="creditcard"> بطاقة ائتمان</option>
   <option value="paypal"> باي بال</option>
@@ -212,19 +213,25 @@
 									<th >
 										<select name="branches">
 											<option value="" style="display:none">الفرع</option>
-											<?php
-											include_once ("logcheck.php");
-											mysql_query("SET NAMES 'utf8'");
-											mysql_query('SET CHARACTER SET utf8');
+<?php
 
-$query = $db->query($con,"SELECT `الوصف` FROM `الفرع` ");
-      echo '<select name="DROP DOWN NAME">';
-			while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
-			   echo '<option value="'.$row[`الوصف`].'">'.$row[`الوصف`].'</option>';
-			}
 
-			echo '</select>';// Close your drop down box
-	?>
+											//db connection
+mysql_connect('148.66.136.120', 'fixmincp', 'dmQgpIJ$UfMO5O');
+mysql_select_db('fixmin',$conn);
+
+//query
+mysql_query("SET NAMES 'utf8'");
+mysql_query('SET CHARACTER SET utf8');
+$sql=mysql_query("SELECT `الوصف` FROM `الفرع` WHERE 1");
+if(mysql_num_rows($sql)){
+$select= '<select name="select">';
+while($rs=mysql_fetch_array($sql)){
+      $select.='<option value="'.$rs['id'].'"></option>';
+  }
+}
+
+?>
 
 
 									 </select>
@@ -354,7 +361,7 @@ $query = $db->query($con,"SELECT `الوصف` FROM `الفرع` ");
 																	<section id="eight" class="wrapper style8 fade-up">
 																		<div class="inner">
 																				<center>
-																				 <img src="images/pic14.png" width="100" height="100">
+																				 <img src="images/pic17.png" width="100" height="100">
 																			 </center>
 																				<h2>التقارير</h2>
 
