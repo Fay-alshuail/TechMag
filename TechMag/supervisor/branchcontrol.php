@@ -9,12 +9,7 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/supervisor.css" />
 		<link rel="stylesheet" href="css.css" />
-    <style>
-      #map {
-       height: 400px;
-       width: 100%;
-      }
-   </style>
+  
   </head>
   <body class="align-right">
 
@@ -55,9 +50,7 @@
                 <td>
 
                         <ul>
-                  <br>  <p> :عدد الفواتير <input type="text" name="invoiceno" id="invoiceno" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
-                  <br>  <p> : عدد طلبات الصيانة<input type="text" name="requestno" id="requestno" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
-                  <br>  <p> : عدد الموظفين <input type="text" name="staffno" id="staffno" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
+            <button id="snap">click to see</button>
 
                   </ul>
 </td>
@@ -71,4 +64,5 @@
       </div>
 
     </body>
+    <script src="assets/js/main.js"></script>
     </html>

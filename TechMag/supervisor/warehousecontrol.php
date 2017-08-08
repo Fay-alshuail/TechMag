@@ -3,7 +3,7 @@
 
 <html>
 	<head>
-		<title>إنتاجية الفروع</title>
+		<title>مراقبة الفروع</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -35,27 +35,37 @@
 
     <!-- Wrapper -->
       <div id="wrapper" >
-        <section id="one" class="wrapper style2 spotlights" style="background-color:#bccbe2; color:#253f66;">
+        <section id="one" class="wrapper style2 spotlights" style="background-color:#8bb5c4; color:#4a5859;">
 
 
               <div class="inner">
                 <center>
-                 <img src="images/pic02.png" width="100" height="100">
+                 <img src="images/pic05.png" width="100" height="100">
                </center>
-<h2>مراقبة الفروع</h2>
+<h2>مراقبة المخازن </h2>
 <br>
                 <table id = "table2" class ="align-center">
-                  <select name="branches">
-                    <option value="" style="display:none">الفرع</option>
-                <td>
 
-                        <ul>
-                  <br>  <p> :عدد الفواتير <input type="text" name="invoiceno" id="invoiceno" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
-                  <br>  <p> : عدد طلبات الصيانة<input type="text" name="requestno" id="requestno" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
-                  <br> <p> : عدد الموظفين <input type="text" name="staffno" id="staffno" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
+                          <tr>
+                            <th ><center><input type="submit" value="بحث"> </center></th>
+                          <th> <input type="text" name="search" placeholder=" ... بحث" style="text-align :right"></th>
+<th> <p>  : ادخل رقم المخزن</p></th>
+</tr>
+</table>
+<table>
+<tr>
+    <th>الكميات المتوفرة</th>
+    <th> الفرع</th>
+  <th>رقم المخزن</th>
 
-                  </ul>
-</td>
+
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
 
                 </table>
               </div>
@@ -66,4 +76,6 @@
       </div>
 
     </body>
+
+    <script src="assets/js/main.js"></script>
     </html>
