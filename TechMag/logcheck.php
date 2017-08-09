@@ -9,24 +9,45 @@ $password = filter_input(INPUT_POST,"password");
  mysql_query("SET NAMES 'utf8'");
  mysql_query('SET CHARACTER SET utf8');
 
-$sql =("SELECT * FROM `المشرف` WHERE `البريد` = '$username' AND `الرقم_السري` ='$password'");
+switch () {
+  case 'supervisor':
+  $sql =("SELECT * FROM `المشرف` WHERE `البريد` = '$username' AND `الرقم_السري` ='$password'");
 
-$result = mysql_query($sql) or die(mysql_error());
-$num = mysql_num_rows($result);
-
-
-if ($row = mysql_fetch_assoc($result)) {
-  header('Location: supervisor/supervisorcp.php');
+  $result = mysql_query($sql) or die(mysql_error());
+  $num = mysql_num_rows($result);
 
 
+  if ($row = mysql_fetch_assoc($result))
+    header('Location: supervisor/supervisorcp.php');
 
-  } else  {
+    break;
+    case 'customerservice':
+    $sql =("SELECT * FROM `خدمة العملاء` WHERE `البريد` = '$username' AND `الرقم_السري` ='$password'");
 
+    $result = mysql_query($sql) or die(mysql_error());
+    $num = mysql_num_rows($result);
+
+
+    if ($row = mysql_fetch_assoc($result))
+      header('Location: customerservice/cs.php');
+      break;
+
+      case 'technican':
+      $sql =("SELECT * FROM `الفني` WHERE `البريد` = '$username' AND `الرقم_السري` ='$password'");
+
+      $result = mysql_query($sql) or die(mysql_error());
+      $num = mysql_num_rows($result);
+
+
+      if ($row = mysql_fetch_assoc($result))
+        header('Location:technican/technicancp.php');
+       break;
+  default:
   echo '<script language="javascript" >';
   echo 'alert("خطأ في اسم المستخدم أو الرقم السري ")';
   echo '</script>';
 
-exit;}
+    break;
+}
 
-mysqli_close($conn);
 ?>

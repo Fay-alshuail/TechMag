@@ -1,6 +1,5 @@
 <?php
 
-//MySQL Database Connect
 
 $hostname='fixmin.com';
 $username_db='fixmin_db';

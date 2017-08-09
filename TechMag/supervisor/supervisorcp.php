@@ -5,6 +5,7 @@
 	<head>
 		<title>المشرف </title>
 		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-whidth", user-scalable=no, initial-scale=1.0>
 		<meta http-equiv="X-UA-Comptible" content="ie=edge">
 
@@ -210,27 +211,23 @@
 									<tr>
 										<th ><center><input type="submit" value="بحث"> </center></th>
 									<th><input type="text" name="search" placeholder=" ... بحث" style="text-align :right"></th>
-									<th >
-										<select name="branches">
-											<option value="branch" style="display:none">الفرع</option>
+									<th ><select name="branches">
+										<option value="allbranches" name ="allbranches"> جميع الفروع</option>
+
 <?php
-include 'config.php';
+include '../config.php';
 //query
 mysql_query("SET NAMES 'utf8'");
 mysql_query('SET CHARACTER SET utf8');
-$sql=mysql_query("SELECT `الوصف`
-FROM `الفرع`
-LIMIT 0 , 30");
-
+$sql=("SELECT `الوصف` FROM `الفرع` ");
 $result=mysql_query($sql);
-echo"<select name='branches'>";
-while ($row= mysql_fetch_array($result))
+while($row=mysql_fetch_array($result))
 {
-echo"<option value='".$row['الفرع']."'>".$row['الفرع']."</select>";
-}
-echo"</select>";
 ?>
-
+<option><?php echo $row["الوصف"];?></option>
+<?php
+}
+?>
 
 									 </select>
 									</th>
@@ -263,16 +260,30 @@ echo"</select>";
 													<section style="text-align=right">
 														<table >
 														<tr>
-														<th style="padding: 0 0 0 0 ;"><input type="button" value="مقبول"></th>
+														<th style="padding: 0 0 0 0 ;"><input type="button" value="مقبول"style="width:1em; text-align:center;"></th>
 														<th style="padding: 0 0 0 0 ;" ><input type="button" value=" مرفوض"></th>
 														<th style="padding: 0 0 0 0 ;"><input type="button" value="قيد الانتظار"></th>
 														<th style="padding: 0 0 0 0 ;"><input type="button" value="تم الإصلاح "></th>
-														<th style="padding: 0 0 0 0 ;"><input type="button" value="مغلق"></th>
+														<th style="padding: 0 0 0 0 ;"><input type="button" value="مغلق" style="width:1em; text-align:center;"></th>
 														<th > <select name="branches">
-															<option value="" style="display:none">الفرع</option>
-														<option> </option>
-														<option> </option>
-														</select></th>
+															<option value="allbranches" name ="allbranches"> جميع الفروع</option>
+
+					<?php
+					include '../config.php';
+					//query
+					mysql_query("SET NAMES 'utf8'");
+					mysql_query('SET CHARACTER SET utf8');
+					$sql=("SELECT `الوصف` FROM `الفرع` ");
+					$result=mysql_query($sql);
+					while($row=mysql_fetch_array($result))
+					{
+					?>
+					<option><?php echo $row["الوصف"];?></option>
+					<?php
+					}
+					?>
+
+														 </select></th>
 														</tr>
 														</table>
 														<table  style="border: 1px solid black;">
@@ -332,11 +343,25 @@ echo"</select>";
 <th ><center><input type="submit" value="بحث"> </center></th>
 <th><input type="text" name="search" placeholder=" ... بحث" style="text-align :right"></th>
 <th >
-<select name="branches">
-<option value="" style="display:none">الفرع</option>
-<option> </option>
-<option> </option>
-</select>
+	<select name="branches">
+		<option value="allbranches" name ="allbranches"> جميع الفروع</option>
+
+	<?php
+	include '../config.php';
+	//query
+	mysql_query("SET NAMES 'utf8'");
+	mysql_query('SET CHARACTER SET utf8');
+	$sql=("SELECT `الوصف` FROM `الفرع` ");
+	$result=mysql_query($sql);
+	while($row=mysql_fetch_array($result))
+	{
+	?>
+	<option><?php echo $row["الوصف"];?></option>
+	<?php
+	}
+	?>
+
+	 </select>
 </th>
 </tr>
 </table>
