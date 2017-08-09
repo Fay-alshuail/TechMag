@@ -46,7 +46,7 @@
 								<table style="width:100% text-align:center ">
 	<tr>
 		<th><center><a href="settings.php"><h3>إعدادات</h3><img src="setting.png" width="100" height="100"></a></center></th>
-		<th><center><a href = " "><h3>لوحة الطلبات</h3><img src="control.png" width="100" height="100"></a></center></th>
+		<th><center><a href ="#two"><h3>لوحة الطلبات</h3><img src="control.png" width="100" height="100"></a></center></th>
 		<th><center><a href="arrived.php"><h3>الطلبات المستلمة</h3><img src="arrived.png" width="100" height="100"></a></center></th>
 		<th><center><a href="fix.php"><h3>طلب صيانة جديد</h3><img src="fix.png" width="100" height="100"></a></center></th>
 
