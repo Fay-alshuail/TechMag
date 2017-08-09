@@ -9,7 +9,8 @@
 	<head>
 		<title>خدمة العملاء</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="viewport" content="width=device-whidth", user-scalable=no, initial-scale=1.0>
+        <meta http-equiv="X-UA-Comptible" content="ie=edge">
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="cs.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
@@ -105,7 +106,6 @@
     </table>
 		<!-- The Modal -->
 <div id="myModal" class="modal">
-
   <!-- Modal content -->
   <div class="modal-content">
 		<section class="wrapper style2 fade-up">
@@ -119,30 +119,30 @@
 			<th><input type="text" name="search" placeholder=" ... ادخل رقم الطلب" style="text-align :right"></th>
 			</tr>
 		</table>
-<form method="get" action="#">
+<form method="get" action="#" >
 			<div class="field half first">
-				<label for="name">سعر القطعة</label>
-				<input type="text" name="price" id="price" />
+				<label for="date">التاريخ</label>
+				<input type="text" name="date" id="date" />
 			</div>
 			<div class="field half">
-				<label for="name">الخصـم</label>
-				<input type="text" name="sale" id="sale" />
+				<label for="order">حالة الطلب</label>
+				<input type="text" name="order" id="order" />
 			</div>
 			<div class="field half first">
-				<label for="name">المجموع</label>
-				<input type="text" name="total" id="total" />
+				<label for="descrip">الوصف</label>
+				<input type="text" name="descrip" id="descrip" />
 			</div>
 			<div class="field half">
-				<label for="name">المجموع</label>
-				<input type="text" name="total" id="total" />
+				<label for="tech">اسم الفني</label>
+				<input type="text" name="tech" id="tech" />
 			</div>
 			<div class="field half first">
-				<label for="name">المجموع</label>
-				<input type="text" name="total" id="total" />
+				<label for="phone">رقم التواصل</label>
+				<input type="text" name="phone" id="phone" />
 			</div>
 			<div class="field half">
-				<label for="name">المجموع</label>
-				<input type="text" name="total" id="total" />
+				<label for="customer">اسم العميل</label>
+				<input type="text" name="customer" id="customer" />
 			</div>
 		</form>
 		</section>
@@ -262,7 +262,7 @@ window.onclick = function(event) {
 <table>
 <tr>
 <th ><center><input type="submit" value="بحث"> </center></th>
-<th><input type="text" name="search" placeholder=" ... بحث" style="text-align :right"></th>
+<th><input type="text" name="uplaod" placeholder=" ... بحث" style="text-align :right"></th>
 <th >
 <select name="branches">
 <option value="" style="display:none">الفرع</option>
@@ -296,42 +296,61 @@ window.onclick = function(event) {
 
 					<section id="four" class="wrapper style4 fade-up">
 						<div class="inner">
-							<h2>What we do</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="features">
-								<section>
-									<span class="icon major fa-code"></span>
-									<h3>Lorem ipsum amet</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-							</div>
-						</div>
+								<center>
+								 <img src="pic17.png" width="100" height="100">
+							 </center>
+								<h2>التقارير</h2>
+
+
+									<section style="text-align=right">
+
+<table>
+<tr>
+<th ><center><input type="submit" value="رفع"> </center></th>
+<th><input type="file" name="uplaod" placeholder=" ... ارفع التقرير" style="text-align :right"></th>
+<th >
+<select name="branches">
+<option value="" style="display:none">نوع التقرير</option>
+<option> </option>
+<option> </option>
+</select>
+</th>
+</tr>
+</table>
+
+
+
+<p>قائمة التقارير</p>
+				<table>
+	<tr>
+	<th>التفاصيل </th>
+	<th>عنوان التقرير </th>
+	</tr>
+
+
+		<td></td>
+		<td></td>
+	</tr>
+					</table>
+
 					</section>
+					</div>
+					</section>
+
 								<section id="five" class="wrapper style5 fade-up">
 									<div class="inner">
-										<h2>What we do</h2>
-										<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-										<div class="features">
-											<section>
-												<span class="icon major fa-code"></span>
-												<h3>Lorem ipsum amet</h3>
-												<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-											</section>
-										</div>
-									</div>
+										<h2>الإعدادات </h2>
+										<section style="text-align=right">
+
+												<table style="width:70% text-align:center ">
+					<tr>
+						<th><center><a href=".php"><h3>تعديل البيانات الشخصية</h3><img src="setting.png" width="100" height="100"></a></center></th>
+					</tr>
+				</table>
+			</section>
+			</div>
 								</section>
 
-					</section>
-			</div>
-
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
