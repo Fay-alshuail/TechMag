@@ -30,7 +30,7 @@
 				<!-- Form -->
 				<section class="wrapper style2 fade-up">
 					<div class="inner">
-							<form method="post" action="#">
+							<form method="post" action="#" style="border: 1px solid #c2d9ed; padding: 10px;">
 						<label>معلومات الاتصال</label>
 								<div class="field half first">
 									<label for="name">الاسـم</label>
