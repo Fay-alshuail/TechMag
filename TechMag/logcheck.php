@@ -5,8 +5,6 @@ session_start();
 $username = filter_input(INPUT_POST,"username");
 $password = filter_input(INPUT_POST,"password");
 
-//Call the database and check to make sure the password matches
-//MySQL Database Connect
  include 'config.php';
  mysql_query("SET NAMES 'utf8'");
  mysql_query('SET CHARACTER SET utf8');

@@ -1627,7 +1627,7 @@
 	}
 
 	body {
-		background: #312450;
+		background:white;
 	}
 
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
@@ -3600,7 +3600,7 @@ input[type="date"],
 		position:fixed;
 		text-align: right;
 		top: 0;
-		width: 18em;
+		width: 10em;
 		z-index: 10000;
 	}
 

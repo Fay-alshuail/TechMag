@@ -61,7 +61,7 @@
                                     <section>
                                         <table style="width:20% text-align:center ">
       <tr>
-                <th><center><a href = "prices.php"><h3>تجديد الإشتراك </h3><img src="images/pic15.png" width="100" height="100"></a></center></td>
+                <th><center><a href = "../prices.php"><h3>تجديد الإشتراك </h3><img src="images/pic15.png" width="100" height="100"></a></center></td>
                 <th><center><a href="branchcontrol.php"><h3>مراقبة الفروع </h3><img src="images/pic01.png" width="100" height="100"></a></center></td>
                 <th><center><a href = "addproduct.php "><h3>إضافة منتج</h3><img src="images/pic04.png" width="100" height="100"></a></center></td>
   </tr>
@@ -408,7 +408,7 @@ while($rs=mysql_fetch_array($sql)){
 																								<table style="width:70% text-align:center ">
 																	<tr>
 																		<th><center><a href=".php"><h3>إعدادات الأدوار</h3><img src="images/pic16.png" width="100" height="100"></a></center></th>
-																		<th><center><a href = "prices.php"><h3>تحديث خطة الاشتراك </h3><img src="images/pic15.png" width="100" height="100"></a></center></th>
+																		<th><center><a href = "../prices.php"><h3>تحديث خطة الاشتراك </h3><img src="images/pic15.png" width="100" height="100"></a></center></th>
 																	</tr>
 																</table>
 															</section>

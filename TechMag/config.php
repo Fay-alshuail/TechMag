@@ -1,4 +1,7 @@
 <?php
+
+//MySQL Database Connect
+
 $hostname='fixmin.com';
 $username_db='fixmin_db';
 $password_db='!m[s3LrAE3nw';
