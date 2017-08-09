@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>خدمة العملاء</title>
+		<title>طلب صيانة</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -30,8 +30,6 @@
 				<!-- Form -->
 				<section class="wrapper style2 fade-up">
 					<div class="inner">
-						<h2>What we do</h2>
-
 							<form method="post" action="#">
 						<label>معلومات الاتصال</label>
 								<div class="field half first">
@@ -42,7 +40,7 @@
 									<label for="name">رقم الجوال</label>
 									<input type="text" name="phone" id="phone" />
 								</div>
-								<label>معلومات الاتصال</label>
+								<label>معلومات الجهاز</label>
 								<div class="field half first">
 								<select name="brand" >
 									<option value="" style="display:none">اختر نوع الجهاز</option>

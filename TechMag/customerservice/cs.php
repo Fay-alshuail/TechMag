@@ -39,14 +39,14 @@
 
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
+						<div class="inner" >
 							<h2>الوصول السريع</h2>
 							<section>
 								<table style="width:100% text-align:center ">
 	<tr>
 		<th><center><a href=" "><h3>إعدادات</h3><img src="setting.png" width="100" height="100"></a></center></th>
 		<th><center><a href = " "><h3>لوحة الطلبات</h3><img src="control.png" width="100" height="100"></a></center></th>
-		<th><center><a href=" "><h3>الطلبات المستلمة</h3><img src="arrived.png" width="100" height="100"></a></center></th>
+		<th><center><a href="arrived.php"><h3>الطلبات المستلمة</h3><img src="arrived.png" width="100" height="100"></a></center></th>
 		<th><center><a href="fix.php"><h3>طلب صيانة جديد</h3><img src="fix.png" width="100" height="100"></a></center></th>
 
 	</tr>
@@ -96,8 +96,8 @@
 									<section>
 										<table style="width:100% text-align:center ">
       <tr>
-				<th><center><a href = " "><h3>مشكلة جديدة</h3><img src="newprob.png" width="100" height="100"></a></center></th>
-				<th><center><a href=" "><h3>الطلبات المستلمة</h3><img src="arrived.png" width="100" height="100"></a></center></th>
+				<th><center><a href = "newprob.php"><h3>مشكلة جديدة</h3><img src="newprob.png" width="100" height="100"></a></center></th>
+				<th><center><a href="arrived.php"><h3>الطلبات المستلمة</h3><img src="arrived.png" width="100" height="100"></a></center></th>
 				<th><center><a href = " "><h3>طلب بيع جديد</h3><img src="new.png" width="100" height="100"></a></center></th>
 				<th><center><h3>تتبع طلب صيانة</h3><img src="track.png" width="100" height="100" id="myBtn"></center></th>
         <th><center><a href="fix.php"><h3>طلب صيانة جديد</h3><img src="fix.png" width="100" height="100"></a></center></th>
@@ -108,12 +108,9 @@
 
   <!-- Modal content -->
   <div class="modal-content">
-    <span class="close">&times;</span>
 		<section class="wrapper style2 fade-up">
 			<div class="inner">
-				<center>
-				 <img src="track.png" width="70" height="70">
-			 </center>
+    <span class="close">&times;</span>
 				<h2>تتبع طلب الصيانة</h2>
 				<section style="text-align=right">
 					<table>
@@ -122,25 +119,36 @@
 			<th><input type="text" name="search" placeholder=" ... ادخل رقم الطلب" style="text-align :right"></th>
 			</tr>
 		</table>
-
-		<table>
-		<tr>
-		<th>حالة الطلب </th>
-		<th>اسم الفني </th>
-		</tr>
-
-
-		<td></td>
-		<td></td>
-		</tr>
-		</table>
-
-		</section>
-		</div>
+<form method="get" action="#">
+			<div class="field half first">
+				<label for="name">سعر القطعة</label>
+				<input type="text" name="price" id="price" />
+			</div>
+			<div class="field half">
+				<label for="name">الخصـم</label>
+				<input type="text" name="sale" id="sale" />
+			</div>
+			<div class="field half first">
+				<label for="name">المجموع</label>
+				<input type="text" name="total" id="total" />
+			</div>
+			<div class="field half">
+				<label for="name">المجموع</label>
+				<input type="text" name="total" id="total" />
+			</div>
+			<div class="field half first">
+				<label for="name">المجموع</label>
+				<input type="text" name="total" id="total" />
+			</div>
+			<div class="field half">
+				<label for="name">المجموع</label>
+				<input type="text" name="total" id="total" />
+			</div>
+		</form>
 		</section>
   </div>
+</section>
 </div>
-
 <script>
 // Get the modal
 var modal = document.getElementById('myModal');
