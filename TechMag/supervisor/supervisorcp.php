@@ -1,22 +1,16 @@
 
 <!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
 	<head>
 		<title>المشرف </title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="viewport" content="width=device-whidth", user-scalable=no, initial-scale=1.0>
+		<meta http-equiv="X-UA-Comptible" content="ie=edge">
 
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/supervisor.css" />
 		<link rel="stylesheet" href="css.css" />
 
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<script>
     if (!Modernizr.touch || !Modernizr.inputtypes.date) {
         $('input[type=date]')
@@ -184,6 +178,9 @@
 </section>
 </div>
 					</section>
+
+					<!-- four -->
+
 					<section id="four" class="wrapper style4 fade-up">
 						<div class="inner">
 							<h2>الموظفين</h2>
@@ -199,6 +196,9 @@
 </section>
 </div>
 					</section>
+
+					<!-- five -->
+
 								<section id="five" class="wrapper style5 fade-up">
 									<div class="inner">
 										<center>
@@ -212,25 +212,23 @@
 									<th><input type="text" name="search" placeholder=" ... بحث" style="text-align :right"></th>
 									<th >
 										<select name="branches">
-											<option value="" style="display:none">الفرع</option>
+											<option value="branch" style="display:none">الفرع</option>
 <?php
-
-
-											//db connection
-mysql_connect('148.66.136.120', 'fixmincp', 'dmQgpIJ$UfMO5O');
-mysql_select_db('fixmin',$conn);
-
+include 'config.php';
 //query
 mysql_query("SET NAMES 'utf8'");
 mysql_query('SET CHARACTER SET utf8');
-$sql=mysql_query("SELECT `الوصف` FROM `الفرع` WHERE 1");
-if(mysql_num_rows($sql)){
-$select= '<select name="select">';
-while($rs=mysql_fetch_array($sql)){
-      $select.='<option value="'.$rs['id'].'"></option>';
-  }
-}
+$sql=mysql_query("SELECT `الوصف`
+FROM `الفرع`
+LIMIT 0 , 30");
 
+$result=mysql_query($sql);
+echo"<select name='branches'>";
+while ($row= mysql_fetch_array($result))
+{
+echo"<option value='".$row['الفرع']."'>".$row['الفرع']."</select>";
+}
+echo"</select>";
 ?>
 
 
@@ -254,7 +252,9 @@ while($rs=mysql_fetch_array($sql)){
 			</section>
 			</div>
 								</section>
-											<section id="six" class="wrapper style6 fade-up">
+								<!-- six -->
+
+	<section id="six" class="wrapper style6 fade-up">
 												<div class="inner">
 													<center>
 													 <img src="images/pic10.png" width="100" height="100">
@@ -304,7 +304,8 @@ while($rs=mysql_fetch_array($sql)){
 						</section>
 						</div>
 											</section>
-														<section id="seven" class="wrapper style7 fade-up">
+											<!-- seven -->
+		<section id="seven" class="wrapper style7 fade-up">
 
 															<div class="inner">
 																<center>
@@ -358,6 +359,8 @@ while($rs=mysql_fetch_array($sql)){
 												</section>
 
 														</section>
+														<!-- eight -->
+
 																	<section id="eight" class="wrapper style8 fade-up">
 																		<div class="inner">
 																				<center>
@@ -400,7 +403,8 @@ while($rs=mysql_fetch_array($sql)){
 																</section>
 
 																	</section>
-																				<section id="nine" class="wrapper style9 fade-up">
+																	<!-- nine-->
+	<section id="nine" class="wrapper style9 fade-up">
 																					<div class="inner">
 																						<h2>الإعدادات </h2>
 																						<section style="text-align=right">
@@ -425,7 +429,6 @@ while($rs=mysql_fetch_array($sql)){
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 
 	</body>
