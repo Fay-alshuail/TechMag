@@ -29,7 +29,7 @@
 			<div id="wrapper">
 				<!-- Form -->
 				<section class="wrapper style2 fade-up">
-					<div class="inner" style="height:115%">
+					<div class="inner" style="height:240%">
 
 								<label>المشاكل الإضافية</label>
 
@@ -81,6 +81,28 @@
 													</center>
 														</div>
 													</form>
+													<ul class="actions" margin-top="4em">
+														<li><button type="button" class="button" onclick="newprob()">إضافة مشكلة جديدة</button></li>
+													</ul>
+
+													<form method="post" action="#" style="visibility:hidden" id="new" style="border: 1px solid #c2d9ed; padding: 10px;">
+													<label>تعديل على المشكلة</label>
+														<div class="field half first">
+															<label for="newprob">المشكلة الإضافية</label>
+															<input type="text" name="newprob" id="newprob"/>
+														</div>
+															<div class="field half ">
+															<label for="price">السعر</label>
+															<input type="text" name="price" id="price" />
+														</div>
+														<div>
+															<center>
+														<ul class="actions" margin-top="4em">
+															<li><a href="#" class="button" >إرسال</a></li>
+														</ul>
+													</center>
+														</div>
+													</form>
 
 
 					</div>
@@ -89,6 +111,9 @@
 			<script>
 			function myFunction() {
 			    document.getElementById("reply").style.visibility= "visible";
+			}
+			function newprob() {
+			    document.getElementById("new").style.visibility= "visible";
 			}
 			</script>
 </html>
