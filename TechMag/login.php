@@ -130,6 +130,7 @@ select,
 	text-align: right;
 }
 
+
 .login input[type=submit]{
 	width: 300px;
 	height: 55px;
@@ -144,6 +145,7 @@ select,
 	padding: 6px;
 	margin-top: 10px;
 }
+.error {color: #FF0000;}
 
 .login input[type=button]:hover{
 	opacity: 0.8;
@@ -189,18 +191,20 @@ select,
 		<br>
 		<div class="login">
 
-      <form action="" method="post">
-<select id="users"name ="users">
+      <form action="logcheck.php" method="post">
+        <p><span class="error">* حقول مطلوبة</span></p>
+<select id="users" name ="users" > <span class="error">* </span> 
+
   <option>نوع الدخول</option>
-<option  id ="supervisor">مشرف</option>
-<option  id ="customer_service">خدمة عملاء</option>
-<option  id ="technican">فني</option>
+<option  value ="supervisor">مشرف</option>
+<option  value ="customer_service">خدمة عملاء</option>
+<option  value ="technican">فني</option>
 
 
 </select><br>
 <br>
-				<input type="text" placeholder="اسم المستخدم" name="username"><br>
-				<input type="password" placeholder="الرقم السري " name="password"><br>
+				<input type="text" placeholder="اسم المستخدم" name="username" > <span class="error">* </span><br>
+				<input type="password" placeholder="الرقم السري " name="password">  <span class="error">*</span><br>
         <input type="submit" onClick="return validateForm()" value="تسجيل الدخول">
 
 			</form>
@@ -209,55 +213,3 @@ select,
 
 </body>
 </html>
-<?php
-session_start();
-
-//Get username and password from the form.
-$username = filter_input(INPUT_POST,"username");
-$password = filter_input(INPUT_POST,"password");
- include 'config.php';
- mysql_query("SET NAMES 'utf8'");
- mysql_query('SET CHARACTER SET utf8');
-
-switch ($select) {
-  case 'supervisor':
-  $sql =("SELECT * FROM `المشرف` WHERE `البريد` = '$username' AND `الرقم_السري` ='$password'");
-
-  $result = mysql_query($sql) or die(mysql_error());
-  $num = mysql_num_rows($result);
-
-
-  if ($row = mysql_fetch_assoc($result))
-    header('Location: supervisor/supervisorcp.php');
-
-    break;
-    case 'customer_service':
-    $sql =("SELECT * FROM `خدمة العملاء` WHERE `البريد` = '$username' AND `الرقم_السري` ='$password'");
-
-    $result = mysql_query($sql) or die(mysql_error());
-    $num = mysql_num_rows($result);
-
-
-    if ($row = mysql_fetch_assoc($result))
-      header('Location: customerservice/cs.php');
-      break;
-
-      case 'technican':
-      $sql =("SELECT * FROM `الفني` WHERE `البريد` = '$username' AND `الرقم_السري` ='$password'");
-
-      $result = mysql_query($sql) or die(mysql_error());
-      $num = mysql_num_rows($result);
-
-
-      if ($row = mysql_fetch_assoc($result))
-        header('Location:technican/technicancp.php');
-       break;
-  default:
-  echo '<script language="javascript" >';
-  echo 'alert("خطأ في اسم المستخدم أو الرقم السري ")';
-  echo '</script>';
-
-    break;
-}
-
-?>
