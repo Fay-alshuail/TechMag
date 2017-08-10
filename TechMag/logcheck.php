@@ -4,13 +4,13 @@ session_start();
 //Get username and password from the form.
 $username = filter_input(INPUT_POST,"username");
 $password = filter_input(INPUT_POST,"password");
-
+$select= ($_POST['users']);
  include 'config.php';
  mysql_query("SET NAMES 'utf8'");
  mysql_query('SET CHARACTER SET utf8');
 
-switch () {
-  case 'supervisor':
+switch ($select) {
+  case 'مشرف':
   $sql =("SELECT * FROM `المشرف` WHERE `البريد` = '$username' AND `الرقم_السري` ='$password'");
 
   $result = mysql_query($sql) or die(mysql_error());
@@ -21,7 +21,7 @@ switch () {
     header('Location: supervisor/supervisorcp.php');
 
     break;
-    case 'customerservice':
+    case 'خدمة عملاء':
     $sql =("SELECT * FROM `خدمة العملاء` WHERE `البريد` = '$username' AND `الرقم_السري` ='$password'");
 
     $result = mysql_query($sql) or die(mysql_error());
@@ -32,7 +32,7 @@ switch () {
       header('Location: customerservice/cs.php');
       break;
 
-      case 'technican':
+      case 'فني':
       $sql =("SELECT * FROM `الفني` WHERE `البريد` = '$username' AND `الرقم_السري` ='$password'");
 
       $result = mysql_query($sql) or die(mysql_error());
