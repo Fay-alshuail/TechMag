@@ -12,7 +12,7 @@
 		<meta name="viewport" content="width=device-whidth", user-scalable=no, initial-scale=1.0>
         <meta http-equiv="X-UA-Comptible" content="ie=edge">
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="cs.css" />
+		<link rel="stylesheet" href="../assets/css/style.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
@@ -232,9 +232,68 @@ window.onclick = function(event) {
 						<td style="border: 1px solid #073660;"></td>
 					</tr>
 									</table>
+									<button class="button" id="myorder">تكليف</button>
 </section>
 </div>
 					</section>
+
+					<!-- The Modal -->
+			<div id="mytech" class="modal">
+			  <!-- Modal content -->
+			  <div class="modal-content">
+					<section class="wrapper style3 fade-up">
+						<div class="inner">
+			    <span class="close">&times;</span>
+							<h2>تكليف الفني</h2>
+							<section style="text-align=right">
+
+			<form method="get" action="#" >
+						<div class="field half first">
+							<label for="date">الفني</label>
+							<select name="tech">
+							<option value="" style="display:none">تكليف</option>
+							<option> </option>
+							<option> </option>
+							</select></th>
+						</div>
+					</form>
+					</section>
+			  </div>
+			</section>
+			</div>
+			<script>
+			// Get the modal
+			var modal = document.getElementById('mytech');
+
+			// Get the button that opens the modal
+			var btn = document.getElementById("myorder");
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+
+			// When the user clicks the button, open the modal
+			btn.onclick = function() {
+			    modal.style.display = "block";
+			}
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+			    modal.style.display = "none";
+			}
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+			    if (event.target == modal) {
+			        modal.style.display = "none";
+			    }
+			}
+			</script>
+			</section>
+
+				<ul class="actions">
+					<li><a href="#" class="button">Learn more</a></li>
+				</ul>
+				</div>
 
 				<!-- Three -->
 					<section id="three" class="wrapper style10 fade-up">
