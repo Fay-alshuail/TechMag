@@ -3,7 +3,7 @@
 
 <html>
 	<head>
-		<title>مراقبة الفروع</title>
+		<title>إضافة موظف</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/supervisor.css" />
