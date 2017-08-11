@@ -2767,14 +2767,7 @@ text-align: center;
 			vertical-align: middle;
 			width: 5em;
 		}
-		#nav2 nav {
-margin-left:auto;
-margin-right:auto;
-width: 500px;
-text-align:center;
-background-color: #5ab2c4;
-		}
-
+		
 			#navPanel .close:before {
 				-moz-osx-font-smoothing: grayscale;
 				-webkit-font-smoothing: antialiased;

@@ -1,4 +1,6 @@
+
 <html>
+
 <style type="text/css">
 
 .body{
@@ -9,7 +11,7 @@
   bottom: 0px;
   width: auto;
   height: auto;
-  background-image: url(images/banner.jpg);
+  background-image: url(images/banner3.jpg);
   background-size: cover;
   -webkit-filter: blur(5px);
   z-index: 0;
@@ -38,9 +40,9 @@
 .box{
   text-align: right;
   position: absolute;
-  top: calc(3% - 5px);
-  left: calc(15% - 5px);
-  height: 60px;
+  top: calc(13% - 5px);
+  left: calc(35% - 5px);
+  height: 613px;
   width: 500px;
   padding: -20px;
   z-index: 2;
@@ -50,7 +52,7 @@
 .left{text-align: center;}
 
 .buttonsub{
-  background-color: #5ab2c4;
+  background-color:#94bbce;
   color: #FFF;
   text-align: center;
   width:84%;
@@ -65,20 +67,19 @@
 <head>
   <title>اشتراك</title><meta charset="utf-8" />
   <header id="header" class="alt">
-    <div id="nav2">
-    <nav id="nav">
-      <ul>
-        <li><a href="homepage.html">الصفحة الرئيسية </a></li>
-        <li><a href="prices.php">خطط الإشتراك  </a></li>
-        <li><a href="login.php">تسجيل الدخول  </a></li>
-      </ul>
-    </nav>
-  </div>
-   </header>
-    <a href="#menu" class="navPanelToggle"></a>
+  <table >
+  <tr>
+  <th style="text-align:center ; width:1em;color:#4f6589; background-color:#abb0b5;"><a href="homepage.html">الصفحة الرئيسية </a></th>
+  <th style="text-align:center ;width:1em;color:#4f6589; background-color:#abb0b5;"><a href="prices.php">خطط الإشتراك  </a></th>
+  <th style="text-align:center ;width:1em; color:#4f6589; background-color:#abb0b5;"><a href="login.php">تسجيل الدخول  </a></th>
+  </tr>
+  </table>
+
+  </header>
+
 <link rel="stylesheet" href="css.css" />
 <link rel="stylesheet" href="assets/css/main.css" />
-<head>
+</head>
 <body>
   <div class="body"></div>
 		<div class="grad"></div>
@@ -86,7 +87,7 @@
 		</div>
 		<br>
 		<div class="box">
-      <form method="post" action="formsub.html">
+      <form method="post" action="formsub.php">
       <div class="contentform">
 				<div>
 				    <table>
@@ -97,9 +98,9 @@
 				            <td></td>
 				        </tr>
 				        <tr class="left">
-				            <td bgcolor="#FFCC99">
+				            <td bgcolor="#85a7d3">
 				                Premium</td>
-				            <td bgcolor="#BDFFDB">
+				            <td bgcolor="#c1e1f4">
 				                Starter</td>
 				            <td bgcolor="#ACCDFF">
 				                Free Plan</td>

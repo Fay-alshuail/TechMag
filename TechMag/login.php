@@ -9,19 +9,17 @@
   <title>تسجيل الدخول</title>
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<header id="header" class="alt">
+    <br>
+    <br>
+<table >
+<tr>
+<th style="text-align:center ; width:1em;color:#4f6589; background-color:#abb0b5;"><a href="homepage.html">الصفحة الرئيسية </a></th>
+<th style="text-align:center ;width:1em;color:#4f6589; background-color:#abb0b5;"><a href="prices.php">خطط الإشتراك  </a></th>
+<th style="text-align:center ;width:1em; color:#4f6589; background-color:#abb0b5;"><a href="login.php">تسجيل الدخول  </a></th>
+</tr>
+</table>
 
-		<div id="nav2">
-		<nav id="nav">
-			<ul>
-				<li><a href="homepage.html">الصفحة الرئيسية </a></li>
-				<li><a href="prices.php">خطط الإشتراك  </a></li>
-				<li><a href="login.php">تسجيل الدخول  </a></li>
-			</ul>
-		</nav>
-	</div>
 	</header>
-
-	<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 
     <style>
     @import url(https://fonts.googleapis.com/css?family=Changa);
@@ -43,7 +41,7 @@ body {
 
 .body{
 	position: absolute;
-	top: -20px;
+	top: -40px;
 	left: -20px;
 	right: -40px;
 	bottom: -40px;
@@ -89,7 +87,7 @@ body {
 
 .login{
 	position: absolute;
-	top: calc(50% - 75px);
+	top: calc(41% - 75px);
 	left: calc(50% - 50px);
 	height: 150px;
 	width: 350px;
@@ -145,7 +143,9 @@ select,
 	padding: 6px;
 	margin-top: 10px;
 }
-.error {color: #FF0000;}
+.error {color: #FF0000;
+  font-size: 19px;
+}
 
 .login input[type=button]:hover{
 	opacity: 0.8;
@@ -193,9 +193,9 @@ select,
 
       <form action="logcheck.php" method="post">
         <p><span class="error">* حقول مطلوبة</span></p>
-<select id="users" name ="users" > <span class="error">* </span> 
+<select id="users" name ="users" >
 
-  <option>نوع الدخول</option>
+  <option>نوع الدخول </option>
 <option  value ="supervisor">مشرف</option>
 <option  value ="customer_service">خدمة عملاء</option>
 <option  value ="technican">فني</option>
@@ -203,8 +203,8 @@ select,
 
 </select><br>
 <br>
-				<input type="text" placeholder="اسم المستخدم" name="username" > <span class="error">* </span><br>
-				<input type="password" placeholder="الرقم السري " name="password">  <span class="error">*</span><br>
+				 <span class="error">* </span><input type="text" placeholder="اسم المستخدم" name="username" ><br>
+				 <span class="error">* </span><input type="password" placeholder="الرقم السري " name="password"><br>
         <input type="submit" onClick="return validateForm()" value="تسجيل الدخول">
 
 			</form>
