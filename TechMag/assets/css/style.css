@@ -1515,7 +1515,7 @@ form input {
 
 		.wrapper > .inner {
 			text-align: right;
-			padding: 5em 5em 5em 5em ;
+			padding: 0em 0em 5em 5em ;
 			max-width: 100%;
 			width: 75em;
 		}
@@ -1549,7 +1549,7 @@ form input {
 		}
 
 		.wrapper.style1 {
-			background-color:#86b7ba;
+			background-color:#9db3c9;
 		}
 
 		.wrapper.style1-alt {
@@ -1557,21 +1557,21 @@ form input {
 		}
 
 		.wrapper.style2 {
-			background-color: #a6cbe2;
+			background-color: #81adc6;
 			text-align: right;
 		}
 
 
 		.wrapper.style2-alt {
-			background-color: #3e4094;
+			background-color: #ccdcea;
 		}
 
 		.wrapper.style3 {
-			background-color: #c6ced3;
+			background-color: #83bbd3;
 		}
 
 		.wrapper.style4 {
-			background-color:#9fdaea;}
+			background-color:#a1d1ed;}
 
 			.wrapper.style5 {
 				background-color: #5a81a8;}
@@ -1586,7 +1586,7 @@ form input {
 							background-color: #9aabbc;}
 
 							.wrapper.style9{
-								background-color: #498596;}
+								background-color: #7998b7;}
 								.wrapper.style10{
 									background-color: #b3cfe0;}
 
@@ -1629,7 +1629,7 @@ form input {
 			@media screen and (max-width: 736px) {
 
 				.wrapper.fullscreen {
-					padding: 2em 0;
+					padding: 0 0;
 					min-height: 0;
 				}
 
@@ -2086,19 +2086,11 @@ form input {
 			}
 
 			#sidebar nav a:before {
-				background: #3c2c62;
+				background: #59838c;
 			}
 
 			#sidebar nav a:after {
-				background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: linear-gradient(to right, #5e42a6, #b74e91);
-				-moz-transition: max-width 0.2s ease;
-				-webkit-transition: max-width 0.2s ease;
-				-ms-transition: max-width 0.2s ease;
-				transition: max-width 0.2s ease;
-				max-width: 0;
+				color: #ccdcea;
 			}
 
 			#sidebar nav a:hover {
@@ -2106,7 +2098,7 @@ form input {
 			}
 
 			#sidebar nav a.active {
-				color: #263977;
+				color: #1f517c;
 			}
 
 				#sidebar nav a.active:after {
@@ -2186,9 +2178,7 @@ form input {
 					}
 
 						#sidebar nav a:after {
-							background-image: none;
-							background-color: #b74e91;
-
+							color: #ccdcea;
 						}
 
 		}
