@@ -1,13 +1,14 @@
 <?php
 session_start();
 
+
+
 //Get username and password from the form.
-$username = filter_input(INPUT_POST,"username");
-$password = filter_input(INPUT_POST,"password");
+$username = $_POST['username'];
+$password = $_POST['password'];
 $selectOption = $_POST['users'];
 $message = " خطأ في اسم المستخدم أو الرقم السري أو نوع الدخول";
-
-
+$_SESSION['username_s']=$username;
 
  include 'config.php';
  mysql_query("SET NAMES 'utf8'");
@@ -23,6 +24,7 @@ switch ($selectOption) {
 
   if ($row = mysql_fetch_assoc($result))
     header('Location: supervisor/supervisorcp.php');
+
     else  {
 echo "<script type='text/javascript'>alert('$message');</script>";
 }

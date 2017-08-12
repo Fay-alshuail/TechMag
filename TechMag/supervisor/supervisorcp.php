@@ -1,4 +1,12 @@
-
+<?php
+session_start();
+include '../config.php';
+mysql_query("SET NAMES 'utf8'");
+mysql_query('SET CHARACTER SET utf8');
+$sessionU=$_SESSION['username_s'];
+$result=mysql_query("SELECT * FROM `المشرف` WHERE `البريد` ='$sessionU'");
+while($row=mysql_fetch_array($result))
+{?>
 <!DOCTYPE HTML>
 
 <html>
@@ -11,7 +19,21 @@
 
 		<link rel="stylesheet" href="assets/css/supervisor.css" />
 		<link rel="stylesheet" href="css.css" />
+<script type="text/javascript">
+function showhide(){
+document.getElementById('uncard').style.display="block";
+document.getElementById('undate').style.display="block";
+document.getElementById('shdate').style.display="none";
+document.getElementById('shcard').style.display="none";
+document.getElementById('phone').removeAttribute("readOnly");
+document.getElementById('phone2').removeAttribute("readOnly");
+document.getElementById('address').removeAttribute("readOnly");
+document.getElementById('securityno').removeAttribute("readOnly");
+document.getElementById('cardno').removeAttribute("readOnly");
 
+}
+
+</script>
 		<script>
     if (!Modernizr.touch || !Modernizr.inputtypes.date) {
         $('input[type=date]')
@@ -87,14 +109,17 @@
 									 <img src="images/pic11.png" width="100" height="100">
 								 </center>
 <h2>الإشتراك </h2>
+<form action="insertsub.php" method="post">
+
 <p> البيانات الشخصية </p>
 									<table id = "table2" class ="align-center">
 									<td>
 									  <ul>
 
-									<p> : الجوال <input type="text" name="phone" id="nom" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
-									<p> : الجوال 2 <input type="text" name="phone2" id="prenom" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
-									<p> : عنوان السكن <input type="text" name="address" id="fonction" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
+									<p> : الجوال <input type="text" name="phone" readOnly="true" id="phone" value="<?php echo $row["الجوال1"];?>"/> </p>
+									<p> : الجوال 2 <input type="text" name="phone2" readOnly="true" id="phone2" value="<?php echo $row["الجوال2"];?>"/> </p>
+									<p> : عنوان السكن <input type="text" name="address" readOnly="true" id="address" value="<?php echo $row["عنوان_السكن"];?>"/> </p>
+									<p> : الفرع <input type="text" name="branch" readOnly="true" id="branch" value="<?php echo $row["الفرع"];?>"/> </p>
 
 									  </ul>
 
@@ -102,9 +127,9 @@
 									<td>
 
 									    <ul>
-									    <p> : الاسم <input type="text" name="name" id="name" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
-									    <p> : المسمى الوظيفي <input type="text" name="job" id="job" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
-									    <p> : البريد الالكتروني <input type="email" name="email" id="fonction" data-rule="required" data-msg="لو ماعبى التيكست"/>  </p>
+									    <p> : الاسم <input type="text" name="name" readOnly="true" id="name"value="<?php echo $row["الاسم"];?>"/> </p>
+									    <p> : المسمى الوظيفي <input type="text" readOnly="true" name="job" id="job" value="<?php echo $row["المسمى_الوظيفي"];?>"/> </p>
+									    <p> : البريد الالكتروني <input type="email"  readOnly="true" name="email" id="email" value="<?php echo $row["البريد"];?>"/>  </p>
 
 									    </ul>
 									  </td>
@@ -113,8 +138,11 @@
 <table id = "table2" class ="align-center">
 <td>
 	<ul>
-<p> : تاريخ الانتهاء <input type="date"></p>
-	<p> : رقم الأمان  <input type="text" name="securityno" id="securityno" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p> <br>
+		<p> : رقم الأمان  <input type="text" name="securityno"  readOnly="true"id="securityno" value="<?php echo $row["رقم_الأمان"];?>"/> </p>
+		<p style="display:block;"id="shdate"> : تاريخ الانتهاء <input type="text"  value="<?php echo $row["تاريخ_الإنتهاء"];?>" ></p>
+<p style="display:none;"id="undate"> : تاريخ الانتهاء <input type="date" ></p>
+<br>
+
 <p> <input type="submit" value="حـفـظ"></p>
 </ul>
 
@@ -123,16 +151,24 @@
 
 		<ul>
 
-			<p> :رقم البطاقة  <input type="text" name="cardno" id="cardno" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
-			<p> : نوع البطاقة  <select name="cards  ">
-  <option value="creditcard"> بطاقة ائتمان</option>
-  <option value="paypal"> باي بال</option>
-</select> </p>
+			<p> :رقم البطاقة  <input type="text" name="cardno" readOnly="true" id="cardno" value="<?php echo $row["رقم_حساب_البنك"];?>"/> </p>
+			<p style="display:block;"id="shcard"> : نوع البطاقة  <input type="text" name="cards"  readOnly="true" value="<?php echo $row["نوع_بطاقة_البنك"];?>">
+				<p style="display:none;"id="uncard"> : نوع البطاقة  <select name="cards" >
+				<option value="creditcard"> بطاقة ائتمان</option>
+				<option value="paypal"> باي بال</option>
+				</select>
+			 </p>
 			<br>
-			<p> <input type="button" value="تـعـديـل "></p>
+			<p> <input type="button" value="تـعـديـل " onclick=showhide()></p>
 		</ul>
 	</td>
+
 </table>
+<?php
+}
+?>
+</form>
+
 								</div>
 
 
@@ -446,7 +482,6 @@ while($row=mysql_fetch_array($result))
 
 					</section>
 			</div>
-
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

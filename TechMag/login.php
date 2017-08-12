@@ -8,6 +8,8 @@
   <meta charset="UTF-8">
   <title>تسجيل الدخول</title>
 	<link rel="stylesheet" href="assets/css/main.css" />
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
 	<header id="header" class="alt">
     <br>
     <br>

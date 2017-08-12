@@ -6,6 +6,10 @@
 		<title>إضافة فرع </title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/supervisor.css" />
 		<link rel="stylesheet" href="css.css" />
@@ -48,6 +52,8 @@
                  <img src="images/pic18.png" width="100" height="100">
                </center>
 <h2>إضافة فرع جديد </h2>
+
+<form action="insertaddbranch.php" method="post">
                 <table id = "table2" class ="align-center">
 
                 <td>
@@ -79,6 +85,8 @@
 </td>
 
                 </table>
+
+							</form>
               </div>
 
 
