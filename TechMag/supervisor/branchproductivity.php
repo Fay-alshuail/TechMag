@@ -45,8 +45,8 @@
 <h2>مراقبة الفروع</h2>
 <br>
                 <table id = "table2" class ="align-center">
-
-									<select name="branches" method ="post"  action ="">
+<form action="../test.php" method="post">
+									<select name="branches" >
 										<option value="allbranches" name ="allbranches"> جميع الفروع</option>
 
 	<?php
@@ -59,7 +59,7 @@
 	while($row=mysql_fetch_array($result))
 	{
 	?>
-	<option><?php echo $row["الوصف"];?></option>
+	<option ><?php echo $row["الوصف"];?></option>
 	<?php
 	}
 	?>
@@ -76,7 +76,7 @@
 
                   </ul>
 </td>
-
+</form>
                 </table>
               </div>
 
