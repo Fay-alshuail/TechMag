@@ -34,7 +34,7 @@
 				<!-- Form -->
 				<section class="wrapper style2 fade-up">
 					<div class="inner" style="height:110%">
-<center><img src="setting.png" width="100" height="100">
+<center><img src="img/setting.png" width="100" height="100">
 <h3>تعديل البيانات الشخصية</h3>
 </center>
 
@@ -82,7 +82,7 @@
 <div>
 <center>
 <ul class="actions" margin-top="7em">
-<li><a href="#" class="button">ـعديل</a></li>
+<li><a href="#" class="button">تعديل</a></li>
 <li><a href="#" class="button">مسح</a></li>
 <li><a href="#" class="button">حفظ</a></li>
 </ul>

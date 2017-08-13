@@ -76,7 +76,7 @@
 <div>
 <center>
 <ul class="actions" margin-top="7em">
-<li><a href="#" class="button">ـعديل</a></li>
+<li><a href="#" class="button">تعديل</a></li>
 <li><a href="#" class="button">مسح</a></li>
 <li><a href="#" class="button">حفظ</a></li>
 </ul>

@@ -1,11 +1,5 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-
 <html>
+
 	<head>
 		<title>خدمة العملاء</title>
 		<meta charset="utf-8" />
@@ -45,10 +39,10 @@
 							<section>
 								<table style="width:100% text-align:center ">
 	<tr>
-		<th><center><a href="settings.php"><h3>إعدادات</h3><img src="setting.png" width="100" height="100"></a></center></th>
-		<th><center><a href ="#two"><h3>لوحة الطلبات</h3><img src="control.png" width="100" height="100"></a></center></th>
-		<th><center><a href="arrived.php"><h3>الطلبات المستلمة</h3><img src="arrived.png" width="100" height="100"></a></center></th>
-		<th><center><a href="fix.php"><h3>طلب صيانة جديد</h3><img src="fix.png" width="100" height="100"></a></center></th>
+		<th><center><a href="settings.php"><h3>إعدادات</h3><img src="img/setting.png" width="100" height="100"></a></center></th>
+		<th><center><a href ="#two"><h3>لوحة الطلبات</h3><img src="img/control.png" width="100" height="100"></a></center></th>
+		<th><center><a href="arrived.php"><h3>الطلبات المستلمة</h3><img src="img/arrived.png" width="100" height="100"></a></center></th>
+		<th><center><a href="fix.php"><h3>طلب صيانة جديد</h3><img src="img/fix.png" width="100" height="100"></a></center></th>
 
 	</tr>
 </table>
@@ -59,7 +53,7 @@
 					<section id="zero" class="wrapper style5 fade-up">
 						<div class="inner">
 							<center>
-							 <img src="customer.png" width="100" height="100">
+							 <img src="img/customer.png" width="100" height="100">
 						 </center>
 							<h2>العملاء </h2>
 							<section style="text-align=right">
@@ -93,29 +87,27 @@
 				<!-- One -->
 						<section id="one" class="wrapper style2 spotlights">
 								<div class="inner">
-									<h2>الموظفين</h2>
+									<h2>الطلبـات</h2>
 									<section>
 										<table style="width:100% text-align:center ">
       <tr>
-				<th><center><a href = "newprob.php"><h3>مشكلة جديدة</h3><img src="newprob.png" width="100" height="100"></a></center></th>
-				<th><center><a href="arrived.php"><h3>الطلبات المستلمة</h3><img src="arrived.png" width="100" height="100"></a></center></th>
-				<th><center><a href = " "><h3>طلب بيع جديد</h3><img src="new.png" width="100" height="100"></a></center></th>
-				<th><center><h3>تتبع طلب صيانة</h3><img src="track.png" width="100" height="100" id="myBtn"></center></th>
-        <th><center><a href="fix.php"><h3>طلب صيانة جديد</h3><img src="fix.png" width="100" height="100"></a></center></th>
+				<th><center><a href = "newprob.php"><h3>مشكلة جديدة</h3><img src="img/newprob.png" width="100" height="100"></a></center></th>
+				<th><center><a href="arrived.php"><h3>الطلبات المستلمة</h3><img src="img/arrived.png" width="100" height="100"></a></center></th>
+				<th><center><a href = " "><h3>طلب بيع جديد</h3><img src="img/new.png" width="100" height="100"></a></center></th>
+				<th><center><h3>تتبع طلب صيانة</h3><img src="img/track.png" width="100" height="100" id="track"></center></th>
+        <th><center><a href="fix.php"><h3>طلب صيانة جديد</h3><img src="img/fix.png" width="100" height="100"></a></center></th>
       </tr>
     </table>
 		<!-- The Modal -->
-<div id="myModal" class="modal">
+<div id="mytrack" class="modaltrack">
   <!-- Modal content -->
-  <div class="modal-content">
+  <div class="modal-contenttrack">
 		<section class="wrapper style2 fade-up">
 			<div class="inner">
     <span class="close">&times;</span>
 				<h2>تتبع طلب الصيانة</h2>
 				<section style="text-align=right">
 					<table>
-			<tr>
-				<th ><center><input type="submit" value="بحث"> </center></th>
 			<th><input type="text" name="search" placeholder=" ... ادخل رقم الطلب" style="text-align :right"></th>
 			</tr>
 		</table>
@@ -149,12 +141,13 @@
   </div>
 </section>
 </div>
+
 <script>
 // Get the modal
-var modal = document.getElementById('myModal');
+var modal = document.getElementById('mytrack');
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+var btn = document.getElementById("track");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -188,7 +181,7 @@ window.onclick = function(event) {
 					<section id="two" class="wrapper style3 fade-up">
 						<div class="inner">
 							<center>
-							 <img src="control.png" width="100" height="100">
+							 <img src="img/control.png" width="100" height="100">
 						 </center>
 							<h2>لوحة التحكم بالطلبات </h2>
 							<section style="text-align=right">
@@ -263,13 +256,13 @@ window.onclick = function(event) {
 			</div>
 			<script>
 			// Get the modal
-			var modal = document.getElementById('mytech');
+			var techmodal = document.getElementById('mytech');
 
 			// Get the button that opens the modal
-			var btn = document.getElementById("myorder");
+			var techbtn = document.getElementById("myorder");
 
 			// Get the <span> element that closes the modal
-			var span = document.getElementsByClassName("close")[0];
+			var techspan = document.getElementsByClassName("close")[0];
 
 			// When the user clicks the button, open the modal
 			btn.onclick = function() {
@@ -283,7 +276,7 @@ window.onclick = function(event) {
 
 			// When the user clicks anywhere outside of the modal, close it
 			window.onclick = function(event) {
-			    if (event.target == modal) {
+			    if (event.target == techmodal) {
 			        modal.style.display = "none";
 			    }
 			}
@@ -300,7 +293,7 @@ window.onclick = function(event) {
 						<div class="inner">
 							<div class="inner">
 								<center>
-								 <img src="bill.png" width="100" height="100">
+								 <img src="img/bill.png" width="100" height="100">
 							 </center>
 								<h2>الفواتير </h2>
 								<section style="text-align=right">
@@ -356,7 +349,7 @@ window.onclick = function(event) {
 					<section id="four" class="wrapper style4 fade-up">
 						<div class="inner">
 								<center>
-								 <img src="pic17.png" width="100" height="100">
+								 <img src="img/pic17.png" width="100" height="100">
 							 </center>
 								<h2>التقارير</h2>
 
@@ -403,7 +396,7 @@ window.onclick = function(event) {
 
 												<table style="width:70% text-align:center ">
 					<tr>
-						<th><center><a href="settings.php"><h3>تعديل البيانات الشخصية</h3><img src="setting.png" width="100" height="100"></a></center></th>
+						<th><center><a href="settings.php"><h3>تعديل البيانات الشخصية</h3><img src="img/setting.png" width="100" height="100"></a></center></th>
 					</tr>
 				</table>
 			</section>

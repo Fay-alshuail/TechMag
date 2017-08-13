@@ -11,26 +11,20 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
 	<body>
-
-
+		<!-- Sidebar -->
+		<section id="sidebar">
+		<div class="inner">
+			<nav>
+				<ul>
+					<li><a href="tech.php#intro">الصفحة الرئيسية </a></li>
+					<li><center><a href="#one"><h4>الطلبات</h4><img src="fix.png" width="100" height="100"></a></center></li>
+					<li><center><a href="setting.php"><h4>إعدادات</h4><img src="setting.png" width="100" height="100"></a></center></li>
+				</ul>
+			</nav>
+		</div>
+		</section>
 		<!-- Wrapper -->
 			<div id="wrapper">
-
-				<!-- Intro -->
-							<section id="intro" class="wrapper style1 fullscreen fade-up">
-								<div class="inner" >
-									<h2>الوصول السريع</h2>
-									<section>
-										<table style="width:100% text-align:center ">
-			<tr>
-				<th><center><a href="#two"><h3>إعدادات</h3><img src="setting.png" width="100" height="100"></a></center></th>
-				<th><center><a href="#one"><h3>الطلبات</h3><img src="fix.png" width="100" height="100"></a></center></th>
-
-			</tr>
-		</table>
-		</section>
-		</div>
-							</section>
 
 							<!-- One -->
 									<section id="one" class="wrapper style2 spotlights">
