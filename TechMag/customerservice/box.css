@@ -1,8 +1,0 @@
-
-
-#adcontainer {padding: 2px 0 0 0;margin:0 0 0 0;width: 280px;}
-#adboxes{padding: 0 0 18px 0px;width:280px;	height: 284px;background: url(images/adcontainer_bg.jpg) top repeat-x;float:left;position: relative;}
-
-#adboxes ul {	margin: 0;	padding: 0;	list-style: none;}
-
-#adboxes ul li {display:block;	margin: 0px 0px 0px 0px;padding: 10px 2px 0px 9px;	float:left;	list-style: none;}
