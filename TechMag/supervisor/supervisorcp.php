@@ -25,6 +25,8 @@ document.getElementById('uncard').style.display="block";
 document.getElementById('undate').style.display="block";
 document.getElementById('shdate').style.display="none";
 document.getElementById('shcard').style.display="none";
+document.getElementById('shbranch').style.display="none";
+document.getElementById('unbranch').style.display="block";
 document.getElementById('phone').removeAttribute("readOnly");
 document.getElementById('phone2').removeAttribute("readOnly");
 document.getElementById('address').removeAttribute("readOnly");
@@ -119,8 +121,8 @@ document.getElementById('cardno').removeAttribute("readOnly");
 									<p> : الجوال <input type="text" name="phone" readOnly="true" id="phone" value="<?php echo $row["الجوال1"];?>"/> </p>
 									<p> : الجوال 2 <input type="text" name="phone2" readOnly="true" id="phone2" value="<?php echo $row["الجوال2"];?>"/> </p>
 									<p> : عنوان السكن <input type="text" name="address" readOnly="true" id="address" value="<?php echo $row["عنوان_السكن"];?>"/> </p>
-									<p> : الفرع <input type="text" name="branch" readOnly="true" id="branch" value="<?php echo $row["الفرع"];?>"/> </p>
-
+									<p style="display:block;"id="shbranch"> : الفرع <input type="text" name="branch" readOnly="true"  value="<?php echo $row["الفرع"];?>"/> </p>
+									<p style="display:none;"id="unbranch"> : الفرع  <input type="text" name="branch"   value="جميع الفروع"/>
 									  </ul>
 
 									</td>
@@ -140,7 +142,7 @@ document.getElementById('cardno').removeAttribute("readOnly");
 	<ul>
 		<p> : رقم الأمان  <input type="text" name="securityno"  readOnly="true"id="securityno" value="<?php echo $row["رقم_الأمان"];?>"/> </p>
 		<p style="display:block;"id="shdate"> : تاريخ الانتهاء <input type="text"  value="<?php echo $row["تاريخ_الإنتهاء"];?>" ></p>
-<p style="display:none;"id="undate"> : تاريخ الانتهاء <input type="date" ></p>
+<p style="display:none;"id="undate"> : تاريخ الانتهاء <input type="date" name="date" id="date"></p>
 <br>
 
 <p> <input type="submit" value="حـفـظ"></p>

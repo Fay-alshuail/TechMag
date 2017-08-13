@@ -1,18 +1,19 @@
-
-<html>
 <?php
-session_start();
 include 'config.php';
+
+$selected=$_POST['branches'];
 mysql_query("SET NAMES 'utf8'");
 mysql_query('SET CHARACTER SET utf8');
-$sessionU=$_SESSION['username_s'];
-$result=mysql_query("SELECT * FROM `المشرف` WHERE `البريد` ='$sessionU'");
-while($row=mysql_fetch_array($result))
-{?>
-
-<input type="text" value="<?php echo $row["الجوال1"];?>"/>
-<?php
+if ($selected="allbranches"){
+$sql =("SELECT * FROM `الفاتورة` ");
+$result = mysql_query($sql) or die(mysql_error());
+$num = mysql_num_rows($result);
+echo $num ;
 }
-?>
-
-</html>
+{
+	$sql =("SELECT * FROM `الفاتورة` WHERE `وصف_الفرع`='$selected'");
+	$result = mysql_query($sql) or die(mysql_error());
+	$num = mysql_num_rows($result);
+echo $num ;
+}
+ ?>
