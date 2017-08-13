@@ -9,7 +9,7 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/supervisor.css" />
 		<link rel="stylesheet" href="css.css" />
-  
+
   </head>
   <body class="align-right">
 
@@ -45,12 +45,32 @@
 <h2>مراقبة الفروع</h2>
 <br>
                 <table id = "table2" class ="align-center">
-                  <select name="branches">
-                    <option value="" style="display:none">الفرع</option>
+
+									<select name="branches" method ="post"  action ="">
+										<option value="allbranches" name ="allbranches"> جميع الفروع</option>
+
+	<?php
+	include '../config.php';
+	//query
+	mysql_query("SET NAMES 'utf8'");
+	mysql_query('SET CHARACTER SET utf8');
+	$sql=("SELECT `الوصف` FROM `الفرع` ");
+	$result=mysql_query($sql);
+	while($row=mysql_fetch_array($result))
+	{
+	?>
+	<option><?php echo $row["الوصف"];?></option>
+	<?php
+	}
+	?>
+
+									 </select>
                 <td>
 
                         <ul>
-                  <br>  <p> :عدد الفواتير <input type="text" name="invoiceno" id="invoiceno" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
+													<p> <input type="submit" value="حـفـظ"></p>
+
+                  <br>  <p> :عدد الفواتير <input type="text" name="invoiceno" id="invoiceno" value"<?php echo $num ?>"/> </p>
                   <br>  <p> : عدد طلبات الصيانة<input type="text" name="requestno" id="requestno" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
                   <br> <p> : عدد الموظفين <input type="text" name="staffno" id="staffno" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
 
