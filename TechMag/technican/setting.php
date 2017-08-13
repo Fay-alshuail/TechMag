@@ -13,26 +13,20 @@
 			<div class="inner">
 				<nav>
 					<ul>
-						<li><a href="cs.php#intro">الصفحة الرئيسية </a></li>
-						<li><a href="cs.php#zero"> العمـلاء </a></li>
-						<li><a href="cs.php#one"> الطلبـات </a></li>
-						<li><a href="cs.php#two"> لوحـة مراقبـة الطلبـات </a></li>
-						<li><a href="cs.php#three"> الفـواتيـر </a></li>
-						<li><a href="cs.php#four"> التقارير </a></li>
-						<li><a href="cs.php#five"> الإعـدادات </a></li>
+						<li><a href="tech.php#intro">الصفحة الرئيسية </a></li>
+						<li><a href="tech.php#one"> الطلبـات </a></li>
+						<li><a href="tech.php#two"> الإعدادات </a></li>
 					</ul>
 				</nav>
 			</div>
 		</section>
 
-</body>
-</html>
 
 
 <!-- Wrapper -->
 			<div id="wrapper">
 				<!-- Form -->
-				<section class="wrapper style2 fade-up">
+				<section class="wrapper style5 fade-up">
 					<div class="inner" style="height:110%">
 <center><img src="setting.png" width="100" height="100">
 <h3>تعديل البيانات الشخصية</h3>
@@ -93,3 +87,6 @@
 </section>
 
 </div>
+
+</body>
+</html>

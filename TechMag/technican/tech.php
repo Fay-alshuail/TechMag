@@ -34,14 +34,13 @@
 
 							<!-- One -->
 									<section id="one" class="wrapper style2 spotlights">
-											<div class="inner">
+											<div class="inner"  >
 												<h2>الطلبات</h2>
 												<section>
 													<table style="width:100% text-align:center ">
 			      <tr>
-
-							<th><center><a href="arrived.php"><h3>الطلبات المستلمة</h3><img src="arrived.png" width="100" height="100"></a></center></th>
-							<th><center><a href="fix.php"><h3>الطلبات المقبولة</h3><img src="accept.png" width="100" height="100"></a></center></th>
+							<th><center><a href="accept.php"><h3>الطلبات المقبولة</h3><img src="accept.png" width="100" height="100"></a></center></th>
+							<th><center><a href="problems.php"><h3>الطلبات المستلمة</h3><img src="arrived.png" width="100" height="100"></a></center></th>
 			      </tr>
 			    </table>
 				</div>
@@ -54,7 +53,7 @@
 
 															<table style="width:70% text-align:center ">
 								<tr>
-									<th><center><a href="settings.php"><h3>تعديل البيانات الشخصية</h3><img src="setting.png" width="100" height="100"></a></center></th>
+									<th><center><a href="setting.php"><h3>تعديل البيانات الشخصية</h3><img src="setting.png" width="100" height="100"></a></center></th>
 								</tr>
 							</table>
 						</section>
