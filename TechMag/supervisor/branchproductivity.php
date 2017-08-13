@@ -59,7 +59,7 @@
 	while($row=mysql_fetch_array($result))
 	{
 	?>
-	<option ><?php echo $row["الوصف"];?></option>
+	<option value="<?php echo $row["الوصف"];?>"><?php echo $row["الوصف"];?></option>
 	<?php
 	}
 	?>
