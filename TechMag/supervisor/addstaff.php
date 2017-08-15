@@ -42,6 +42,8 @@
              <img src="images/pic22.png" width="100" height="100">
            </center>
 <h2>إضافةموظف </h2>
+<form method="post" action="#">
+
             <table id = "table2" class ="align-center">
             <td>
               <ul>
@@ -62,6 +64,7 @@
 
                 <ul>
                 <p> : الاسم<input type="text" name="name" id="name" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
+								  <input type="text" name="password1" id="fonction" data-rule="required" value ="<?php echo randomPassword(); ?>"  data-msg="لو ماعبى التيكست"/>
                 <p> : رقم الحساب البنكي <input type="text" name="bank" id="bank" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
                 <p> :  البريد الإلكتروني <input type="email" name="email" id="email" data-rule="required" data-msg="لو ماعبى التيكست"/>  </p>
               :  الفرع <select name="branches">
@@ -71,6 +74,7 @@
                 </ul>
               </td>
             </table>
+					</form>
           </div>
 
         </section>
@@ -80,3 +84,47 @@
 
     <script src="assets/js/main.js"></script>
     </html>
+		<?php
+		function randomPassword() {
+		    $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+		    $pass = array(); //remember to declare $pass as an array
+		    $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+		    for ($i = 0; $i < 8; $i++) {
+		        $n = rand(0, $alphaLength);
+		        $pass[] = $alphabet[$n];
+		    }
+		    return implode($pass); //turn the array into a string
+		}
+
+		 ?>
+
+		<?php
+		include '../config.php';
+
+
+		$name=filter_input(INPUT_POST,"name");
+		$number1=filter_input(INPUT_POST,"number1");
+		$number2=filter_input(INPUT_POST,"number2");
+		$city=filter_input(INPUT_POST,"city");
+		$bank=filter_input(INPUT_POST,"bank");
+		$email=filter_input(INPUT_POST,"email");
+		$password=filter_input(INPUT_POST,"password1");
+		$job=$_POST['job'];
+		$branch=$_POST['branches'];
+		mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
+		switch ($branches) {
+		case 'technican':
+		$sql="INSERT INTO `fixmin`.`الفني` (`الاسم`, `الجوال1`, `الجوال2`, `البريد`, `رقم_الحساب_البنكي`, `المسمى_الوظيفي`, `عنوان_السكن`, `الفرع`, `الرقم_السري`)
+		VALUES ('$name', '$number1','$number2', '$email', '$bank', '$jobs', '$city', '$branch', '$password')";
+		break;
+
+		case 'customer_service':
+		$sql="INSERT INTO `fixmin`.`خدمة العملاء` (`الاسم`, `الجوال1`, `الجوال2`, `البريد`, `رقم_الحساب_البنكي`, `المسمى_الوظيفي`, `عنوان_السكن`, `الفرع`, `الرقم_السري`)
+				VALUES ('$name', '$number1', '$number2', '$email', '$bank', '$jobs', '$city', '$branch', '$password')";
+
+		if (!mysql_query($sql)) {
+		  echo "<script type='text/javascript'>alert('لم يتم ادخال البيانات بشكل صحيح');</script>";
+		}
+		echo "<script type='text/javascript'>alert('تم ادخال البيانات بشكل صحيح');</script>";
+
+		?>
