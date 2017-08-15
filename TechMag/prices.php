@@ -186,9 +186,15 @@
 				        </tr>
                 <tr>
                     <td class="text">
-                      9.99$ في الشهر</td>
+                    30$ في الشهر </td>
                     <td class="text">
-                          30$ في الشهر</td>
+                    10$ في الشهر</td>
+                </tr>
+                <tr>
+                    <td class="text">
+                    360$ في الشهر </td>
+                    <td class="text">
+                    120$ في الشهر</td>
                 </tr>
 				    </table>
 				    </div>
