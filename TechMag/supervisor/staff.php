@@ -46,6 +46,7 @@
 <form action="#" method="post">
             <table>
 <tr>
+	<th> <input type="submit" value="التعديل على الموظفين " onclick=""></th>
 	<th><input type="submit" value="بحث"></th>
 <th>
 	<select name="branches">
@@ -127,43 +128,15 @@
 
 <table>
 <tr>
-  <th><input type="submit" value="حفظ التغييرات" onclick="visible()"> </th>
 
   <th><input type="button" value="رجوع" onclick="history.go(-1);"></th>
 </tr>
 </table>
-<div id="unvisible" hidden="hidden" >
-  <table id = "table2" class ="align-center">
-  <td>
-    <ul>
-      <p> : رقم الجوال 1<input type="text" name="number1" id="number1" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
-  <p> : رقم الجوال 2<input type="text" name="number2" id="number2" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
-  <p> : عنوان السكن - المدينة <input type="text" name="city" id="city" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
-  <p>:  المسمى الوظيفي <input type="text" name="bank" id="bank" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
 
-    </ul>
-
-  </td>
-  <td>
-
-      <ul>
-      <p> : الاسم<input type="text" name="name" id="name" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
-      <p> : رقم الحساب البنكي <input type="text" name="bank" id="bank" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
-      <p> :  البريد الإلكتروني <input type="email" name="email" id="email" data-rule="required" data-msg="لو ماعبى التيكست"/>  </p>
-      <p>:  الفرع   <input type="text" name="bank" id="bank" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
-    </ul>
-  </td>
-</table>
-</div>
         </section>
       </div>
 
     </body>
-    <script>
-    function visible() {
-        document.getElementById('unvisible').removeAttribute("hidden");
-    }
-    </script>
 
     <script src="assets/js/main.js"></script>
     </html>
