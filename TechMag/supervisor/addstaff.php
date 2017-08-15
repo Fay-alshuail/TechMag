@@ -52,9 +52,8 @@
             <p> : عنوان السكن - المدينة <input type="text" name="city" id="city" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
 
           :  المسمى الوظيفي     <select name="job">
-          <option value="" style="display:none">خدمة عملاء </option>
-          <option  value="" style="display:none"> فني</option>
-          <option  value="" style="display:none"> مشرف</option>
+          <option value="customer_service" >خدمة عملاء </option>
+          <option  value="technican" > فني</option>
           </select>
 <br><center><input type="submit" value="حفظ"> </center>
               </ul>
@@ -64,12 +63,26 @@
 
                 <ul>
                 <p> : الاسم<input type="text" name="name" id="name" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
-								  <input type="text" name="password1" id="fonction" data-rule="required" value ="<?php echo randomPassword(); ?>"  data-msg="لو ماعبى التيكست"/>
+								  <p> : الرقم السري <input type="text" name="password1" id="fonction" data-rule="required" value ="<?php echo randomPassword(); ?>"  data-msg="لو ماعبى التيكست"/></p>
                 <p> : رقم الحساب البنكي <input type="text" name="bank" id="bank" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
                 <p> :  البريد الإلكتروني <input type="email" name="email" id="email" data-rule="required" data-msg="لو ماعبى التيكست"/>  </p>
-              :  الفرع <select name="branches">
-               <option ></option>
-               </select>
+              :  الفرع  <select name="branches">
+							  <option value="allbranches" name ="allbranches"> جميع الفروع</option>
+							  <?php
+							include '../config.php';
+							//query
+							mysql_query("SET NAMES 'utf8'");
+							mysql_query('SET CHARACTER SET utf8');
+							$sql=("SELECT `الوصف` FROM `الفرع` ");
+							$result=mysql_query($sql);
+							while($row=mysql_fetch_array($result))
+							{
+							?>
+							<option><?php echo $row["الوصف"];?></option>
+							<?php
+							}
+							?>
+							</select>
 <br><center><input type="button" value="إلغاء"> </center>
                 </ul>
               </td>
@@ -112,7 +125,7 @@
 		$job=$_POST['job'];
 		$branch=$_POST['branches'];
 		mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
-		switch ($branches) {
+		switch ($job) {
 		case 'technican':
 		$sql="INSERT INTO `fixmin`.`الفني` (`الاسم`, `الجوال1`, `الجوال2`, `البريد`, `رقم_الحساب_البنكي`, `المسمى_الوظيفي`, `عنوان_السكن`, `الفرع`, `الرقم_السري`)
 		VALUES ('$name', '$number1','$number2', '$email', '$bank', '$jobs', '$city', '$branch', '$password')";
@@ -121,10 +134,11 @@
 		case 'customer_service':
 		$sql="INSERT INTO `fixmin`.`خدمة العملاء` (`الاسم`, `الجوال1`, `الجوال2`, `البريد`, `رقم_الحساب_البنكي`, `المسمى_الوظيفي`, `عنوان_السكن`, `الفرع`, `الرقم_السري`)
 				VALUES ('$name', '$number1', '$number2', '$email', '$bank', '$jobs', '$city', '$branch', '$password')";
-
+	break;
+}
 		if (!mysql_query($sql)) {
 		  echo "<script type='text/javascript'>alert('لم يتم ادخال البيانات بشكل صحيح');</script>";
-		}
+		} else {
 		echo "<script type='text/javascript'>alert('تم ادخال البيانات بشكل صحيح');</script>";
-
+}
 		?>

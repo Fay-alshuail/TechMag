@@ -12,6 +12,18 @@
     <meta http-equiv="X-UA-Comptible" content="ie=edge">
 
    </style>
+   <script type="text/javascript">
+   function showhide(){
+   document.getElementById('unjob').style.display="block";
+   document.getElementById('shjob').style.display="none";
+   document.getElementById('shbranch').style.display="none";
+   document.getElementById('unbranch').style.display="block";
+   document.getElementById('number1').removeAttribute("readOnly");
+
+   }
+
+   </script>
+   }
   </head>
   <body class="align-right">
 
@@ -68,10 +80,10 @@ $jobs=$_POST['jobs'];
 mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
 switch ($jobs) {
 case 'customer_service':
-$result=mysql_query("SELECT * FROM `خدمة العملاء` WHERE `بريد_خ_ع`=(Select `البريد` FROM `خدمة العملاء` WHERE `الاسم` = '$staff'");
+$result=mysql_query("SELECT * FROM `خدمة العملاء`WHERE `الاسم` = '$staff'")or die(mysql_error());
 break;
 case 'technican':
-$result=mysql_query("SELECT * FROM `الفني` WHERE `بريد_الفني`=(SELECT `البريد` FROM `الفني` WHERE `الاسم`= '$staff' ");
+$result=mysql_query("SELECT * FROM `الفني` WHERE `الاسم`= '$staff' ")or die(mysql_error());
 
 break;
 }
@@ -79,27 +91,48 @@ while($rows=mysql_fetch_array($result))
 {
 ?>
 
-
-
-
               <table id = "table2" class ="align-center">
               <td>
                 <ul>
-                  <p> : رقم الجوال 1<input type="text" name="number1" id="number1"value="<?php echo $rows["الجوال1"];?>" /> </p>
-              <p> : رقم الجوال 2<input type="text" name="number2" id="number2" value="<?php echo $rows["الجوال2"];?>"/> </p>
-              <p> : عنوان السكن - المدينة <input type="text" name="city" id="city" value="<?php echo $rows["عنوان_السكن"];?>"/> </p>
-              <p>:  المسمى الوظيفي <input type="text" name="job" id="job" value="<?php echo $rows["المسمى_الوظيفي"];?>"/> </p>
-
+                  <p> : رقم الجوال 1<input type="text" name="number1" readOnly="true" id="number1"value="<?php echo $rows["الجوال1"];?>" /> </p>
+              <p> : رقم الجوال 2<input type="text" name="number2" readOnly="true" id="number2" value="<?php echo $rows["الجوال2"];?>"/> </p>
+              <p> : عنوان السكن - المدينة <input type="text"readOnly="true" name="city" id="city" value="<?php echo $rows["عنوان_السكن"];?>"/> </p>
+              <p style="display:block;"id="shjob">:  المسمى الوظيفي <input type="text" name="job" readOnly="true" id="job" value="<?php echo $rows["المسمى_الوظيفي"];?>"/> </p>
+<p style="display:none;"id="unjob"> :  المسمى الوظيفي
+<select name="jobs">
+	<option value="job_title"> المسمى الوظيفي</option>
+	<option value="technican"> فني</option>
+	<option value="customer_service"> خدمة عملاء</option>
+</select> </p>
                 </ul>
 
               </td>
               <td>
 
                   <ul>
-                  <p> : الاسم<input type="text" name="name" id="name" value="<?php echo $rows["الاسم"];?>"/> </p>
-                  <p> : رقم الحساب البنكي <input type="text" name="bank" id="bank" value="<?php echo $rows["رقم_الحساب_البنكي"];?>"/> </p>
-                  <p> :  البريد الإلكتروني <input type="email" name="email" id="email" value="<?php echo $rows["البريد"];?>"/>  </p>
-                  <p>:  الفرع   <input type="text" name="branch" id="branch" value="<?php echo $rows["الفرع"];?>"/> </p>
+                  <p> : الاسم<input type="text" name="name"readOnly="true" id="name" value="<?php echo $rows["الاسم"];?>"/> </p>
+                  <p> : رقم الحساب البنكي <input type="text"readOnly="true" name="bank" id="bank" value="<?php echo $rows["رقم_الحساب_البنكي"];?>"/> </p>
+                  <p> :  البريد الإلكتروني <input type="email" readOnly="true"name="email" id="email" value="<?php echo $rows["البريد"];?>"/>  </p>
+                  <p style="display:block;"id="shbranch"> : الفرع <input type="text" name="branch" readOnly="true"  value="<?php echo $rows["الفرع"];?>"/> </p>
+<p style="display:none;"id="unbranch">: الفرع  <select name="branches">
+  <option value="allbranches" name ="allbranches"> جميع الفروع</option>
+  <?php
+include '../config.php';
+//query
+mysql_query("SET NAMES 'utf8'");
+mysql_query('SET CHARACTER SET utf8');
+$sql=("SELECT `الوصف` FROM `الفرع` ");
+$result=mysql_query($sql);
+while($row=mysql_fetch_array($result))
+{
+?>
+<option><?php echo $row["الوصف"];?></option>
+<?php
+}
+?>
+</select>
+</p>
+
                 </ul>
               </td>
             </table>
@@ -114,9 +147,12 @@ while($rows=mysql_fetch_array($result))
 
 <table>
 <tr>
-  <th><input type="submit" value="حفظ التغييرات" > </th>
 
-  <th><input type="button" value="رجوع" onclick="history.go(-1);"></th>
+  <th ><input type="submit" value="حفظ التغييرات" > </th>
+    <th><input type="button" value="تـعـديـل " onclick=showhide()></th>
+  <th> <input type="button" value="رجوع" onclick="history.go(-1);" style="margin-right:150px;" ></th>
+
+
 </tr>
 </table>
 
