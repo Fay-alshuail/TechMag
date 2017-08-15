@@ -1,3 +1,18 @@
+<?php
+include '../config.php';
+
+
+$city=filter_input(INPUT_POST,"city");
+$details=filter_input(INPUT_POST,"details");
+$map="riyadh";
+mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
+$sql="INSERT INTO `fixmin`.`الفرع` (`المدينة`, `الوصف`) VALUES ('$city', '$details')";
+if (!mysql_query($sql)) {
+  echo "<script type='text/javascript'>alert('لم يتم ادخال البيانات بشكل صحيح');</script>";
+}
+echo "<script type='text/javascript'>alert('تم ادخال البيانات بشكل صحيح');</script>";
+
+?>
 
 <!DOCTYPE HTML>
 
@@ -13,12 +28,7 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/supervisor.css" />
 		<link rel="stylesheet" href="css.css" />
-    <style>
-      #map {
-       height: 400px;
-       width: 100%;
-      }
-   </style>
+
   </head>
   <body class="align-right">
 
@@ -53,7 +63,7 @@
                </center>
 <h2>إضافة فرع جديد </h2>
 
-<form action="insertaddbranch.php" method="post">
+<form action="#" method="post">
                 <table id = "table2" class ="align-center">
 
                 <td>
@@ -64,24 +74,8 @@
 
                   </ul>
 
-                     <div id="map"></div>
-                    <script>
-                      function initMap() {
-                        var uluru = {lat: -25.363, lng: 131.044};
-                        var map = new google.maps.Map(document.getElementById('map'), {
-                          zoom: 4,
-                          center: uluru
-                        });
-                        var marker = new google.maps.Marker({
-                          position: uluru,
-                          map: map
-                        });
-                      }
-                    </script>
-                    <script async defer
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABmebxNurA4SnIZoEXtQ3DdHuHVJlsmX0&callback=initMap">
-                    </script>
-                    <input type="submit" value="حـفـظ"> <input type="button" value="إالغاء">
+
+                    <input type="submit" value="حـفـظ"> <input type="button" value="إالغاء"   onclick="history.go(-1);" />
 </td>
 
                 </table>

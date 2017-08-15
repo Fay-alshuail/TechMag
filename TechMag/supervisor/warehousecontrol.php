@@ -3,13 +3,13 @@
 
 <html>
 	<head>
-		<title>مراقبة الفروع</title>
+		<title>مراقبة المخازن</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/supervisor.css" />
 		<link rel="stylesheet" href="css.css" />
-  
+
   </head>
   <body class="align-right">
 
@@ -44,30 +44,47 @@
                </center>
 <h2>مراقبة المخازن </h2>
 <br>
+<form action="#" method="post">
                 <table id = "table2" class ="align-center">
 
                           <tr>
                             <th ><center><input type="submit" value="بحث"> </center></th>
-                          <th> <input type="text" name="search" placeholder=" ... بحث" style="text-align :right"></th>
+                          <th> <input type="text" name="warehouseno" placeholder=" ... بحث" style="text-align :right"></th>
 <th> <p>  : ادخل رقم المخزن</p></th>
 </tr>
 </table>
+<?php
+include '../config.php';
+$warehouseno=$_POST['warehouseno'];
+mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
+$sql="SELECT * FROM `المخزن`  WHERE `رقم_المخزن`= $warehouseno";
+$result=mysql_query($sql);
+?>
 <table>
 <tr>
     <th>الكميات المتوفرة</th>
-    <th> الفرع</th>
+		<th>الفرع</th>
   <th>رقم المخزن</th>
-
-
 </tr>
+<?php
+while($rows = mysql_fetch_assoc($result))
+{
+	                    ?>
+<p> مخزن رقم :<?php echo $warehouseno ?></p>
 <tr>
-<td></td>
-<td></td>
-<td></td>
+<td><?php echo $rows['الكميات_المتوفرة']; ?></td>
+<td><?php echo $rows['الفرع']; ?></td>
+<td><?php echo $rows['رقم_المخزن']; ?></td>
+
+<?php
+							 }
+							 ?>
+
 </tr>
 
 
                 </table>
+
               </div>
 
 

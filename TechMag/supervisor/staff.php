@@ -41,32 +41,95 @@
             <center>
              <img src="images/pic22.png" width="100" height="100">
            </center>
-<h2>إضافةموظف </h2>
+<h2>الموظفين</h2>
 
-
+<form action="#" method="post">
             <table>
 <tr>
-<th>  :  الفرع <select name="branches">
-   <option value="all"> جميع الفروع</option>
-   <option ></option>
-   </select></th>
+	<th><input type="submit" value="بحث"></th>
+<th>
+	<select name="branches">
+		<option value="allbranches" name ="allbranches"> جميع الفروع</option>
+
+	<?php
+	include '../config.php';
+	//query
+	mysql_query("SET NAMES 'utf8'");
+	mysql_query('SET CHARACTER SET utf8');
+	$sql=("SELECT `الوصف` FROM `الفرع` ");
+	$result=mysql_query($sql);
+	while($row=mysql_fetch_array($result))
+	{
+	?>
+	<option><?php echo $row["الوصف"];?></option>
+	<?php
+	}
+	?>
+
+	 </select>
+</th>
 </tr>
-            </table>
+            </table></form>
+						<?php
+						include '../config.php';
+						$branches=$_POST['branches'];
+						mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
+
+						?>
+						<p>فرع : <?php echo $branches?></p>
 <table>
+
 <tr>
   <th> المسمى الوظيفي</th>
 <th>اسم الموظف </th>
 </tr>
+
+
+
+
+<tr>
+	<?php
+	$sql="SELECT `المسمى_الوظيفي` , `الاسم`
+	FROM `الفني`
+	WHERE `الفرع` ='$branches'
+	";
+	$result=mysql_query($sql);
+	while($rows = mysql_fetch_assoc($result))
+	{
+		                    ?>
+<td> <?php echo $rows['المسمى_الوظيفي']; ?></td>
+<td> <?php echo $rows['الاسم']; ?></td>
+<?php
+							 }
+							 ?>
+
+											</tr>
+											<tr>
+												<?php
+												$sql="SELECT `المسمى_الوظيفي` , `الاسم`
+												FROM `خدمة العملاء`
+												WHERE `الفرع` ='$branches'
+												";
+												$result=mysql_query($sql);
+												while($rows = mysql_fetch_assoc($result))
+												{
+													                    ?>
+											<td> <?php echo $rows['المسمى_الوظيفي']; ?></td>
+											<td> <?php echo $rows['الاسم']; ?></td>
+
+											<?php
+																		 }
+																		 ?>
+
+																						</tr>
 </table>
           </div>
 
 <table>
 <tr>
-  <!--<th><input type="submit" value="حفظ التغييرات" onclick="visible()"> </th>-->
+  <th><input type="submit" value="حفظ التغييرات" onclick="visible()"> </th>
 
-<th><input type="submit" value="حفظ التغييرات" > </th>
-  <th><input type="button" value="إلغاء"></th>
-  <th><input type="button" value="تعطيل المستخدم"></th>
+  <th><input type="button" value="رجوع" onclick="history.go(-1);"></th>
 </tr>
 </table>
 <div id="unvisible" hidden="hidden" >

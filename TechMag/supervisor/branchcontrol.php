@@ -42,11 +42,10 @@
                 <center>
                  <img src="images/pic01.png" width="100" height="100">
                </center>
-<h2>إضافة فرع جديد </h2>
+<h2>إدارة الفروع</h2>
 <br>
                 <table id = "table2" class ="align-center">
-                  <select name="branches">
-                    <option value="" style="display:none">الفرع</option>
+              
                 <td>
 
                         <ul>

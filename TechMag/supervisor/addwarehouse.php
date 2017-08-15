@@ -1,3 +1,17 @@
+<?php
+include '../config.php';
+
+
+$count=filter_input(INPUT_POST,"count");
+$branch=$_POST['branch'];
+mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
+$sql="INSERT INTO `fixmin`.`المخزن` (`رقم_المخزن`, `الكميات_المتوفرة`, `الفرع`) VALUES (null,'$count', '$branch')";
+if (!mysql_query($sql)) {
+  echo "<script type='text/javascript'>alert('لم يتم ادخال البيانات بشكل صحيح');</script>";
+}else{
+echo "<script type='text/javascript'>alert('تم ادخال البيانات بشكل صحيح');</script>";
+}
+?>
 
 <!DOCTYPE HTML>
 
@@ -44,15 +58,31 @@
                </center>
 <h2>إضافة مخزن جديد</h2>
 <br>
-                <table id = "table2" class ="align-center">
-                  <select name="branches">
-                    <option value="" style="display:none">الفرع</option>
-                <td>
+<form action="#" method="post">                <table id = "table2" class ="align-center">
+									<select name="branch">
+
+<?php
+include '../config.php';
+//query
+mysql_query("SET NAMES 'utf8'");
+mysql_query('SET CHARACTER SET utf8');
+$sql=("SELECT `الوصف` FROM `الفرع` ");
+$result=mysql_query($sql);
+while($row=mysql_fetch_array($result))
+{
+?>
+<option><?php echo $row["الوصف"];?></option>
+<?php
+}
+?>
+
+									 </select>
+									 <td>
 <p> : بيانات المخزون </p>
                         <ul>
-                <br> <p> : الكميات المتوفره <input type="text" name="count" id="count" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
+                <br> <p> : الكمية<input type="text" name="count" id="count" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
 
-<br><input type="submit" value="حفظ ">
+<br><input type="submit" value="حفظ "> </form>
                   </ul>
 </td>
 

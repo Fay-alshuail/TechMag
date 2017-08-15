@@ -1,4 +1,29 @@
+<?php
+// php code for the results
+include '../config.php';
+if(isset($_POST['submit'])){
+$selected_val = $_POST['branches'];
 
+mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
+switch ($selected_val) {
+	case 'جميع الفروع':
+	$result = mysql_query("SELECT * FROM `الفاتورة`") or die(mysql_error());
+	$result1=mysql_query("SELECT * FROM `طلب الصيانة` ") or die(mysql_error());
+	$num = mysql_num_rows($result);
+$num1 = mysql_num_rows($result1);
+		break;
+
+	default:
+	$result = mysql_query("SELECT * FROM `الفاتورة` WHERE `وصف_الفرع` = '$selected_val' ") or die(mysql_error());
+$result1=mysql_query("SELECT * FROM `طلب الصيانة` WHERE `وصف_الفرع` = '$selected_val' ") or die(mysql_error());
+	$num = mysql_num_rows($result);
+	$num1 = mysql_num_rows($result1);
+
+		break;
+}
+
+}
+ ?>
 <!DOCTYPE HTML>
 
 <html>
@@ -6,7 +31,6 @@
 		<title>إنتاجية الفروع</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/supervisor.css" />
 		<link rel="stylesheet" href="css.css" />
 
@@ -45,34 +69,34 @@
 <h2>مراقبة الفروع</h2>
 <br>
                 <table id = "table2" class ="align-center">
-<form action="../test.php" method="post">
-									<select name="branches" >
-										<option value="allbranches" name ="allbranches"> جميع الفروع</option>
+									<form action="#" method="post">
+									<select name="branches">
+										<option value="جميع الفروع" >جميع الفروع </option>
+									<?php // retrive the branches from db
+									include '../config.php';
+									//query
+									mysql_query("SET NAMES 'utf8'");
+									mysql_query('SET CHARACTER SET utf8');
+									$sql=("SELECT * FROM `الفرع` ");
+									$result=mysql_query($sql);
+									while($row=mysql_fetch_array($result))
+									{
+									?>
+									<!-- showing the options-->
 
-	<?php
-	include '../config.php';
-	//query
-	mysql_query("SET NAMES 'utf8'");
-	mysql_query('SET CHARACTER SET utf8');
-	$sql=("SELECT `الوصف` FROM `الفرع` ");
-	$result=mysql_query($sql);
-	while($row=mysql_fetch_array($result))
-	{
-	?>
-	<option value="<?php echo $row["الوصف"];?>"><?php echo $row["الوصف"];?></option>
-	<?php
-	}
-	?>
+									<option value="<?php echo $row["الوصف"];?>"><?php echo $row["الوصف"];?></option>
+									<?php
+									}
+									?>
 
 									 </select>
                 <td>
 
                         <ul>
-													<p> <input type="submit" value="حـفـظ"></p>
-
-                  <br>  <p> :عدد الفواتير <input type="text" name="invoiceno" id="invoiceno" value"<?php echo $num ?>"/> </p>
-                  <br>  <p> : عدد طلبات الصيانة<input type="text" name="requestno" id="requestno" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
-                  <br> <p> : عدد الموظفين <input type="text" name="staffno" id="staffno" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
+													<p> <input type="submit" name="submit" value="بحث"></p>
+<p ><?php echo $selected_val ?></p>
+                  <br>  <p> :عدد الفواتير <input type="text" name="invoiceno" id="invoiceno" value =<?php echo $num?>> </p>
+                  <br>  <p> : عدد طلبات الصيانة<input type="text" name="requestno" id="requestno" value =<?php echo $num1?>> </p>
 
                   </ul>
 </td>

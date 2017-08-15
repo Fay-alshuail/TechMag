@@ -1,4 +1,28 @@
+<?php
 
+include '../config.php';
+if(isset($_POST['submit'])){
+
+$saleprice=filter_input(INPUT_POST,"saleprice");
+$taxrate=filter_input(INPUT_POST,"taxrate");
+$barcode=filter_input(INPUT_POST,"barcode");
+$productname=filter_input(INPUT_POST,"productname");
+$purprice=filter_input(INPUT_POST,"purprice");
+$count=filter_input(INPUT_POST,"count");
+$catagory=filter_input(INPUT_POST,"catagory");
+$selected = $_POST['warehouse'];
+mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
+$sql="INSERT INTO `fixmin`.`المنتج` (`الباركود`, `اسم_المنتج`, `التصنيف`, `الكمية`, `سعر_الشراء`, `سعر_البيع`, `نسبة_المعدل`, `رقم_المخزن`)
+VALUES ('$barcode', '$productname', '$catagory', '$count', '$purprice', '$saleprice', '$taxrate', '$selected')";
+if (!mysql_query($sql)) {
+echo "<script type='text/javascript'>alert('لم يتم ادخال البيانات بشكل صحيح');</script>";
+}else {
+echo "<script type='text/javascript'>alert('تم ادخال البيانات بشكل صحيح');</script>";
+
+}
+}
+
+ ?>
 <!DOCTYPE HTML>
 
 <html>
@@ -43,10 +67,27 @@
            </center>
 <h2>إضافة منتج </h2>
             <table id = "table2" class ="align-center">
+							<form action="#" method="post">
             <td>
               <ul>
-              :  المخزن <select name="branches">
-                  <option value="" style="display:none"></option></select>
+              :  المخزن <select name="warehouse">
+
+								<?php
+								include '../config.php';
+								//query
+								mysql_query("SET NAMES 'utf8'");
+								mysql_query('SET CHARACTER SET utf8');
+								$sql=("SELECT `رقم_المخزن`FROM `المخزن`");
+								$result=mysql_query($sql);
+								while($row=mysql_fetch_array($result))
+								{
+								?>
+								<option><?php echo $row["رقم_المخزن"];?></option>
+								<?php
+								}
+								?>
+
+																	 </select>
             <p> : سعر البيع<input type="text" name="saleprice" id="saleprice" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
             <p> : (معدل الضريبة (*بالنسبة المئوية<input type="text" name="taxrate" id="taxrate" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
             <p> : (ISSN)الباركود<input type="text" name="barcode" id="barcode" data-rule="required" data-msg="لو ماعبى التيكست"/>  </p>
@@ -59,11 +100,12 @@
                 <ul>
                 <p> : اسم المنتج<input type="text" name="productname" id="productname" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
                 <p> : سعر الشراء<input type="text" name="purprice" id="purprice" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
-                <p> :  الكمية<input type="email" name="count" id="count" data-rule="required" data-msg="لو ماعبى التيكست"/>  </p>
-                <p> : التصنيف<input type="email" name="catagory" id="catagory" data-rule="required" data-msg="لو ماعبى التيكست"/>  </p>
-<br><center><input type="button" value="إلغاء"> </center>
+                <p> :  الكمية<input type="text" name="count" id="count" data-rule="required" data-msg="لو ماعبى التيكست"/>  </p>
+                <p> : التصنيف<input type="text" name="catagory" id="catagory" data-rule="required" data-msg="لو ماعبى التيكست"/>  </p>
+<br><center><input type="button" value="إلغاء" onclick="history.go(-1);" /> </center>
                 </ul>
               </td>
+						</form>
             </table>
           </div>
 
@@ -74,3 +116,27 @@
 
     <script src="assets/js/main.js"></script>
     </html>
+		<?php
+
+		include '../config.php';
+
+
+		$saleprice=filter_input(INPUT_POST,"saleprice");
+		$taxrate=filter_input(INPUT_POST,"taxrate");
+		$barcode=filter_input(INPUT_POST,"barcode");
+		$productname=filter_input(INPUT_POST,"productname");
+		$purprice=filter_input(INPUT_POST,"purprice");
+		$count=filter_input(INPUT_POST,"count");
+		$catagory=filter_input(INPUT_POST,"catagory");
+$selected = $_POST['warehouse'];
+mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
+$sql="INSERT INTO `fixmin`.`المنتج` (`الباركود`, `اسم_المنتج`, `التصنيف`, `الكمية`, `سعر_الشراء`, `سعر_البيع`, `نسبة_المعدل`, `رقم_المخزن`)
+VALUES ('$barcode', '$productname', '$catagory', '$count', '$purprice', '$saleprice', '$taxrate', '$selected');";
+if (!mysql_query($sql)) {
+  echo "<script type='text/javascript'>alert('لم يتم ادخال البيانات بشكل صحيح');</script>";
+}
+else
+{
+echo "<script type='text/javascript'>alert('تم ادخال البيانات بشكل صحيح');</script>";
+}
+		 ?>
