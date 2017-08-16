@@ -278,9 +278,21 @@ while($row=mysql_fetch_array($result))
 <th>اسم العميل </th>
 </tr>
 
-
-	<td></td>
-	<td></td>
+<tr>
+	<?php
+	$sql="SELECT `الجوال` , `اسم_العميل`
+	FROM `الطلب`
+	WHERE `الفرع` ='$branches'
+	";
+	$result=mysql_query($sql);
+	while($rows = mysql_fetch_assoc($result))
+	{
+												?>
+	<td><?php echo $rows['الجوال']; ?></td>
+	<td><?php echo $rows['اسم_العميل']; ?></td>
+	<?php
+								 }
+								 ?>
 </tr>
 				</table>
 
@@ -412,10 +424,21 @@ while($row=mysql_fetch_array($result))
 									<th>التفاصيل </th>
 									<th>رقم الفاتورة </th>
 									</tr>
-
-
-										<td></td>
-										<td></td>
+									<tr>
+										<?php
+										$sql="SELECT `المبلغ` , `رقم_الفاتورة`
+										FROM `الفاتورة`
+										WHERE `الفرع` ='$branches'
+										";
+									 $result=mysql_query($sql);
+									 while($rows = mysql_fetch_assoc($result))
+									 {
+																				 ?>
+										<td><?php echo $rows['المبلغ']; ?></td>
+										<td><?php echo $rows['رقم_الفاتورة']; ?></td>
+										<?php
+																	 }
+																	 ?>
 									</tr>
 													</table>
 														</div>
@@ -456,10 +479,21 @@ while($row=mysql_fetch_array($result))
 													<th>التفاصيل </th>
 													<th>عنوان التقرير </th>
 													</tr>
-
-
-														<td></td>
-														<td></td>
+													<tr>
+														<?php
+														$sql="SELECT `نوع_التقرير` , `عنوان_التقرير`
+														FROM `التقرير`
+														WHERE `الفرع` ='$branches'
+														";
+														$result=mysql_query($sql);
+														while($rows = mysql_fetch_assoc($result))
+														{
+															                    ?>
+														<td><?php echo $rows['نوع_التقرير']; ?></td>
+														<td><?php echo $rows['عنوان_التقرير']; ?></td>
+														<?php
+																					 }
+																					 ?>
 													</tr>
 																	</table>
 																		</div>
