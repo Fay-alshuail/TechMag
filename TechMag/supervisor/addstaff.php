@@ -55,6 +55,9 @@
           <option value="customer_service" >خدمة عملاء </option>
           <option  value="technican" > فني</option>
           </select>
+					<br>
+					<br>
+					<br>
 <br><center><input type="submit" value="حفظ"> </center>
               </ul>
 
@@ -63,11 +66,10 @@
 
                 <ul>
                 <p> : الاسم<input type="text" name="name" id="name" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
-								  <p> : الرقم السري <input type="text" name="password1" id="fonction" data-rule="required" value ="<?php echo randomPassword(); ?>"  data-msg="لو ماعبى التيكست"/></p>
+								  <p> : الرقم السري <input type="text" name="password1" id="password1" data-rule="required" value ="<?php echo randomPassword(); ?>"  data-msg="لو ماعبى التيكست"/></p>
                 <p> : رقم الحساب البنكي <input type="text" name="bank" id="bank" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
                 <p> :  البريد الإلكتروني <input type="email" name="email" id="email" data-rule="required" data-msg="لو ماعبى التيكست"/>  </p>
               :  الفرع  <select name="branches">
-							  <option value="allbranches" name ="allbranches"> جميع الفروع</option>
 							  <?php
 							include '../config.php';
 							//query
@@ -83,7 +85,9 @@
 							}
 							?>
 							</select>
-<br><center><input type="button" value="إلغاء"> </center>
+							<br>
+						<p> <input type="button" value="رجوع" onclick="history.go(-1);" style="margin-right:150px;" ></p>
+
                 </ul>
               </td>
             </table>
@@ -127,13 +131,15 @@
 		mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
 		switch ($job) {
 		case 'technican':
+		$jobt="فني";
 		$sql="INSERT INTO `fixmin`.`الفني` (`الاسم`, `الجوال1`, `الجوال2`, `البريد`, `رقم_الحساب_البنكي`, `المسمى_الوظيفي`, `عنوان_السكن`, `الفرع`, `الرقم_السري`)
-		VALUES ('$name', '$number1','$number2', '$email', '$bank', '$jobs', '$city', '$branch', '$password')";
+		VALUES ('$name', '$number1','$number2', '$email', '$bank', '$jobt', '$city', '$branch', '$password')";
 		break;
 
 		case 'customer_service':
+		$jobt="خدمة عملاء";
 		$sql="INSERT INTO `fixmin`.`خدمة العملاء` (`الاسم`, `الجوال1`, `الجوال2`, `البريد`, `رقم_الحساب_البنكي`, `المسمى_الوظيفي`, `عنوان_السكن`, `الفرع`, `الرقم_السري`)
-				VALUES ('$name', '$number1', '$number2', '$email', '$bank', '$jobs', '$city', '$branch', '$password')";
+				VALUES ('$name', '$number1', '$number2', '$email', '$bank', '$jobt', '$city', '$branch', '$password')";
 	break;
 }
 		if (!mysql_query($sql)) {

@@ -46,11 +46,11 @@
 <form action="#" method="post">
             <table>
 <tr>
-	<th> <input type="submit" value="التعديل على الموظفين " onclick=""></th>
+	<th> <input type="submit" value="التعديل على الموظفين " onclick="location.href='staffedit.php';"></th>
 	<th><input type="submit" value="بحث"></th>
 <th>
 	<select name="branches">
-		<option value="allbranches" name ="allbranches"> جميع الفروع</option>
+		<option value="جميع الفروع" name ="allbranches"> جميع الفروع</option>
 
 	<?php
 	include '../config.php';
@@ -86,8 +86,48 @@
 </tr>
 
 
+<?php
+switch ($branches) {
+	case 'جميع الفروع':
+		?>
+		<tr>
+			<?php
+			$sql="SELECT `المسمى_الوظيفي` , `الاسم`
+			FROM `الفني`
+			";
+			$result=mysql_query($sql);
+			while($rows = mysql_fetch_assoc($result))
+			{
+				                    ?>
+		<td> <?php echo $rows['المسمى_الوظيفي']; ?></td>
+		<td> <?php echo $rows['الاسم']; ?></td>
+		<?php
+									 }
+									 ?>
 
+													</tr>
+													<tr>
+														<?php
+														$sql="SELECT `المسمى_الوظيفي` , `الاسم`
+														FROM `خدمة العملاء`
+														";
+														$result=mysql_query($sql);
+														while($rows = mysql_fetch_assoc($result))
+														{
+															                    ?>
+													<td> <?php echo $rows['المسمى_الوظيفي']; ?></td>
+													<td> <?php echo $rows['الاسم']; ?></td>
 
+													<?php
+																				 }
+																				 ?>
+
+																								</tr>
+																								<?php
+		break;
+
+	default:
+	?>
 <tr>
 	<?php
 	$sql="SELECT `المسمى_الوظيفي` , `الاسم`
@@ -123,6 +163,9 @@
 																		 ?>
 
 																						</tr>
+																						<?php 		break;
+																						}
+?>
 </table>
           </div>
 
