@@ -2920,7 +2920,7 @@ text-align: center;
 /* Footer */
 
 footer {
-background: url("../../images/banner.jpg") 50% 0 repeat-y fixed;
+background: #5eb8c4;
 -webkit-background-size: cover;
 background-size: cover;
 background-position: center;
