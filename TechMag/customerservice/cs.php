@@ -104,7 +104,7 @@
   <div class="modal-contenttrack">
 		<section class="wrapper style2 fade-up">
 			<div class="inner">
-    <span class="close">&times;</span>
+    <span class="closetrack">&times;</span>
 				<h2>تتبع طلب الصيانة</h2>
 				<section style="text-align=right">
 					<table>
@@ -150,7 +150,7 @@ var modal = document.getElementById('mytrack');
 var btn = document.getElementById("track");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var span = document.getElementsByClassName("closetrack")[0];
 
 // When the user clicks the button, open the modal
 btn.onclick = function() {
@@ -270,7 +270,7 @@ window.onclick = function(event) {
 			}
 
 			// When the user clicks on <span> (x), close the modal
-			span.onclick = function() {
+			techspan.onclick = function() {
 			    techmodal.style.display = "none";
 			}
 
