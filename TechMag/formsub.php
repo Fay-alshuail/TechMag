@@ -8,7 +8,7 @@
   top: -20px;
   left: -20px;
   right: 0px;
-  bottom: 0px;
+  bottom: 5px;
   width: auto;
   height: auto;
   background-image: url(images/banner3.jpg);

@@ -22,7 +22,7 @@
   top: -20px;
   left: -20px;
   right: 0px;
-  bottom: 0px;
+  bottom: -140px;
   width: auto;
   height: auto;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
