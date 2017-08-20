@@ -90,7 +90,7 @@ break;
 while($rows=mysql_fetch_array($result))
 {
 ?>
-
+<form>
               <table id = "table2" class ="align-center">
               <td>
                 <ul>
@@ -155,7 +155,7 @@ while($row=mysql_fetch_array($result))
 
 </tr>
 </table>
-
+</form>
         </section>
       </div>
 
@@ -163,3 +163,30 @@ while($row=mysql_fetch_array($result))
 
     <script src="assets/js/main.js"></script>
     </html>
+    <?php
+		include '../config.php';
+
+
+		$number1=filter_input(INPUT_POST,"number1");
+		$email=filter_input(INPUT_POST,"email");
+		$job=$_POST['job'];
+		$branch=$_POST['branches'];
+		mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
+		switch ($job) {
+		case 'technican':
+		$sql="UPDATE `fixmin`.`الفني` SET `الجوال1` = '$number1',
+`الفرع` = '$branch' WHERE `الفني`.`البريد` = '$email'"or die(mysql_error());
+		break;
+
+		case 'customer_service':
+		$sql="UPDATE `fixmin`.`خدمة العملاء` SET `الجوال1` = '$number1',
+`الفرع` = '$branch' WHERE `الفني`.`البريد` = '$email'"or die(mysql_error());
+
+    break;
+}
+		if (!mysql_query($sql)) {
+		  echo "<script type='text/javascript'>alert('لم يتم ادخال البيانات بشكل صحيح');</script>";
+		} else {
+		echo "<script type='text/javascript'>alert('تم ادخال البيانات بشكل صحيح');</script>";
+}
+		?>

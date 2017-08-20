@@ -36,6 +36,61 @@ document.getElementById('cardno').removeAttribute("readOnly");
 }
 
 </script>
+<script type="text/javascript">
+function showhidestatus(){
+
+	document.getElementById('branches').style.display="none";
+	document.getElementById('status').style.display="block";
+	document.getElementById('st').style.display="none";
+	document.getElementById('br').style.display="block";
+
+} </script>
+<script type="text/javascript">
+function SH1(){
+
+	document.getElementById('btntype').style.display="none";
+	document.getElementById('reports').style.display="block";
+	document.getElementById('btntitle').style.display="block";
+	document.getElementById('Rname').style.display="none";
+
+} </script>
+<script type="text/javascript">
+function SH2(){
+
+	document.getElementById('btntitle').style.display="none";
+	document.getElementById('Rname').style.display="block";
+	document.getElementById('btntype').style.display="block";
+	document.getElementById('reports').style.display="none";
+
+} </script>
+<script type="text/javascript">
+function showhidebranches(){
+	document.getElementById('status').style.display="none";
+	document.getElementById('branches').style.display="block";
+	document.getElementById('br').style.display="none";
+	document.getElementById('st').style.display="block";
+
+
+} </script>
+
+<script type="text/javascript">
+function showhideinvoicesearch(){
+	document.getElementById('ip').style.display="none";
+	document.getElementById('stext').style.display="block";
+	document.getElementById('bp').style.display="block";
+	document.getElementById('bran').style.display="none";
+
+
+} </script>
+<script type="text/javascript">
+function showhidebranchsearch(){
+	document.getElementById('stext').style.display="none";
+	document.getElementById('ip').style.display="block";
+	document.getElementById('bran').style.display="block";
+	document.getElementById('bp').style.display="none";
+
+
+} </script>
 		<script>
     if (!Modernizr.touch || !Modernizr.inputtypes.date) {
         $('input[type=date]')
@@ -244,13 +299,12 @@ document.getElementById('cardno').removeAttribute("readOnly");
 										 <img src="images/pic13.png" width="100" height="100">
 									 </center>
 										<h2>العملاء </h2>
-										<section style="text-align=right">
+								<form method="post" action="#five" >		<section style="text-align=right">
 											<table>
 									<tr>
 										<th ><center><input type="submit" value="بحث"> </center></th>
-									<th><input type="text" name="search" placeholder=" ... بحث" style="text-align :right"></th>
 									<th ><select name="branches">
-										<option value="allbranches" name ="allbranches"> جميع الفروع</option>
+										<option value="جميع الفروع" name ="allbranches"> جميع الفروع</option>
 
 <?php
 include '../config.php';
@@ -273,17 +327,57 @@ while($row=mysql_fetch_array($result))
 								</table>
 
 			<table>
+				<?php
+				include '../config.php';
+				$branch=$_POST['branches'];
+				$customer=filter_input(INPUT_POST,"customer");
+				mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
+
+				?>
+				<p>فرع : <?php echo $branch?></p>
 <tr>
 <th>رقم الجوال </th>
 <th>اسم العميل </th>
 </tr>
-
+<?php
+switch ($branch) {
+	case 'جميع الفروع':
+		?>
 <tr>
 	<?php
-	$sql="SELECT `الجوال` , `اسم_العميل`
-	FROM `الطلب`
-	WHERE `الفرع` ='$branches'
-	";
+
+	$sql="SELECT *
+FROM `العميل`";
+	$result=mysql_query($sql);
+	while($rows = mysql_fetch_assoc($result))
+	{
+												?>
+	<td><?php echo $rows['الجوال']; ?></td>
+	<td><?php echo $rows['اسم_العميل']; ?></td>
+	</tr>
+	<?php
+								 }
+								 ?>
+
+
+<?php
+break;
+
+default:
+?>
+<tr>
+	<?php
+
+	$sql="SELECT *
+FROM `العميل`
+WHERE `اسم_العميل` = (
+SELECT `اسم_العميل`
+FROM `الطلب`
+WHERE `رقم_الطلب` = (
+SELECT `رقم_الطلب`
+FROM `طلب الصيانة`
+WHERE `وصف_الفرع` = '$branch' ) )";
+
 	$result=mysql_query($sql);
 	while($rows = mysql_fetch_assoc($result))
 	{
@@ -292,11 +386,14 @@ while($row=mysql_fetch_array($result))
 	<td><?php echo $rows['اسم_العميل']; ?></td>
 	<?php
 								 }
+							 }
 								 ?>
+
 </tr>
+
 				</table>
 
-			</section>
+			</section> </form>
 			</div>
 								</section>
 								<!-- six -->
@@ -308,15 +405,26 @@ while($row=mysql_fetch_array($result))
 												 </center>
 													<h2>لوحة التحكم بالطلبات </h2>
 													<section style="text-align=right">
-														<table >
+													<form action="#six" method="post">	<table >
 														<tr>
-														<th style="padding: 0 0 0 0 ;"><input type="button" value="مقبول"style="width:1em; text-align:center;"></th>
-														<th style="padding: 0 0 0 0 ;" ><input type="button" value=" مرفوض"></th>
-														<th style="padding: 0 0 0 0 ;"><input type="button" value="قيد الانتظار"></th>
-														<th style="padding: 0 0 0 0 ;"><input type="button" value="تم الإصلاح "></th>
-														<th style="padding: 0 0 0 0 ;"><input type="button" value="مغلق" style="width:1em; text-align:center;"></th>
-														<th > <select name="branches">
-															<option value="allbranches" name ="allbranches"> جميع الفروع</option>
+												<th style="padding: 0 0 0 0 ;" ><input type="submit" value=" بحث"></th>
+												<th style="padding: 0 0 0 0 ;" ><input type="button" id="st" onclick=showhidestatus() value=" بحث حسب حالة الطلب"></th>
+												<th style="padding: 0 0 0 0 ;" ><input type="button"   id="br"onclick=showhidebranches() value=" بحث حسب الفرع "></th>
+
+<th>
+<select name="status" id="status" style="display:none;">
+<option >حالة الطلب</option>
+<option value="قيد الإنتظار">قيد الإنتظار</option>
+<option value="مرفوض">مرفوض</option>
+<option value="مقبول">مقبول</option>
+<option value="تم الإصلاح">تم الإصلاح</option>
+<option value="قيد الإصلاح">قيد الإصلاح</option>
+
+</select>
+</th>
+														<th > <select name="branches" id="branches" style="display:none;">
+															<option > فضلاً اختر الفرع</option>
+															<option value="جميع الفروع" name ="allbranches"> جميع الفروع</option>
 
 					<?php
 					include '../config.php';
@@ -336,32 +444,185 @@ while($row=mysql_fetch_array($result))
 														 </select></th>
 														</tr>
 														</table>
-														<table  style="border: 1px solid black;">
+														<?php
+														include '../config.php';
+														$branches=$_POST['branches'];
+														mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
+
+														?>
+														<table  style="border: 1px solid black;" id="show1">
+															<p>فرع : <?php echo $branches?></p>
+
 											<tr >
 
 												<th style="border: 1px solid #c2d9ed;">مشكلة إضافية </th>
 												<th style="border: 1px solid #c2d9ed;">تاريخ الاستحقاق </th>
 												<th style="border: 1px solid #c2d9ed;">تاريخ الاستلام </th>
 												<th style="border: 1px solid #c2d9ed;">الحالة </th>
-												<th style="border: 1px solid #c2d9ed;">الفني المسؤول </th>
-												<th style="border: 1px solid #c2d9ed;"> تم إرسال الطلب بواسطة </th>
 												<th style="border: 1px solid #c2d9ed;"> التفصيل</th>
 												<th style="border: 1px solid #c2d9ed;"> نوع المشكلة</th>
 											<th style="border: 1px solid #c2d9ed;"> رقم الطلب </th>
+											<th style="border: 1px solid #c2d9ed;"> تم إرسال الطلب بواسطة </th>
+											<th style="border: 1px solid #c2d9ed;">الفني المسؤول </th>
+
 											</tr>
 
+											<?php
+											switch ($branches) {
+												case 'جميع الفروع':
+													?>
+													<tr>
+														<?php
+														$sql=("SELECT *
+															FROM `طلب الصيانة`");
+														$result=mysql_query($sql);
+														while($rows = mysql_fetch_assoc($result))
+														{
+															                    ?>
+													<td style="border: 1px solid #073660;"><?php echo $rows['مشكلة_إضافية']; ?></td>
+													<td style="border: 1px solid #073660;"> <?php echo $rows['وقت_الاستحقاق']; ?></td>
+													<td style="border: 1px solid #073660;"> <?php echo $rows['تاريخ_الاستلام']; ?></td>
+													<td style="border: 1px solid #073660;"> <?php echo $rows['حالة_الطلب']; ?></td>
+													<td style="border: 1px solid #073660;"> <?php echo $rows['التفصيل']; ?></td>
+													<td style="border: 1px solid #073660;"> <?php echo $rows['نوع_المشكلة']; ?></td>
+													<td style="border: 1px solid #073660;"> <?php echo $rows['رقم_الطلب']; ?></td>
 
-												<td style="border: 1px solid #073660;"></td>
-												<td style="border: 1px solid #073660;"></td>
-												<td style="border: 1px solid #073660;"></td>
-												<td style="border: 1px solid #073660;"></td>
-												<td style="border: 1px solid #073660;"></td>
-												<td style="border: 1px solid #073660;"></td>
-												<td style="border: 1px solid #073660;"></td>
-												<td style="border: 1px solid #073660;"></td>
-												<td style="border: 1px solid #073660;"></td>
-											</tr>
-															</table>
+													<?php
+													$ON=$rows['رقم_الطلب'];
+													$sql1= "SELECT `الاسم` FROM `خدمة العملاء` WHERE `البريد`=(SELECT `بريد_خ_ع` FROM `طلب مرسل` WHERE `رقم_الطلب`='$ON')";
+													$result1=mysql_query($sql1);
+													while($rows1 = mysql_fetch_assoc($result1))
+													{ ?>
+													<td style="border: 1px solid #073660;"><?php echo $rows1['الاسم']?> </td>
+<?php }?>
+<?php $ON1=$rows['رقم_الطلب'];
+$sql2= "SELECT `الاسم` FROM `الفني` WHERE `البريد`=(SELECT `بريد_الفني` FROM `طلب مرسل` WHERE `رقم_الطلب`='$ON')";
+$result2=mysql_query($sql2);
+while($rows2 = mysql_fetch_assoc($result2))
+{ ?>
+	<td style="border: 1px solid #073660;"><?php echo $rows2['الاسم']?> </td>
+<?php }?>
+
+													</tr>
+													<?php
+																				 }
+																				 ?>
+
+																				 <?php
+															 break;
+
+															 default:
+															 ?>
+
+															 <tr>
+				 												<?php
+																$sql=("SELECT *
+																	FROM `طلب الصيانة`
+																	WHERE `وصف_الفرع` = '$branches'");
+				 												$result=mysql_query($sql);
+				 												while($rows = mysql_fetch_assoc($result))
+				 												{
+				 													                    ?>
+																											<td style="border: 1px solid #073660;"><?php echo $rows['مشكلة_إضافية']; ?></td>
+																											<td style="border: 1px solid #073660;"> <?php echo $rows['وقت_الاستحقاق']; ?></td>
+																											<td style="border: 1px solid #073660;"> <?php echo $rows['تاريخ_الاستلام']; ?></td>
+																											<td style="border: 1px solid #073660;"> <?php echo $rows['حالة_الطلب']; ?></td>
+																											<td style="border: 1px solid #073660;"> <?php echo $rows['التفصيل']; ?></td>
+																											<td style="border: 1px solid #073660;"> <?php echo $rows['نوع_المشكلة']; ?></td>
+																											<td style="border: 1px solid #073660;"> <?php echo $rows['رقم_الطلب']; ?></td>
+																											<?php
+																											$ON=$rows['رقم_الطلب'];
+																											$sql1= "SELECT `الاسم` FROM `خدمة العملاء` WHERE `البريد`=(SELECT `بريد_خ_ع` FROM `طلب مرسل` WHERE `رقم_الطلب`='$ON')";
+																											$result1=mysql_query($sql1);
+																											while($rows1 = mysql_fetch_assoc($result1))
+																											{ ?>
+																											<td style="border: 1px solid #073660;"><?php echo $rows1['الاسم']?> </td>
+														<?php }?>
+														<?php $ON1=$rows['رقم_الطلب'];
+														$sql2= "SELECT `الاسم` FROM `الفني` WHERE `البريد`=(SELECT `بريد_الفني` FROM `طلب مرسل` WHERE `رقم_الطلب`='$ON')";
+														$result2=mysql_query($sql2);
+														while($rows2 = mysql_fetch_assoc($result2))
+														{ ?>
+															<td style="border: 1px solid #073660;"><?php echo $rows2['الاسم']?> </td>
+														<?php }?>
+		</tr>
+		</table>
+				 											<?php
+				 																		 }
+																					 }
+				 																		 ?>
+																						 <?php
+																						 include '../config.php';
+																						 $status=$_POST['status'];
+																						 mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
+
+																						 ?>
+
+																						 <table  style="border: 1px solid black;"id="show">
+
+<p>حالة الطلب  : <?php echo $status?></p>
+																						 <tr >
+																						   <th style="border: 1px solid #c2d9ed;">الفرع</th>
+																						 <th style="border: 1px solid #c2d9ed;">مشكلة إضافية </th>
+																						 <th style="border: 1px solid #c2d9ed;">تاريخ الاستحقاق </th>
+																						 <th style="border: 1px solid #c2d9ed;">تاريخ الاستلام </th>
+																						 <th style="border: 1px solid #c2d9ed;">الحالة </th>
+																						 <th style="border: 1px solid #c2d9ed;"> التفصيل</th>
+																						 <th style="border: 1px solid #c2d9ed;"> نوع المشكلة</th>
+																						 <th style="border: 1px solid #c2d9ed;"> رقم الطلب </th>
+																						 <th style="border: 1px solid #c2d9ed;"> تم إرسال الطلب بواسطة </th>
+																						 <th style="border: 1px solid #c2d9ed;">الفني المسؤول </th>
+
+																						 </tr>
+
+																						 <?php
+																						 switch ($status) {
+																						 default:
+																						 ?>
+																						 <tr>
+																						 <?php
+																						 $sql=("SELECT * FROM `طلب الصيانة` WHERE `حالة_الطلب`='$status'");
+																						 $result=mysql_query($sql);
+																						 while($rows = mysql_fetch_assoc($result))
+																						 {
+																						                       ?>
+																						 <td style="border: 1px solid #073660;"><?php echo $rows['وصف_الفرع']; ?></td>
+																						 <td style="border: 1px solid #073660;"><?php echo $rows['مشكلة_إضافية']; ?></td>
+																						 <td style="border: 1px solid #073660;"> <?php echo $rows['وقت_الاستحقاق']; ?></td>
+																						 <td style="border: 1px solid #073660;"> <?php echo $rows['تاريخ_الاستلام']; ?></td>
+																						 <td style="border: 1px solid #073660;"> <?php echo $rows['حالة_الطلب']; ?></td>
+																						 <td style="border: 1px solid #073660;"> <?php echo $rows['التفصيل']; ?></td>
+																						 <td style="border: 1px solid #073660;"> <?php echo $rows['نوع_المشكلة']; ?></td>
+																						 <td style="border: 1px solid #073660;"> <?php echo $rows['رقم_الطلب']; ?></td>
+
+																						 <?php
+																						 $ON=$rows['رقم_الطلب'];
+																						 $sql1= "SELECT `الاسم` FROM `خدمة العملاء` WHERE `البريد`=(SELECT `بريد_خ_ع` FROM `طلب مرسل` WHERE `رقم_الطلب`='$ON')";
+																						 $result1=mysql_query($sql1);
+																						 while($rows1 = mysql_fetch_assoc($result1))
+																						 { ?>
+																						 <td style="border: 1px solid #073660;"><?php echo $rows1['الاسم']?> </td>
+																						 <?php }?>
+																						 <?php $ON1=$rows['رقم_الطلب'];
+																						 $sql2= "SELECT `الاسم` FROM `الفني` WHERE `البريد`=(SELECT `بريد_الفني` FROM `طلب مرسل` WHERE `رقم_الطلب`='$ON')";
+																						 $result2=mysql_query($sql2);
+																						 while($rows2 = mysql_fetch_assoc($result2))
+																						 { ?>
+																						 <td style="border: 1px solid #073660;"><?php echo $rows2['الاسم']?> </td>
+																						 <?php }?>
+
+																						 </tr>
+																						 <?php
+																						              }
+
+																						    break;
+
+																						                  }
+																						                  ?>
+
+
+
+															</table></form>
 						</section>
 						</div>
 											</section>
@@ -373,28 +634,19 @@ while($row=mysql_fetch_array($result))
 																 <img src="images/pic14.png" width="100" height="100">
 															 </center>
 																<h2>الفواتير </h2>
-																<section style="text-align=right">
-																	<p> رفع نموذج فاتورة</p>
-																	<table>
-															<tr>
-																<th ><center><input type="submit" value="بحث"> </center></th>
-															<th><input type="text" name="search" placeholder="" style="text-align :right"></th>
-															<th >
-																<center><input type="submit" value="استعراض"> </center>
-															</th>
-															</tr>
-														</table>
-																	</section>
+
 
 																	<section style="text-align=right">
 <p>قائمة الفواتير </p>
+<form action="#seven" method="post">
 <table>
 <tr>
 <th ><center><input type="submit" value="بحث"> </center></th>
-<th><input type="text" name="search" placeholder=" ... بحث" style="text-align :right"></th>
+<th><input type="button" name="branchessearch" id="bp"value="بحث بحسب الفرع " onclick="showhidebranchsearch()"></th>
+<th><input type="button" name="invoicesearch" id="ip" value="بحث بحسب رقم الفاتورة" onclick="showhideinvoicesearch()"></th>
+<th ><input style="display:none;" type="text" name="invoice_number"id="stext"  placeholder=" ... بحث" style="text-align :right"></th>
 <th >
-	<select name="branches">
-		<option value="allbranches" name ="allbranches"> جميع الفروع</option>
+	<select style="display:none;" id="bran" name="branches2">
 
 	<?php
 	include '../config.php';
@@ -414,32 +666,61 @@ while($row=mysql_fetch_array($result))
 	 </select>
 </th>
 </tr>
-</table>
+</table></form>
 
 
 
 
 												<table>
 									<tr>
-									<th>التفاصيل </th>
+									<th>المبلغ </th>
+									<th>الكمية</th>
+									<th>التاريخ</th>
 									<th>رقم الفاتورة </th>
 									</tr>
-									<tr>
+
 										<?php
-										$sql="SELECT `المبلغ` , `رقم_الفاتورة`
+										include '../config.php';
+										$branches2=$_POST['branches2'];
+										$invoice_number=filter_input(INPUT_POST,"invoice_number");
+										mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
+if (!$branches2){
+	$sql="SELECT *
+	FROM `الفاتورة`WHERE `رقم_الفاتورة`=$invoice_number " or die(mysql_error());
+	$result=mysql_query($sql);
+	while($rows = mysql_fetch_assoc($result))
+	{
+											 ?>
+											 <tr>
+	<td><?php echo $rows['المبلغ']; ?></td>
+	<td><?php echo $rows['الكمية']; ?></td>
+	<td><?php echo $rows['التاريخ']; ?></td>
+	<td><?php echo $rows['رقم_الفاتورة']; ?></td>
+</tr>
+	<?php
+								 }
+
+
+
+}{
+										$sql="SELECT *
 										FROM `الفاتورة`
-										WHERE `الفرع` ='$branches'
-										";
+										WHERE `وصف_الفرع` ='$branches2'" or die(mysql_error());
 									 $result=mysql_query($sql);
 									 while($rows = mysql_fetch_assoc($result))
 									 {
 																				 ?>
-										<td><?php echo $rows['المبلغ']; ?></td>
-										<td><?php echo $rows['رقم_الفاتورة']; ?></td>
+																				 <p>   فرع : <?php echo $branches2 ?> </p>
+																				 <tr>
+																				 <td><?php echo $rows['المبلغ']; ?></td>
+																				 <td><?php echo $rows['الكمية']; ?></td>
+																				 <td><?php echo $rows['التاريخ']; ?></td>
+																				 <td><?php echo $rows['رقم_الفاتورة']; ?></td>
+																				 </tr>
 										<?php
-																	 }
+									} }
 																	 ?>
-									</tr>
+
 													</table>
 														</div>
 												</section>
@@ -457,18 +738,21 @@ while($row=mysql_fetch_array($result))
 
 																					<section style="text-align=right">
 
-				<table>
+				<table><form action="#eight" method="post">
 				<tr>
 				<th ><center><input type="submit" value="بحث"> </center></th>
-				<th><input type="text" name="search" placeholder=" ... بحث" style="text-align :right"></th>
+				<th><input type="button" id="btntype" value="بحث حسب نوع التقرير " onclick="SH1()"></th>
+				<th><input type="button" id="btntitle" value="بحث حسب عنوان التقرير" onclick="SH2()"></th>
+				<th><input  style="display:none;"type="text" id="Rname" name="reportname" placeholder=" ... بحث" style="text-align :right"></th>
 				<th >
-				<select name="branches">
+				<select style="display:none;"  id="reports"name="reports">
 				<option value="" style="display:none">نوع التقرير</option>
-				<option> </option>
-				<option> </option>
+				<option>مبيعات </option>
+				<option> عملاء</option>
+				<option> موظفين</option>
 				</select>
 				</th>
-				</tr>
+			</tr></form>
 				</table>
 
 
@@ -476,14 +760,37 @@ while($row=mysql_fetch_array($result))
 <p>قائمة التقارير</p>
 																<table>
 													<tr>
-													<th>التفاصيل </th>
+													<th>نوع التقرير </th>
 													<th>عنوان التقرير </th>
+													<th>بريد المرسل</th>
+
 													</tr>
 													<tr>
 														<?php
-														$sql="SELECT `نوع_التقرير` , `عنوان_التقرير`
+														include '../config.php';
+														$reports=$_POST['reports'];
+														$reportname=filter_input(INPUT_POST,"reportname");
+														mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
+if(!$reports){
+	$sql="SELECT *
+	FROM `التقرير`
+	WHERE `عنوان_التقرير` ='$reportname'
+	";
+	$result=mysql_query($sql);
+	while($rows = mysql_fetch_assoc($result))
+	{
+												?>
+	<td><?php echo $rows['نوع_التقرير']; ?></td>
+	<td><?php echo $rows['عنوان_التقرير']; ?></td>
+	<td><?php echo $rows['بريد_الفني']; ?> <?php echo $rows['بريد_خ_ع']; ?></td>
+
+	<?php
+	}
+
+}
+														{$sql="SELECT *
 														FROM `التقرير`
-														WHERE `الفرع` ='$branches'
+														WHERE `نوع_التقرير` ='$reports'
 														";
 														$result=mysql_query($sql);
 														while($rows = mysql_fetch_assoc($result))
@@ -491,8 +798,10 @@ while($row=mysql_fetch_array($result))
 															                    ?>
 														<td><?php echo $rows['نوع_التقرير']; ?></td>
 														<td><?php echo $rows['عنوان_التقرير']; ?></td>
+														<td><?php echo $rows['بريد_الفني']; ?> <?php echo $rows['بريد_خ_ع']; ?></td>
+
 														<?php
-																					 }
+													}}
 																					 ?>
 													</tr>
 																	</table>

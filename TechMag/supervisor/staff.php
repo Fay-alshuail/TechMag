@@ -101,11 +101,12 @@ switch ($branches) {
 				                    ?>
 		<td> <?php echo $rows['المسمى_الوظيفي']; ?></td>
 		<td> <?php echo $rows['الاسم']; ?></td>
+		</tr>
 		<?php
 									 }
 									 ?>
 
-													</tr>
+
 													<tr>
 														<?php
 														$sql="SELECT `المسمى_الوظيفي` , `الاسم`
