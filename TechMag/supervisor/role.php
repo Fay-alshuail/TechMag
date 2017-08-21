@@ -39,57 +39,138 @@
 
           <div class="inner">
             <center>
-             <img src="images/pic22.png" width="100" height="100">
+						<img src="images/pic16.png" width="100" height="100"><h3>تحديد أدوار المستخدمين</h3>
            </center>
-<h2>إضافةموظف </h2>
-
 
             <table>
 <tr>
-<th>  :  الفرع <select name="branches">
-   <option value="all"> جميع الفروع</option>
-   <option ></option>
-   </select></th>
+<th>
+	:  المسمى الوظيف <select name="job">
+	<option> فضلا اختر المسمى الوظيفي</option>
+	<option value="supervisor" >المشرف</option>
+	<option value="customer_service" >خدمة عملاء </option>
+	<option  value="technican" > فني</option>
+	</select>
+ </th>
 </tr>
             </table>
+						<!-- case supervisor -->
 <table>
 <tr>
-  <th> المسمى الوظيفي</th>
-<th>اسم الموظف </th>
+<th>بيانات الموظفين
+	<form method="post" action="#">
+	  <input type="checkbox" name="staff" value="add"> إضـافة<br>
+	  <input type="checkbox" name="staff" value="edit"> تعديـل<br>
+		<input type="checkbox" name="staff" value="view"> عـرض<br>
+	  <input type="checkbox" name="staff" value="delete"> إلغـاء<br>
+	</form>
+</th>
+<th> بيانات الاشتراك
+	<form method="post" action="#">
+	  <input type="checkbox" name="subs" value="add"> إضـافة<br>
+	  <input type="checkbox" name="subs" value="edit"> تعديـل<br>
+		<input type="checkbox" name="subs" value="view"> عـرض<br>
+	  <input type="checkbox" name="subs" value="delete"> إلغـاء<br>
+	</form>
+</th>
 </tr>
+
+<tr>
+	<th>بيانات الفروع والمخازن
+		<form method="post" action="#">
+		  <input type="checkbox" name="info" value="add"> إضـافة<br>
+		  <input type="checkbox" name="info" value="edit"> تعديـل<br>
+			<input type="checkbox" name="info" value="view"> عـرض<br>
+		  <input type="checkbox" name="info" value="delete"> إلغـاء<br>
+		</form>
+	</th>
+	<th>التقارير/الرسائل
+		<form method="post" action="#">
+		  <input type="checkbox" name="subs" value="add"> إضـافة<br>
+		  <input type="checkbox" name="subs" value="edit"> تعديـل<br>
+			<input type="checkbox" name="subs" value="view"> عـرض<br>
+		  <input type="checkbox" name="subs" value="delete"> إلغـاء<br>
+		</form>
+	</th>
+</tr>
+<th>الطلبـات
+	<form method="post" action="#">
+	  <input type="checkbox" name="staff" value="add"> عـرض<br>
+	</form>
+</th>
+
 </table>
+						<!-- END supervisor -->
+
+						<!-- case customer_service -->
+						<table>
+						<tr>
+						<th>الطلبـات
+							<form method="post" action="#">
+							  <input type="checkbox" name="problem" value="add"> إضـافة<br>
+								<input type="checkbox" name="problem" value="view"> عـرض<br>
+								<input type="checkbox" name="problem" value="reply"> رد<br>
+							  <input type="checkbox" name="problem" value="close"> إغلاق<br>
+							</form>
+						</th>
+						<th> البيانات الخاصة
+							<form method="post" action="#">
+							  <input type="checkbox" name="personalinfo" value="edit"> تعديـل<br>
+								<input type="checkbox" name="personalinfo" value="view"> عـرض<br>
+							</form>
+						</th>
+						</tr>
+
+						<tr>
+							<th>بيانات العملاء
+								<form method="post" action="#">
+								  <input type="checkbox" name="customerinfo" value="add"> إضـافة<br>
+									<input type="checkbox" name="customerinfo" value="view"> عـرض<br>
+								</form>
+							</th>
+							<th>التقارير
+								<form method="post" action="#">
+								  <input type="checkbox" name="reports" value="add"> إضـافة<br>
+								</form>
+							</th>
+						</tr>
+						</table>
+						<!-- END customer_service -->
+
+
+						<!-- case technican -->
+						<table>
+						<tr>
+						<th>الطلبـات
+							<form method="post" action="#">
+								<input type="checkbox" name="problemtech" value="view"> عـرض<br>
+							  <input type="checkbox" name="problemtech" value="accept">قبول<br>
+							  <input type="checkbox" name="problemtech" value="reject">رفض<br>
+								<input type="checkbox" name="problemtech" value="reply"> رد<br>
+							</form>
+						</th>
+						<th> البيانات الخاصة
+							<form method="post" action="#">
+							  <input type="checkbox" name="personalinfo" value="edit"> تعديـل<br>
+								<input type="checkbox" name="personalinfo" value="view"> عـرض<br>
+							</form>
+						</th>
+						</tr>
+						</table>
+						<!-- END technican -->
+
           </div>
 
+
 <table>
 <tr>
-  <!--<th><input type="submit" value="حفظ التغييرات" onclick="visible()"> </th>-->
-
-<th><input type="submit" value="حفظ التغييرات" > </th>
-  <th><input type="button" value="إلغاء"></th>
-  <th><input type="button" value="تعطيل المستخدم"></th>
+<th><center><input type="submit" value="حفظ" ></center></th>
 </tr>
 </table>
+
 <div id="unvisible" hidden="hidden" >
   <table id = "table2" class ="align-center">
-  <td>
-    <ul>
-      <p> : رقم الجوال 1<input type="text" name="number1" id="number1" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
-  <p> : رقم الجوال 2<input type="text" name="number2" id="number2" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
-  <p> : عنوان السكن - المدينة <input type="text" name="city" id="city" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
-  <p>:  المسمى الوظيفي <input type="text" name="bank" id="bank" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
 
-    </ul>
-
-  </td>
-  <td>
-
-      <ul>
-      <p> : الاسم<input type="text" name="name" id="name" data-rule="required" data-msg="لو ماعبى التيكست"/> </p>
-      <p> : رقم الحساب البنكي <input type="text" name="bank" id="bank" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
-      <p> :  البريد الإلكتروني <input type="email" name="email" id="email" data-rule="required" data-msg="لو ماعبى التيكست"/>  </p>
-      <p>:  الفرع   <input type="text" name="bank" id="bank" data-rule="required" data-msg=" لو ماعبى التيكست"/> </p>
-    </ul>
-  </td>
 </table>
 </div>
         </section>
@@ -104,3 +185,8 @@
 
     <script src="assets/js/main.js"></script>
     </html>
+		<?php
+		/// include '../config.php';
+		$job=$_POST['job'];
+
+		?>

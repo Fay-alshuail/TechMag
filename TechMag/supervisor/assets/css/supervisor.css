@@ -2190,6 +2190,7 @@ input[type="date"],
 	input[type="password"],
 	input[type="email"],
 	input[type="tel"],
+	input[type="checkbox"],
 	select,
 	textarea {
 
