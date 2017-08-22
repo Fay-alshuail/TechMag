@@ -26,8 +26,6 @@
 		</section>
 
 </body>
-</html>
-
 
 <!-- Wrapper -->
 			<div id="wrapper">
@@ -43,11 +41,11 @@
 	<div>
 	<div class="field half first">
 		<label for="name">الاسـم</label>
-		<input type="text" name="name" id="name" />
+		<input type="text" name="name" id="name" value="<?php echo $rows["الاسم"];?>" />
 	</div>
 		<div class="field half">
 		<label for="name">رقم الجوال</label>
-		<input type="text" name="phone" id="phone" />
+		<input type="text" name="phone" id="phone" value="<?php echo $rows["الجوال1"];?>" />
 	</div>
 </div>
 </form>
@@ -55,41 +53,65 @@
 <form method="post" action="#">
 	<div class="field half first">
 		<label for="branch">الفر ع</label>
-		<input type="text" name="branch" id="branch" />
+		<input type="text" name="branch" id="branch" readOnly="true" value="<?php echo $rows["الفرع"];?>" />
 	</div>
 		<div class="field half">
 		<label for="job">المسمى الوظيفي</label>
-		<input type="text" name="job" id="job" />
+		<input type="text" name="job" id="job"readOnly="true" value="<?php echo $rows["المسمى_الوظيفي"];?>" />
 	</div>
 	<div class="field half first">
 		<label for="bank">رقم حساب البنك</label>
-		<input type="text" name="bank" id="bank" />
+		<input type="text" name="bank" id="bank" readOnly="true" value="<?php echo $rows["رقم_الحساب_البنكي"];?>"/>
 	</div>
 		<div class="field half">
 		<label for="phone2">رقم الجوال 2</label>
-		<input type="text" name="phone2" id="phone2" />
+		<input type="text" name="phone2" id="phone2" value="<?php echo $rows["الجوال2"];?>" />
 	</div>
 	<div class="field half first">
 		<label for="email">البريد الإلكتروني</label>
-		<input type="text" name="email" id="email" />
+		<input type="text" name="email" id="email" readOnly="true" value="<?php echo $rows["البريد"];?>" />
 	</div>
 		<div class="field half">
 		<label for="address">عنوان السكن</label>
-		<input type="text" name="address" id="address" />
+		<input type="text" name="address" id="address"  value="<?php echo $rows["عنوان_السكن"];?>"/>
 	</div>
 </form>
 
 <div>
-<center>
-<ul class="actions" margin-top="7em">
-<li><a href="#" class="button">تعديل</a></li>
-<li><a href="#" class="button">مسح</a></li>
-<li><a href="#" class="button">حفظ</a></li>
-</ul>
-</center>
+	<table>
+	<tr>
+	<center>
+	  <th ><input type="submit" value="حفظ التغييرات" > </th>
+	    <th><input type="button" value="تـعـديـل " onclick=showhide()></th>
+	  <th> <input type="button" value="رجوع" onclick="history.go(-1);" style="margin-right:150px;" ></th>
+	</center>
+	</tr>
+	</table>
+
 </div>
 
 </div>
 </section>
 
 </div>
+</html>
+<?php
+include '../config.php';
+
+
+$phone1=filter_input(INPUT_POST,"phone1");
+$phone2=filter_input(INPUT_POST,"phone2");
+$address=filter_input(INPUT_POST,"address");
+
+mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
+
+$sql="UPDATE `fixmin`.`خدمة العملاء` SET `الجوال1`,`الجوال2`,`عنوان_السكن` = '$number1','$number2', '$address'"or die(mysql_error());
+
+break;
+}
+if (!mysql_query($sql)) {
+	echo "<script type='text/javascript'>alert('لم يتم ادخال البيانات بشكل صحيح');</script>";
+} else {
+echo "<script type='text/javascript'>alert('تم ادخال البيانات بشكل صحيح');</script>";
+}
+?>
