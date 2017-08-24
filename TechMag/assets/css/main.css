@@ -1846,17 +1846,17 @@ a {
 
 
 		.button.special {
-			background-color: #75dcff;
+			background-color: #5eb8c4;
 			color: #ffffff !important;
 		}
 
 
 			.button.special:hover {
-				background-color: #f44066;
+				background-color: #3b8e99;
 			}
 
 			.button.special:active {
-				background-color: #f21040;
+				background-color: #0cb7ce;
 			}
 
 		@media screen and (max-width: 480px) {

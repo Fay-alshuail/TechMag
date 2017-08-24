@@ -35,7 +35,7 @@
 
     <!-- Wrapper -->
       <div id="wrapper" >
-        <section id="one" class="wrapper style2 spotlights" style="background-color:#587699; color:#ffffff;">
+        <section id="one" class="wrapper style2 spotlights" style="background-color:#587699;">
 
           <div class="inner">
             <center>
@@ -45,27 +45,27 @@
             <table>
 <tr>
 <th>
-	:  المسمى الوظيف <select name="job">
-	<option> فضلا اختر المسمى الوظيفي</option>
-	<option value="supervisor" >المشرف</option>
-	<option value="customer_service" >خدمة عملاء </option>
-	<option  value="technican" > فني</option>
-	</select>
+<center>
+	<button type="button" class="button" onclick="showtech()">أدوار الفني</button>
+	<button type="button" class="button" onclick="showcs()">أدوار خدمة العملاء</button>
+	<button type="button" class="button" onclick="showsup()">أدوار المشرف</button>
+</center>
+
  </th>
 </tr>
             </table>
 						<!-- case supervisor -->
-<table>
+<table style="visibility:hidden" id="super">
 <tr>
-<th>بيانات الموظفين
-	<form method="post" action="#">
+<th>: بيانات الموظفين
+	<form method="post" action="#"  style="visibl">
 	  <input type="checkbox" name="staff" value="add"> إضـافة<br>
 	  <input type="checkbox" name="staff" value="edit"> تعديـل<br>
 		<input type="checkbox" name="staff" value="view"> عـرض<br>
 	  <input type="checkbox" name="staff" value="delete"> إلغـاء<br>
 	</form>
 </th>
-<th> بيانات الاشتراك
+<th>: بيانات الاشتراك
 	<form method="post" action="#">
 	  <input type="checkbox" name="subs" value="add"> إضـافة<br>
 	  <input type="checkbox" name="subs" value="edit"> تعديـل<br>
@@ -76,7 +76,7 @@
 </tr>
 
 <tr>
-	<th>بيانات الفروع والمخازن
+	<th>: بيانات الفروع والمخازن
 		<form method="post" action="#">
 		  <input type="checkbox" name="info" value="add"> إضـافة<br>
 		  <input type="checkbox" name="info" value="edit"> تعديـل<br>
@@ -84,7 +84,7 @@
 		  <input type="checkbox" name="info" value="delete"> إلغـاء<br>
 		</form>
 	</th>
-	<th>التقارير/الرسائل
+	<th>: التقارير/الرسائل
 		<form method="post" action="#">
 		  <input type="checkbox" name="subs" value="add"> إضـافة<br>
 		  <input type="checkbox" name="subs" value="edit"> تعديـل<br>
@@ -93,7 +93,7 @@
 		</form>
 	</th>
 </tr>
-<th>الطلبـات
+<th>: الطلبـات
 	<form method="post" action="#">
 	  <input type="checkbox" name="staff" value="add"> عـرض<br>
 	</form>
@@ -103,9 +103,9 @@
 						<!-- END supervisor -->
 
 						<!-- case customer_service -->
-						<table>
+						<table style="visibility:hidden" id="cs">
 						<tr>
-						<th>الطلبـات
+						<th>: الطلبـات
 							<form method="post" action="#">
 							  <input type="checkbox" name="problem" value="add"> إضـافة<br>
 								<input type="checkbox" name="problem" value="view"> عـرض<br>
@@ -113,7 +113,7 @@
 							  <input type="checkbox" name="problem" value="close"> إغلاق<br>
 							</form>
 						</th>
-						<th> البيانات الخاصة
+						<th>: البيانات الخاصة
 							<form method="post" action="#">
 							  <input type="checkbox" name="personalinfo" value="edit"> تعديـل<br>
 								<input type="checkbox" name="personalinfo" value="view"> عـرض<br>
@@ -122,13 +122,13 @@
 						</tr>
 
 						<tr>
-							<th>بيانات العملاء
+							<th>: بيانات العملاء
 								<form method="post" action="#">
 								  <input type="checkbox" name="customerinfo" value="add"> إضـافة<br>
 									<input type="checkbox" name="customerinfo" value="view"> عـرض<br>
 								</form>
 							</th>
-							<th>التقارير
+							<th>: التقارير
 								<form method="post" action="#">
 								  <input type="checkbox" name="reports" value="add"> إضـافة<br>
 								</form>
@@ -139,9 +139,9 @@
 
 
 						<!-- case technican -->
-						<table>
+						<table style="visibility:hidden" id="tech">
 						<tr>
-						<th>الطلبـات
+						<th>: الطلبـات
 							<form method="post" action="#">
 								<input type="checkbox" name="problemtech" value="view"> عـرض<br>
 							  <input type="checkbox" name="problemtech" value="accept">قبول<br>
@@ -149,7 +149,7 @@
 								<input type="checkbox" name="problemtech" value="reply"> رد<br>
 							</form>
 						</th>
-						<th> البيانات الخاصة
+						<th>: البيانات الخاصة
 							<form method="post" action="#">
 							  <input type="checkbox" name="personalinfo" value="edit"> تعديـل<br>
 								<input type="checkbox" name="personalinfo" value="view"> عـرض<br>
@@ -177,16 +177,17 @@
       </div>
 
     </body>
-    <script>
-    function visible() {
-        document.getElementById('unvisible').removeAttribute("hidden");
-    }
-    </script>
+		<script>
+		function showsup() {
+				document.getElementById("super").style.visibility= "visible";
+		}
+		function showcs() {
+				document.getElementById("cs").style.visibility= "visible";
+		}
+		function showtech() {
+				document.getElementById("tech").style.visibility= "visible";
+		}
+		</script>
 
     <script src="assets/js/main.js"></script>
     </html>
-		<?php
-		/// include '../config.php';
-		$job=$_POST['job'];
-
-		?>
