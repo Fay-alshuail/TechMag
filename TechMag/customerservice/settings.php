@@ -3,7 +3,7 @@
 		<title>البيانات الشخصية</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-
+.
 		<link rel="stylesheet" href="../assets/css/style.css" />
 
 	</head>
@@ -95,23 +95,3 @@
 
 </div>
 </html>
-<?php
-include '../config.php';
-
-
-$phone1=filter_input(INPUT_POST,"phone1");
-$phone2=filter_input(INPUT_POST,"phone2");
-$address=filter_input(INPUT_POST,"address");
-
-mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
-
-$sql="UPDATE `fixmin`.`خدمة العملاء` SET `الجوال1`,`الجوال2`,`عنوان_السكن` = '$number1','$number2', '$address'"or die(mysql_error());
-
-break;
-}
-if (!mysql_query($sql)) {
-	echo "<script type='text/javascript'>alert('لم يتم ادخال البيانات بشكل صحيح');</script>";
-} else {
-echo "<script type='text/javascript'>alert('تم ادخال البيانات بشكل صحيح');</script>";
-}
-?>
