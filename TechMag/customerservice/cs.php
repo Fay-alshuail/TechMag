@@ -1,3 +1,13 @@
+<?php
+session_start();
+include '../config.php';
+mysql_query("SET NAMES 'utf8'");
+mysql_query('SET CHARACTER SET utf8');
+$sessionU=$_SESSION['username_s'];
+$result=mysql_query("SELECT * FROM `خدمة العملاء` WHERE `البريد` ='$sessionU'");
+while($row=mysql_fetch_array($result))
+{?>
+
 <html>
 
 	<head>
@@ -9,6 +19,18 @@
 		<link rel="stylesheet" href="../assets/css/style.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<script type="text/javascript">
+		function showhide(){
+
+		document.getElementById('phone').removeAttribute("readOnly");
+		document.getElementById('phone2').removeAttribute("readOnly");
+		document.getElementById('address').removeAttribute("readOnly");
+		document.getElementById('bankno').removeAttribute("readOnly");
+
+		}
+
+		</script>
+
 		<script type="text/javascript">
 		function showhidebranches(){
 			document.getElementById('status').style.display="none";
@@ -47,6 +69,16 @@
 
 
 		} </script>
+		<script>
+		if (!Modernizr.touch || !Modernizr.inputtypes.date) {
+				$('input[type=date]')
+						.attr('type', 'text')
+						.datepicker({
+								// Consistent format with the HTML5 picker
+								dateFormat: 'yy-mm-dd'
+						});
+		}
+</script>
 	</head>
 	<body>
 
@@ -56,12 +88,12 @@
 					<nav>
 						<ul>
 							<li><a href="#intro">الصفحة الرئيسية </a></li>
+							<li><a href="#info"> البيانات الشخصية</a></li>
 							<li><a href="#zero"> العمـلاء </a></li>
 							<li><a href="#one"> الطلبـات </a></li>
 							<li><a href="#two"> لوحـة مراقبـة الطلبـات </a></li>
 							<li><a href="#three"> الفـواتيـر </a></li>
 							<li><a href="#four"> التقارير </a></li>
-							<li><a href="#five"> الإعـدادات </a></li>
 						</ul>
 					</nav>
 				</div>
@@ -87,6 +119,51 @@
 </section>
 </div>
 					</section>
+<!-- info -->
+													<section id="info" class="wrapper style5 fade-up">
+														<div class="inner">
+															<center>
+															 <img src="images/pic11.png" width="100" height="100">
+														 </center>
+						<h2>البيانات الشخصية</h2>
+						<form action="insertsub.php" method="post">
+
+															<table id = "table2" class ="align-center">
+															<td>
+																<ul>
+
+															<p> : الجوال <input type="text" name="phone" readOnly="true" id="phone" value="<?php echo $row["الجوال1"];?>"/> </p>
+															<p> : الجوال 2 <input type="text" name="phone2" readOnly="true" id="phone2" value="<?php echo $row["الجوال2"];?>"/> </p>
+															<p> : عنوان السكن <input type="text" name="address" readOnly="true" id="address" value="<?php echo $row["عنوان_السكن"];?>"/> </p>
+															<p style="display:block;"id="shbranch"> : الفرع <input type="text" name="branch" readOnly="true"  value="<?php echo $row["الفرع"];?>"/> </p>
+<p> <input type="submit" value="حـفـظ"></p>
+																</ul>
+
+															</td>
+															<td>
+
+																	<ul>
+																	<p> : الاسم <input type="text" name="name" readOnly="true" id="name"value="<?php echo $row["الاسم"];?>"/> </p>
+																	<p> : المسمى الوظيفي <input type="text" readOnly="true" name="job" id="job" value="<?php echo $row["المسمى_الوظيفي"];?>"/> </p>
+																	<p> : البريد الالكتروني <input type="email"  readOnly="true" name="email" id="email" value="<?php echo $row["البريد"];?>"/>  </p>
+																	<p> : رقم الحساب البنكي<input type="text" name="bankno"  readOnly="true"id="bankno" value="<?php echo $row["رقم_الحساب_البنكي"];?>"/> </p>
+																	<p> <input type="button" value="تـعـديـل " onclick=showhide()></p>
+
+																	</ul>
+																</td>
+															</table>
+
+						<?php
+						}
+						?>
+						</form>
+
+														</div>
+
+
+													</section>
+
+
 					<!-- zero -->
 					<section id="zero" class="wrapper style5 fade-up">
 						<div class="inner">
@@ -755,21 +832,6 @@ while($rows = mysql_fetch_assoc($result))
 					</table>
 						</div>
 					</section>
-
-								<section id="five" class="wrapper style5 fade-up">
-									<div class="inner">
-										<h2>الإعدادات </h2>
-										<section style="text-align=right">
-
-												<table style="width:70% text-align:center ">
-					<tr>
-						<th><center><a href="settings.php"><h3>تعديل البيانات الشخصية</h3><img src="img/setting.png" width="100" height="100"></a></center></th>
-					</tr>
-				</table>
-			</section>
-			</div>
-								</section>
-
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

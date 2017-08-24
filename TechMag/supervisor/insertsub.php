@@ -1,4 +1,6 @@
 <?php
+header('Location: supervisorcp.php');
+
 session_start();
 
 include '../config.php';
@@ -18,14 +20,13 @@ $cards=filter_input(INPUT_POST,"cards");
 mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
 
 $sql="UPDATE `fixmin`.`المشرف` SET `رقم_حساب_البنك` = '$cardno',
-نوع_بطاقة_البنك` = '$cards',
+`نوع_بطاقة_البنك` = '$cards',
 `رقم_الأمان` = '$securityno',
 `تاريخ_الإنتهاء` = '$date',
 `الجوال1` = '$phone',
 `الجوال2` = '$phone2',
 `عنوان_السكن` = '$address',
-`الفرع` = '$branch' WHERE `المشرف`.`البريد` = '$sessionU';
-";
+`الفرع` = '$branch' WHERE `المشرف`.`البريد` = '$sessionU'";
 
 if (!mysql_query($sql)) {
   echo "<script type='text/javascript'>alert('لم يتم ادخال البيانات بشكل صحيح');</script>";

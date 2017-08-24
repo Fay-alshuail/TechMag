@@ -211,8 +211,9 @@ function showhidebranchsearch(){
 			<p> :رقم البطاقة  <input type="text" name="cardno" readOnly="true" id="cardno" value="<?php echo $row["رقم_حساب_البنك"];?>"/> </p>
 			<p style="display:block;"id="shcard"> : نوع البطاقة  <input type="text" name="cards"  readOnly="true" value="<?php echo $row["نوع_بطاقة_البنك"];?>">
 				<p style="display:none;"id="uncard"> : نوع البطاقة  <select name="cards" >
-				<option value="creditcard"> بطاقة ائتمان</option>
-				<option value="paypal"> باي بال</option>
+					<option ><?php echo $row["نوع_بطاقة_البنك"];?><option>
+				<option value="بطاقة ائتمان"> بطاقة ائتمان</option>
+				<option value="باي بال"> باي بال</option>
 				</select>
 			 </p>
 			<br>
