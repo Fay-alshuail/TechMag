@@ -1,16 +1,14 @@
-<html>
-<table><form action="#" method="post">
-<tr>
-<th ><center><input type="submit" value="بحث"> </center></th>
-<th><input type="text" name="search" placeholder="" style="text-align :right"></th>
-<th >
-<center><input type="file"  name ="استعراض"value="استعراض"> </center>
-</th>
-</tr></form>
-</table>
+<?php
+include 'config.php';
+include 'logincheck.php';
+
+mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
+$username='faysaadsh@gmail.com';
+$ssql="SELECT `الفرع` FROM `خدمة العملاء`WHERE`البريد` ='$username'";
+$result=mysql_query($ssql);
+$rows = mysql_fetch_assoc($result);
+$s= $rows['الفرع'];
+echo $s;
 
 
-</html>
-<?php $path = "files/"; $path = $path . basename( $_FILES['userfile']['name']);
-
-if(move_uploaded_file($_FILES['userfile']['tmp_name'], $path)) { echo "Success uploading". basename($_FILES['userfile']['name']); } else{ echo "Error when uploading file."; } ?>
+?>

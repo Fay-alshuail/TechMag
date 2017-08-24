@@ -2820,7 +2820,7 @@ text-align: center;
 	#banner {
 		padding: 11em 0 5em 0;
 		background-attachment: fixed;
-		background-image: url("images/overlay2.jpg"), url("images/banner.jpg");
+		background-image: url("images/overlay.png"), url("images/banner.jpg");
 		background-position: center top;
 		background-size: cover;
 		line-height: 1.75;
