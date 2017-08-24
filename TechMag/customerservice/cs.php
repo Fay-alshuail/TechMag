@@ -102,7 +102,7 @@
 <div id="mytrack" class="modaltrack">
   <!-- Modal content -->
   <div class="modal-contenttrack">
-		<section class="wrapper style2 fade-up">
+		<section class="wrapper style2 fade-up" style="width:80%; height: 130%;">
 			<div class="inner">
     <span class="closetrack">&times;</span>
 				<h2>تتبع طلب الصيانة</h2>
@@ -234,13 +234,14 @@ window.onclick = function(event) {
 			<div id="mytech" class="modal">
 			  <!-- Modal content -->
 			  <div class="modal-content">
-					<section class="wrapper style3 fade-up">
+					<section class="wrapper style3 fade-up" style="width:40%; height: 80%;">
 						<div class="inner">
 			    <span class="close">&times;</span>
 							<h2>تكليف الفني</h2>
 							<section style="text-align=right">
 
 			<form method="get" action="#" >
+				<center>
 						<div class="field half first">
 							<label for="date">الفني</label>
 							<select name="tech">
@@ -249,6 +250,10 @@ window.onclick = function(event) {
 							<option> </option>
 							</select></th>
 						</div>
+						<ul class="actions">
+							<li><a href="#" class="button">Learn more</a></li>
+						</ul>
+					</center>
 					</form>
 					</section>
 			  </div>
@@ -282,10 +287,6 @@ window.onclick = function(event) {
 			}
 			</script>
 			</section>
-
-				<ul class="actions">
-					<li><a href="#" class="button">Learn more</a></li>
-				</ul>
 				</div>
 
 				<!-- Three -->
