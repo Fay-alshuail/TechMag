@@ -224,8 +224,8 @@ $result=mysql_query($sql);
 while($rows = mysql_fetch_assoc($result))
 {
 									?>
-<td><?php echo $rows['الجوال']; ?></td>
-<td><?php echo $rows['اسم_العميل']; ?></td>
+<td style="text-align:right;"><?php echo $rows['الجوال']; ?></td>
+<td style="text-align:right;"><?php echo $rows['اسم_العميل']; ?></td>
 </tr>
 <?php
 					 }
@@ -254,8 +254,8 @@ $result=mysql_query($sql);
 while($rows = mysql_fetch_assoc($result))
 {
 									?>
-<td><?php echo $rows['الجوال']; ?></td>
-<td><?php echo $rows['اسم_العميل']; ?></td>
+<td style="text-align:right;"><?php echo $rows['الجوال']; ?></td>
+<td style="text-align:right;"><?php echo $rows['اسم_العميل']; ?></td>
 <?php
 					 }
 				 }
@@ -717,10 +717,10 @@ while($rows = mysql_fetch_assoc($result))
 {
 		 ?>
 		 <tr>
-<td><?php echo $rows['المبلغ']; ?></td>
-<td><?php echo $rows['الكمية']; ?></td>
-<td><?php echo $rows['التاريخ']; ?></td>
-<td><?php echo $rows['رقم_الفاتورة']; ?></td>
+<td style="text-align:right;"><?php echo $rows['المبلغ']; ?></td>
+<td style="text-align:right;"><?php echo $rows['الكمية']; ?></td>
+<td style="text-align:right;"><?php echo $rows['التاريخ']; ?></td>
+<td style="text-align:right;"><?php echo $rows['رقم_الفاتورة']; ?></td>
 </tr>
 <?php
 }
@@ -737,10 +737,10 @@ while($rows = mysql_fetch_assoc($result))
 											 ?>
 											 <p>   فرع : <?php echo $branches2 ?> </p>
 											 <tr>
-											 <td><?php echo $rows['المبلغ']; ?></td>
-											 <td><?php echo $rows['الكمية']; ?></td>
-											 <td><?php echo $rows['التاريخ']; ?></td>
-											 <td><?php echo $rows['رقم_الفاتورة']; ?></td>
+											 <td style="text-align:right;"><?php echo $rows['المبلغ']; ?></td>
+											 <td style="text-align:right;"><?php echo $rows['الكمية']; ?></td>
+											 <td style="text-align:right;"><?php echo $rows['التاريخ']; ?></td>
+											 <td style="text-align:right;"><?php echo $rows['رقم_الفاتورة']; ?></td>
 											 </tr>
 	<?php
 } }
@@ -806,9 +806,9 @@ while($rows = mysql_fetch_assoc($result))
 			while($rows = mysql_fetch_assoc($result))
 			{
 			?>
-			<td><?php echo $rows['نوع_التقرير']; ?></td>
-			<td><?php echo $rows['عنوان_التقرير']; ?></td>
-			<td><?php echo $rows['بريد_الفني']; ?> <?php echo $rows['بريد_خ_ع']; ?></td>
+			<td style="text-align:right;"><?php echo $rows['نوع_التقرير']; ?></td>
+			<td style="text-align:right;"><?php echo $rows['عنوان_التقرير']; ?></td>
+			<td style="text-align:right;"><?php echo $rows['بريد_الفني']; ?> <?php echo $rows['بريد_خ_ع']; ?></td>
 
 			<?php
 			}
