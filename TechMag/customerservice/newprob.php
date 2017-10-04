@@ -44,48 +44,7 @@
 												</tr>
 													</table>
 
-													<form method="post" action="#" style="border: 1px solid #c2d9ed; padding: 10px;" >
-												<label>مشكلة جديدة</label>
-														<div class="field half first">
-															<label for="name">المحتوى</label>
-															<textarea cols="40" rows="3" type="text" name="cont" id="cont" />
-														</textarea>
-														</div>
-															<div class="field half ">
-															<label for="name">العنوان</label>
-															<input type="text" name="title" id="title" />
-														</div>
-														<div>
-															<center>
-														<ul class="actions" margin-top="4em">
-															<li><button type="button" class="button" onclick="myFunction()">رد</button></li>
-														</ul>
-													</center>
-														</div>
-													</form>
-													<form method="post" action="#" style="visibility:hidden" id="reply" style="border: 1px solid #c2d9ed; padding: 10px;">
-													<label>الرد على المشكلة</label>
-														<div class="field half first">
-															<label for="name">المحتوى</label>
-															<textarea cols="40" rows="3" type="text" name="cont" id="cont" style="text-align:right;" /></textarea>
-														</div>
-															<div class="field half ">
-															<label for="name">العنوان</label>
-															<input type="text" name="title" id="title" />
-														</div>
-														<div>
-															<center>
-														<ul class="actions" margin-top="4em">
-															<li><a href="#" class="button" >رد</a></li>
-														</ul>
-													</center>
-														</div>
-													</form>
-													<ul class="actions" margin-top="4em">
-														<li><button type="button" class="button" onclick="newprob()">إضافة مشكلة جديدة</button></li>
-													</ul>
-
-													<form method="post" action="#" style="visibility:hidden" id="new" style="border: 1px solid #c2d9ed; padding: 10px;">
+													<form method="post" action="#" style="border: 1px solid #c2d9ed; padding: 10px;">
 													<label>تعديل على المشكلة</label>
 														<div class="field half first">
 															<label for="newprob">المشكلة الإضافية</label>
@@ -108,12 +67,4 @@
 					</div>
 				</section>
 			</div>
-			<script>
-			function myFunction() {
-			    document.getElementById("reply").style.visibility= "visible";
-			}
-			function newprob() {
-			    document.getElementById("new").style.visibility= "visible";
-			}
-			</script>
 </html>

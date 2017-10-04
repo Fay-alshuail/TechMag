@@ -105,20 +105,10 @@ $sessionU=$_SESSION['username_s'];?>
 									<input type="text" name="handwork" id="handwork" />
 								</div>
 								<div class="field half">
-									<?php
-									include '../config.php';
-									$fix=$_GET['fix'];
-									mysql_query("SET NAMES 'utf8'");
-									mysql_query('SET CHARACTER SET utf8');
 
-									$sql=("SELECT * FROM `قطع الغيار` WHERE `اسم_القطعة`='$fix'");
-									$result=mysql_query($sql);
-									while($row=mysql_fetch_array($result))
-									{
-									?>
 									<label for="name">سعر القطعة</label>
 									<input type="text" name="price" id="price" value="" >
-								<?php }?>
+							
 								</div>
 								<div class="field half first">
 									<label for="name">المجموع</label>

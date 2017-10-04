@@ -51,7 +51,7 @@ echo "<script type='text/javascript'>alert('$message');</script>";
 
 
       if ($row = mysql_fetch_assoc($result))
-        header('Location:technican/technicancp.php');
+        header('Location:technican/tech.php');
         else  {
           echo "<script type='text/javascript'>alert('$message');</script>";}
        break;

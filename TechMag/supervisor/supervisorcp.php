@@ -769,8 +769,8 @@ if (!$branches2){
 													<tr>
 														<?php
 														include '../config.php';
-														$reports=$_POST['reports'];
 														$reportname=filter_input(INPUT_POST,"reportname");
+														$reports=$_POST['reports'];
 														mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
 if(!$reports){
 	$sql="SELECT *
@@ -787,9 +787,8 @@ if(!$reports){
 
 	<?php
 	}
-
 }
-														{$sql="SELECT *
+else {$sql="SELECT *
 														FROM `التقرير`
 														WHERE `نوع_التقرير` ='$reports'
 														";
