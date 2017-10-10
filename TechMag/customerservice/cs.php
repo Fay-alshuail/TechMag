@@ -131,12 +131,11 @@ while($row=mysql_fetch_array($result))
 															<table id = "table2" class ="align-center">
 															<td>
 																<ul>
-
 															<p> : الجوال <input type="text" name="phone" readOnly="true" id="phone" value="<?php echo $row["الجوال1"];?>"/> </p>
 															<p> : الجوال 2 <input type="text" name="phone2" readOnly="true" id="phone2" value="<?php echo $row["الجوال2"];?>"/> </p>
 															<p> : عنوان السكن <input type="text" name="address" readOnly="true" id="address" value="<?php echo $row["عنوان_السكن"];?>"/> </p>
 															<p style="display:block;"id="shbranch"> : الفرع <input type="text" name="branch" readOnly="true"  value="<?php echo $row["الفرع"];?>"/> </p>
-<p> <input type="submit" value="حـفـظ"></p>
+															<p> <input type="submit" value="حـفـظ"></p>
 																</ul>
 
 															</td>

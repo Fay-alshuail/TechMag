@@ -38,29 +38,29 @@ $sessionU=$_SESSION['username_s'];?>
 					<div class="inner">
 							<form method="post" action="#" style="border: 1px solid #c2d9ed; padding: 10px;">
 						<label>معلومات الاتصال</label>
-								<div class="field half first">
+								<div class=" half first">
 									<label for="name">الاسـم</label>
 									<input type="text" name="name" id="name" />
 								</div>
-									<div class="field half">
+									<div class="half">
 									<label for="name">رقم الجوال</label>
 									<input type="text" name="phone" id="phone" />
 								</div>
 								<label>معلومات الجهاز</label>
-								<div class="field half first">
+								<div class="half first">
 						<input type="text" name="devicetype" value="اكتب نوع الجهاز">
 							</div>
-							<div class="field half">
+							<div class="half">
 						<input type="text" name="brandname" value ="اكتب شركة الجهاز">
 						</div>
-						<div class="field half first">
+						<div class="half first">
 						</div>
-					<div class="field half">
+					<div class="half">
 					<input type="text" name="devicecolor" value="اكتب لون الجهاز">
 					</div>
 
 							<label>المشكلة</label>
-							<div class="field half first">
+							<div class="half first">
 								<select name="prplm">
 									<option value="" style="display:none">اختر نوع المشكلة</option>
 									<option value="saab">Hardware</option>
@@ -69,7 +69,7 @@ $sessionU=$_SESSION['username_s'];?>
 								</select>
 
 						</div>
-						<div class="field half ">
+						<div class=" half ">
 							<select name ="fix"  id="fix2">
 								<option>نوع قطعة الغيار</option>
 							<?php
@@ -90,31 +90,31 @@ $sessionU=$_SESSION['username_s'];?>
 
 
 						</div>
-						<div class="field half first">
+						<div class=" half first">
 							<label for="name">تفاصيل المشكلة</label>
 							<input type="text" name="problem" id="problem" />
 						</div>
-						<div class="field half">
+						<div class=" half">
 							<label for="name">تاريخ الاستحقاق</label>
 							<input type="date" name="date" id="date" />
 						</div>
 
 							<lebel>السعـر</label>
-								<div class="field half first">
+								<div class="half first">
 									<label for="name">شغل اليد</label>
 									<input type="text" name="handwork" id="handwork" />
 								</div>
-								<div class="field half">
+								<div class="half">
 
 									<label for="name">سعر القطعة</label>
 									<input type="text" name="price" id="price" value="" >
-							
+
 								</div>
-								<div class="field half first">
+								<div class=" half first">
 									<label for="name">المجموع</label>
 									<input type="text" name="total" id="total" />
 								</div>
-								<div class="field half ">
+								<div class="half ">
 									<label for="name">الخصم</label>
 									<input type="text" name="sale" id="sale" />
 								</div>
