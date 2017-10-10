@@ -481,7 +481,6 @@
 		button.special,
 		.button.special {
 			background-color: #ffffff;
-			color: #312450 !important;
 		}
 
 			input[type="submit"].special:after,
@@ -689,11 +688,6 @@ form input {
 		.select-wrapper select::-ms-expand {
 			display: none;
 		}
-
-	select option {
-		background-color: #312450;
-		color: red;
-	}
 
 	input[type="text"],
 	input[type="password"],
