@@ -267,7 +267,8 @@ function showhidebranchsearch(){
 	  <tr>
 	    <th> <center><a href="addwarehouse.php"><h3>إضافة مخزن جديد </h3><img src="images/pic06.png" width="100" height="100"></a></center></th>
 	    <th><center><a href="warehousecontrol.php"><h3>مراقبة المخازن  </h3><img src="images/pic05.png" width="100" height="100"></a></center></th>
-	    <th><center><a href = "addproduct.php"><h3>إضافة منتج </h3><img src="images/pic04.png" width="100" height="100"></a></center></th>
+			<th><center><a href="exproduct.php"><h3>إضافة قطع غيار</h3><img src="images/pic20.png" width="100" height="100"></a></center></th>
+			<th><center><a href = "addproduct.php"><h3>إضافة منتج </h3><img src="images/pic04.png" width="100" height="100"></a></center></th>
 	  </tr>
 	</table>
 </section>

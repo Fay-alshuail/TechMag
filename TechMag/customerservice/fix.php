@@ -35,8 +35,11 @@ $sessionU=$_SESSION['username_s'];?>
 			<div id="wrapper">
 				<!-- Form -->
 				<section class="wrapper style2 fade-up">
+
+					<center><h2>طلب الصيانة</h2</center>
 					<div class="inner">
 							<form method="post" action="#" style="border: 1px solid #c2d9ed; padding: 10px;">
+	<center><input type="button" name ="fix22" id="fix22" value="أسعار قطع الغيار"></center>
 						<label>معلومات الاتصال</label>
 								<div class="field half first">
 									<label for="name">الاسـم</label>
@@ -108,7 +111,7 @@ $sessionU=$_SESSION['username_s'];?>
 
 									<label for="name">سعر القطعة</label>
 									<input type="text" name="price" id="price" value="" >
-							
+
 								</div>
 								<div class="field half first">
 									<label for="name">المجموع</label>
