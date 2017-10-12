@@ -277,88 +277,11 @@ while($rows = mysql_fetch_assoc($result))
 				<th><center><a href = "newprob.php"><h3>مشكلة جديدة</h3><img src="img/newprob.png" width="100" height="100"></a></center></th>
 				<th><center><a href="arrived.php"><h3>الطلبات المستلمة</h3><img src="img/arrived.png" width="100" height="100"></a></center></th>
 				<th><center><a href = " "><h3>طلب بيع جديد</h3><img src="img/new.png" width="100" height="100"></a></center></th>
-				<th><center><h3>تتبع طلب صيانة</h3><img src="img/track.png" width="100" height="100" id="track"></center></th>
+				<th><center><h3>تتبع طلب صيانة</h3><img src="img/track.png" width="100" height="100"></center></th>
         <th><center><a href="fix.php"><h3>طلب صيانة جديد</h3><img src="img/fix.png" width="100" height="100"></a></center></th>
       </tr>
     </table>
-		<!-- The Modal -->
-<div id="mytrack" class="modaltrack">
-  <!-- Modal content -->
-  <div class="modal-contenttrack">
-		<section class="wrapper style2 fade-up" style="width:80%; height: 130%;">
-			<div class="inner">
-    <span class="closetrack">&times;</span>
-				<h2>تتبع طلب الصيانة</h2>
-				<section style="text-align=right">
-					<table>
-			<th><input type="text" name="search" placeholder=" ... ادخل رقم الطلب" style="text-align :right"></th>
-			</tr>
-		</table>
-<form method="get" action="#" >
-			<div class="field half first">
-				<label for="date">التاريخ</label>
-				<input type="text" name="date" id="date" />
-			</div>
-			<div class="field half">
-				<label for="order">حالة الطلب</label>
-				<input type="text" name="order" id="order" />
-			</div>
-			<div class="field half first">
-				<label for="descrip">الوصف</label>
-				<input type="text" name="descrip" id="descrip" />
-			</div>
-			<div class="field half">
-				<label for="tech">اسم الفني</label>
-				<input type="text" name="tech" id="tech" />
-			</div>
-			<div class="field half first">
-				<label for="phone">رقم التواصل</label>
-				<input type="text" name="phone" id="phone" />
-			</div>
-			<div class="field half">
-				<label for="customer">اسم العميل</label>
-				<input type="text" name="customer" id="customer" />
-			</div>
-		</form>
-		</section>
-  </div>
 </section>
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('mytrack');
-
-// Get the button that opens the modal
-var btn = document.getElementById("track");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("closetrack")[0];
-
-// When the user clicks the button, open the modal
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-</section>
-
-									<ul class="actions">
-										<li><a href="#" class="button">Learn more</a></li>
-									</ul>
-									</div>
-						</section>
 
 				<!-- Two -->
 				<section id="two" class="wrapper style3 fade-up">
@@ -612,9 +535,6 @@ window.onclick = function(event) {
 							<option> </option>
 							</select></th>
 						</div>
-						<ul class="actions">
-							<li><a href="#" class="button">Learn more</a></li>
-						</ul>
 					</center>
 					</form>
 					</section>

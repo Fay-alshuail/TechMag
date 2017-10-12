@@ -1,7 +1,7 @@
 
 <html>
 	<head>
-		<title>خدمة العملاء</title>
+		<title>الطلبات</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-whidth", user-scalable=no, initial-scale=1.0>
         <meta http-equiv="X-UA-Comptible" content="ie=edge">
