@@ -38,13 +38,18 @@
 								mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
 
 								?>
+								<form method="post" action="#">
+
 								<table  style="border: 1px solid black;">
 												<tr >
+													<th style="border: 1px solid #c2d9ed;">الحالة </th>
 												<th style="border: 1px solid #c2d9ed;">تاريخ الاستلام </th>
 												<th style="border: 1px solid #c2d9ed;"> رقم الطلب </th>
 												<th style="border: 1px solid #c2d9ed;">الفني المسؤول </th>
 
+
 												</tr>
+
 												<?php
 													$sql=("SELECT *
 														FROM `طلب الصيانة` WHERE `حالة_الطلب`='تم الإصلاح' ");
@@ -52,6 +57,7 @@
 													while($rows = mysql_fetch_assoc($result))
 													{
 																								?><tr>
+																									<td style="border: 1px solid #073660;"> <input type="submit" value="إغلاق الطلب "></td>
 																								<td style="border: 1px solid #073660;"> <?php echo $rows['تاريخ_الاستلام']; ?></td>
 																								<td style="border: 1px solid #073660;"> <?php echo $rows['رقم_الطلب']; ?></td>
 																								<?php $ON1=$rows['رقم_الطلب'];
@@ -63,8 +69,24 @@
 																								<?php }}?>
 
 												</tr>
-													</table>
+											</form></table>
 
 					</div>
 				</section>
 			</div>
+			<?php
+			include '../config.php';
+
+			mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
+$ON1=$rows['رقم_الطلب'];
+			$sql="UPDATE `fixmin`.`طلب الصيانة` SET `حالة_الطلب` 'مغلق' WHERE `طلب الصيانة`.`رقم_الطلب` = '82' ";
+			$result=mysql_query($sql) or die($sql);
+			$rows = mysql_fetch_assoc($result);
+			if (mysql_query($sql)) {
+				echo "<script type='text/javascript'>alert('تم إغلاق الطلب بشكل صحيح');</script>";
+
+			}else{
+		echo "	$ON1";
+						echo "<script type='text/javascript'>alert(لم يتم إغلاق الطلب بشكل صحيح');</script>";
+				}
+			?>

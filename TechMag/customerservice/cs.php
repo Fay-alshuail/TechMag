@@ -308,79 +308,7 @@ while($rows = mysql_fetch_assoc($result))
 <div id="mytrack" class="modaltrack">
   <!-- Modal content -->
   <div class="modal-contenttrack">
-		<section class="wrapper style2 fade-up" style="width:80%; height: 130%;">
-			<div class="inner">
-    <span class="closetrack">&times;</span>
-				<h2>تتبع طلب الصيانة</h2>
-				<section style="text-align=right">
-					<table><form method="post" action="#">
-						<th><input type="submit" name="searchbtn" id="searchbtn" onclick="showresult()" value="بحث"></th>
-			<th><input type="text" name="searchtxt" id="searchtxt" placeholder=" ... ادخل رقم الطلب" style="text-align :right"></th>
-			</tr>
-		</form></table>
-		<div id="searchresult" style="display:none;">
-			<?php
 
-			include '../config.php';
-			mysql_query("SET NAMES 'utf8'");
-			mysql_query('SET CHARACTER SET utf8');
-$trackno=filter_input(INPUT_POST,"searchtxt");
-	$result=mysql_query("SELECT * FROM `طلب الصيانة` WHERE `رقم_الطلب` ='$trackno'");
-			while($row=mysql_fetch_array($result))
-			{?>
-<form>
-			<div class="field half first">
-				<label for="date">التاريخ</label>
-				<input type="text" name="date" id="date" value="<?php echo $row["تاريخ_الاستلام"];?>" />
-			</div>
-			<div class="field half">
-				<label for="order">حالة الطلب</label>
-				<input type="text" name="order" id="order" value="<?php echo $row["حالة_الطلب"];?>"/>
-			</div>
-			<div class="field half first">
-				<label for="descrip">الوصف</label>
-				<input type="text" name="descrip" id="descrip"value="<?php echo $row["التفصيل"];?>" />
-			</div>
-			<?php
-		}
-		?>
-		<?php
-
-		include '../config.php';
-		mysql_query("SET NAMES 'utf8'");
-		mysql_query('SET CHARACTER SET utf8');
-$result3= mysql_query("SELECT `الاسم` FROM `الفني` WHERE `البريد`=(SELECT `بريد_الفني` FROM `طلب صيانة` WHERE `رقم_الطلب`='$trackno')");
-		while($row3=mysql_fetch_array($result3))
-		{?>
-			<div class="field half">
-				<label for="tech">اسم الفني</label>
-				<input type="text" name="tech" id="tech"value="<?php echo $row3["الاسم"];?>" />
-			</div>
-<?php } ?>
-<?php
-
-include '../config.php';
-mysql_query("SET NAMES 'utf8'");
-mysql_query('SET CHARACTER SET utf8');
-$result4=mysql_query( "SELECT * FROM `العميل` WHERE `اسم_العميل`=(SELECT `اسم_العميل` FROM `الطلب` WHERE `رقم_الطلب`='$trackno')");
-while($row4=mysql_fetch_array($result4))
-{?>
-
-			<div class="field half first">
-				<label for="phone">رقم التواصل</label>
-				<input type="text" name="phone" id="phone" value="<?php echo $row4["الجوال"];?>"/>
-			</div>
-			<div class="field half">
-				<label for="customer">اسم العميل</label>
-				<input type="text" name="customer" id="customer"value="<?php echo $row4["اسم_العميل"];?>" />
-			</div>
-		<?php }?>
-		</form>
-	</div>
-		</section>
-  </div>
-</section>
-</div>
 
 <script>
 // Get the modal
@@ -411,9 +339,7 @@ window.onclick = function(event) {
 </script>
 </section>
 
-									<ul class="actions">
-										<li><a href="#" class="button">Learn more</a></li>
-									</ul>
+
 									</div>
 						</section>
 
