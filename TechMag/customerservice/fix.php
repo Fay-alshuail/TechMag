@@ -11,6 +11,19 @@ $sessionU=$_SESSION['username_s'];?>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 		<link rel="stylesheet" href="../assets/css/style.css" />
+		<script type="text/javascript">
+		function SHOW(){
+
+			document.getElementById('fix8').style.display="block";
+			document.getElementById('fix33').style.display="block";
+
+		} </script>
+		<script type="text/javascript">
+		function SHOW1(){
+			document.getElementById('fix8').style.display="none";
+			document.getElementById('fix33').style.display="none";
+
+		} </script>
 
 	</head>
 	<body>
@@ -35,35 +48,66 @@ $sessionU=$_SESSION['username_s'];?>
 			<div id="wrapper">
 				<!-- Form -->
 				<section class="wrapper style2 fade-up">
-
-					<center><h2>طلب الصيانة</h2</center>
+					<center><h1>طلب الصيانة</h1></center>
 					<div class="inner">
 							<form method="post" action="#" style="border: 1px solid #c2d9ed; padding: 10px;">
-	<center><input type="button" name ="fix22" id="fix22" value="أسعار قطع الغيار"></center>
+
+	<center><input type="button" name ="fix22" id="fix22" value="أسعار قطع الغيار" onclick="SHOW()"></center>
+	<br><center><input type="button" name ="fix33" id="fix33" style="display:none;"value="إغلاق" onclick="SHOW1()"></center>
+
+<div style="margin:2em 2em 0 10em;">
+	<table id="fix8"  style="display:none";>
+	<?php
+	include '../config.php';
+	mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
+	?>
+<tr>
+	<th>سعر القطعة </th>
+	<th>اسم القطعة</th>
+
+</tr>
+<tr>
+	<?php
+
+	$sql="SELECT *
+FROM `قطع الغيار`";
+	$result=mysql_query($sql);
+	while($rows = mysql_fetch_assoc($result))
+	{
+												?>
+	<td><?php echo $rows['سعر_القطعة']; ?></td>
+	<td><?php echo $rows['اسم_القطعة']; ?></td>
+	</tr>
+	<?php
+								 }
+								 ?>
+
+
+</table></div>
 						<label>معلومات الاتصال</label>
-								<div class=" half first">
+								<div class="field half first">
 									<label for="name">الاسـم</label>
 									<input type="text" name="name" id="name" />
 								</div>
-									<div class="half">
+									<div class="field half">
 									<label for="name">رقم الجوال</label>
 									<input type="text" name="phone" id="phone" />
 								</div>
 								<label>معلومات الجهاز</label>
-								<div class="half first">
+								<div class="field half first">
 						<input type="text" name="devicetype" value="اكتب نوع الجهاز">
 							</div>
-							<div class="half">
+							<div class="field half">
 						<input type="text" name="brandname" value ="اكتب شركة الجهاز">
 						</div>
-						<div class="half first">
+						<div class="field half first">
 						</div>
-					<div class="half">
+					<div class="field half">
 					<input type="text" name="devicecolor" value="اكتب لون الجهاز">
 					</div>
 
 							<label>المشكلة</label>
-							<div class="half first">
+							<div class="field half first">
 								<select name="prplm">
 									<option value="" style="display:none">اختر نوع المشكلة</option>
 									<option value="saab">Hardware</option>
@@ -72,8 +116,8 @@ $sessionU=$_SESSION['username_s'];?>
 								</select>
 
 						</div>
-						<div class=" half ">
-							<select name ="fix"  id="fix2">
+						<div class="field half ">
+							<select name ="fix2"  id="fix2">
 								<option>نوع قطعة الغيار</option>
 							<?php
 							include '../config.php';
@@ -93,31 +137,31 @@ $sessionU=$_SESSION['username_s'];?>
 
 
 						</div>
-						<div class=" half first">
+						<div class="field half first">
 							<label for="name">تفاصيل المشكلة</label>
 							<input type="text" name="problem" id="problem" />
 						</div>
-						<div class=" half">
+						<div class="field half">
 							<label for="name">تاريخ الاستحقاق</label>
 							<input type="date" name="date" id="date" />
 						</div>
 
 							<lebel>السعـر</label>
-								<div class="half first">
+								<div class="field half first">
 									<label for="name">شغل اليد</label>
 									<input type="text" name="handwork" id="handwork" />
 								</div>
-								<div class="half">
+								<div class="field half">
 
 									<label for="name">سعر القطعة</label>
 									<input type="text" name="price" id="price" value="" >
 
 								</div>
-								<div class=" half first">
+								<div class="field half first">
 									<label for="name">المجموع</label>
 									<input type="text" name="total" id="total" />
 								</div>
-								<div class="half ">
+								<div class="field half ">
 									<label for="name">الخصم</label>
 									<input type="text" name="sale" id="sale" />
 								</div>
@@ -134,10 +178,10 @@ $sessionU=$_SESSION['username_s'];?>
 			</html>
 			<?php
 			include '../config.php';
-			include '../logincheck.php';
+
 
 			$prplm=$_POST['brand2'];
-			$fix=$_POST['fix'];
+			$fix=$_POST['fix2'];
 			$name=filter_input(INPUT_POST,"name");
 			$phone=filter_input(INPUT_POST,"phone");
 			$devicetype=filter_input(INPUT_POST,"devicetype");
@@ -158,15 +202,20 @@ $sessionU=$_SESSION['username_s'];?>
 
 			$sql="INSERT INTO `fixmin`.`طلب الصيانة` ( `شركة_الجهاز`, `نوع_الجهاز`, `لون_الجهاز`, `نوع_المشكلة`, `التفصيل`, `حالة_الطلب`, `تاريخ_الاستلام`, `وصف_الفرع`, `شغل اليد`, `الخصم`, `المجموع`,`بريد_خ_ع`)
 			VALUES ( '$brandname', '$devicetype', '$devicecolor', '$prplm', '$problem', 'قيد الإنتظار', '$date', '$s', '$handwork', '$sale', '$total','$sessionU')";
-if (!mysql_query($sql)) {
-		}else{
+
+if (mysql_query($sql)) {
+	echo "<script type='text/javascript'>alert('تم ادخال البيانات بشكل صحيح');</script>";
+
+}else if ( $brandname = "" ||$devicetype="" ||$devicecolor= "" ||$prplm= "" ||$problem= "" ||$date= "" ||$s="" ||$handwork= "" ||$sale= "" ||$total =""){
 			echo "<script type='text/javascript'>alert('تم ادخال البيانات بشكل صحيح');</script>";
 	}
 	$sql2="INSERT INTO `fixmin`.`العميل` (`اسم_العميل`, `الجوال`) VALUES ('$name', '$phone')";
 
 				if(!mysql_query($sql2)){
 				echo "<script type='text/javascript'>alert('لم يتم ادخال البيانات بشكل صحيح');</script>";
-			}else{
-			echo "<script type='text/javascript'>alert('تم ادخال البيانات بشكل صحيح');</script>";
+			}else if ( $name = "" || $phone = "")
+			{echo "<script type='text/javascript'>alert('تم ادخال البيانات بشكل صحيح');</script>";
 }
+
+
 			?>

@@ -25,7 +25,18 @@ while($row=mysql_fetch_array($result))
 		document.getElementById('phone').removeAttribute("readOnly");
 		document.getElementById('phone2').removeAttribute("readOnly");
 		document.getElementById('address').removeAttribute("readOnly");
-		document.getElementById('bankno').removeAttribute("readOnly");
+		document.getElementById('bank').removeAttribute("readOnly");
+
+		}
+
+		</script>
+		<script type="text/javascript">
+		function hide(){
+
+		document.getElementById('phone').readOnly:true;
+		document.getElementById('phone2').readOnly:true;
+		document.getElementById('address').readOnly:true;
+		document.getElementById('bank').readOnly:true;
 
 		}
 
@@ -69,6 +80,11 @@ while($row=mysql_fetch_array($result))
 
 
 		} </script>
+		<script type="text/javascript">
+		function showresult(){
+			document.getElementById('searchresult').style.display="block";
+		} </script>
+
 		<script>
 		if (!Modernizr.touch || !Modernizr.inputtypes.date) {
 				$('input[type=date]')
@@ -109,7 +125,6 @@ while($row=mysql_fetch_array($result))
 							<section>
 								<table style="width:100% text-align:center ">
 	<tr>
-		<th><center><a href="settings.php"><h3>إعدادات</h3><img src="img/setting.png" width="100" height="100"></a></center></th>
 		<th><center><a href ="#two"><h3>لوحة الطلبات</h3><img src="img/control.png" width="100" height="100"></a></center></th>
 		<th><center><a href="arrived.php"><h3>الطلبات المستلمة</h3><img src="img/arrived.png" width="100" height="100"></a></center></th>
 		<th><center><a href="fix.php"><h3>طلب صيانة جديد</h3><img src="img/fix.png" width="100" height="100"></a></center></th>
@@ -126,36 +141,44 @@ while($row=mysql_fetch_array($result))
 															 <img src="images/pic11.png" width="100" height="100">
 														 </center>
 						<h2>البيانات الشخصية</h2>
-						<form action="insertsub.php" method="post">
+						<form action="updatecs.php" method="post">
 
+						<p> البيانات الشخصية </p>
 															<table id = "table2" class ="align-center">
 															<td>
-																<ul>
+															  <ul>
+
 															<p> : الجوال <input type="text" name="phone" readOnly="true" id="phone" value="<?php echo $row["الجوال1"];?>"/> </p>
 															<p> : الجوال 2 <input type="text" name="phone2" readOnly="true" id="phone2" value="<?php echo $row["الجوال2"];?>"/> </p>
 															<p> : عنوان السكن <input type="text" name="address" readOnly="true" id="address" value="<?php echo $row["عنوان_السكن"];?>"/> </p>
-															<p style="display:block;"id="shbranch"> : الفرع <input type="text" name="branch" readOnly="true"  value="<?php echo $row["الفرع"];?>"/> </p>
-															<p> <input type="submit" value="حـفـظ"></p>
-																</ul>
+															<p> : الفرع <input type="text" name="branch" readOnly="true"  value="<?php echo $row["الفرع"];?>"/> </p>
+															  </ul>
 
 															</td>
 															<td>
 
-																	<ul>
-																	<p> : الاسم <input type="text" name="name" readOnly="true" id="name"value="<?php echo $row["الاسم"];?>"/> </p>
-																	<p> : المسمى الوظيفي <input type="text" readOnly="true" name="job" id="job" value="<?php echo $row["المسمى_الوظيفي"];?>"/> </p>
-																	<p> : البريد الالكتروني <input type="email"  readOnly="true" name="email" id="email" value="<?php echo $row["البريد"];?>"/>  </p>
-																	<p> : رقم الحساب البنكي<input type="text" name="bankno"  readOnly="true"id="bankno" value="<?php echo $row["رقم_الحساب_البنكي"];?>"/> </p>
-																	<p> <input type="button" value="تـعـديـل " onclick=showhide()></p>
+															    <ul>
+															    <p> : الاسم <input type="text" name="name" readOnly="true" id="name"value="<?php echo $row["الاسم"];?>"/> </p>
+															    <p> : المسمى الوظيفي <input type="text" readOnly="true" name="job" id="job" value="<?php echo $row["المسمى_الوظيفي"];?>"/> </p>
+															    <p> : البريد الالكتروني <input type="email"  readOnly="true" name="email" id="email" value="<?php echo $row["البريد"];?>"/>  </p>
+																	<p> : الحساب البنكي  <input type="text"  readOnly="true" name="bank" id="bank" value="<?php echo $row["رقم_الحساب_البنكي"];?>"/>  </p>
+																	<p> : الرقم السري  <input type="text"  readOnly="true" name="pass" id="pass" value="<?php echo $row["الرقم_السري"];?>"/>  </p>
 
-																	</ul>
-																</td>
+															    </ul>
+															  </td>
+															</table>
+															<table>
+																<th style="text-align:center;"><p> <input type="submit" value="حـفـظ"></p></th>
+																<th style="text-align:center;"><p> <input type="button" value="تـعـديـل " onclick="showhide()"></p></th>
+																<th style="text-align:center;"><p> <input type="button" value="إالغاء" onclick="hide()"></p></th>
 															</table>
 
-						<?php
-						}
-						?>
-						</form>
+
+														</form>
+
+														<?php
+														}
+														?>
 
 														</div>
 
@@ -290,36 +313,70 @@ while($rows = mysql_fetch_assoc($result))
     <span class="closetrack">&times;</span>
 				<h2>تتبع طلب الصيانة</h2>
 				<section style="text-align=right">
-					<table>
-			<th><input type="text" name="search" placeholder=" ... ادخل رقم الطلب" style="text-align :right"></th>
+					<table><form method="post" action="#">
+						<th><input type="submit" name="searchbtn" id="searchbtn" onclick="showresult()" value="بحث"></th>
+			<th><input type="text" name="searchtxt" id="searchtxt" placeholder=" ... ادخل رقم الطلب" style="text-align :right"></th>
 			</tr>
-		</table>
-<form method="get" action="#" >
+		</form></table>
+		<div id="searchresult" style="display:none;">
+			<?php
+
+			include '../config.php';
+			mysql_query("SET NAMES 'utf8'");
+			mysql_query('SET CHARACTER SET utf8');
+$trackno=filter_input(INPUT_POST,"searchtxt");
+	$result=mysql_query("SELECT * FROM `طلب الصيانة` WHERE `رقم_الطلب` ='$trackno'");
+			while($row=mysql_fetch_array($result))
+			{?>
+<form>
 			<div class="field half first">
 				<label for="date">التاريخ</label>
-				<input type="text" name="date" id="date" />
+				<input type="text" name="date" id="date" value="<?php echo $row["تاريخ_الاستلام"];?>" />
 			</div>
 			<div class="field half">
 				<label for="order">حالة الطلب</label>
-				<input type="text" name="order" id="order" />
+				<input type="text" name="order" id="order" value="<?php echo $row["حالة_الطلب"];?>"/>
 			</div>
 			<div class="field half first">
 				<label for="descrip">الوصف</label>
-				<input type="text" name="descrip" id="descrip" />
+				<input type="text" name="descrip" id="descrip"value="<?php echo $row["التفصيل"];?>" />
 			</div>
+			<?php
+		}
+		?>
+		<?php
+
+		include '../config.php';
+		mysql_query("SET NAMES 'utf8'");
+		mysql_query('SET CHARACTER SET utf8');
+$result3= mysql_query("SELECT `الاسم` FROM `الفني` WHERE `البريد`=(SELECT `بريد_الفني` FROM `طلب صيانة` WHERE `رقم_الطلب`='$trackno')");
+		while($row3=mysql_fetch_array($result3))
+		{?>
 			<div class="field half">
 				<label for="tech">اسم الفني</label>
-				<input type="text" name="tech" id="tech" />
+				<input type="text" name="tech" id="tech"value="<?php echo $row3["الاسم"];?>" />
 			</div>
+<?php } ?>
+<?php
+
+include '../config.php';
+mysql_query("SET NAMES 'utf8'");
+mysql_query('SET CHARACTER SET utf8');
+$result4=mysql_query( "SELECT * FROM `العميل` WHERE `اسم_العميل`=(SELECT `اسم_العميل` FROM `الطلب` WHERE `رقم_الطلب`='$trackno')");
+while($row4=mysql_fetch_array($result4))
+{?>
+
 			<div class="field half first">
 				<label for="phone">رقم التواصل</label>
-				<input type="text" name="phone" id="phone" />
+				<input type="text" name="phone" id="phone" value="<?php echo $row4["الجوال"];?>"/>
 			</div>
 			<div class="field half">
 				<label for="customer">اسم العميل</label>
-				<input type="text" name="customer" id="customer" />
+				<input type="text" name="customer" id="customer"value="<?php echo $row4["اسم_العميل"];?>" />
 			</div>
+		<?php }?>
 		</form>
+	</div>
 		</section>
   </div>
 </section>

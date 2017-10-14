@@ -142,9 +142,11 @@
 				VALUES ('$name', '$number1', '$number2', '$email', '$bank', '$jobt', '$city', '$branch', '$password')";
 	break;
 }
-		if (!mysql_query($sql)) {
-		  echo "<script type='text/javascript'>alert('لم يتم ادخال البيانات بشكل صحيح');</script>";
-		} else {
-		echo "<script type='text/javascript'>alert('تم ادخال البيانات بشكل صحيح');</script>";
+		if (mysql_query($sql)) {
+				echo "<script type='text/javascript'>alert('تم ادخال البيانات بشكل صحيح');</script>";
+
+		} else if ($name = "" ||$number1="" || $number2=""|| $email=""||$bank="" ||$jobt=""||$city=""||$branch=""||$password=""){
+			echo "<script type='text/javascript'>alert('لم يتم ادخال البيانات بشكل صحيح');</script>";
+
 }
 		?>
