@@ -78,8 +78,9 @@
 			include '../config.php';
 
 			mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
-$ON1=$rows['رقم_الطلب'];
-			$sql="UPDATE `fixmin`.`طلب الصيانة` SET `حالة_الطلب` 'مغلق' WHERE `طلب الصيانة`.`رقم_الطلب` = '82' ";
+			$sql="UPDATE `fixmin`.`طلب الصيانة` SET
+			`حالة_الطلب`='مغلق'
+			 WHERE `طلب الصيانة`.`رقم_الطلب` = '$ON1' ";
 			$result=mysql_query($sql) or die($sql);
 			$rows = mysql_fetch_assoc($result);
 			if (mysql_query($sql)) {

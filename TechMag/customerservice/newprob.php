@@ -45,12 +45,11 @@
 						$sql= "SELECT *
 FROM `طلب الصيانة`
 WHERE
-(
-`حالة_الطلب` = 'مغلق'
-)
-AND (
+
+`حالة_الطلب` !='مغلق'
+AND
 `مشكلة_إضافية` IS NOT NULL
-)"
+"
 ;
 						$result=mysql_query($sql) or die($sql);
 						while($row=mysql_fetch_array($result))
@@ -88,9 +87,9 @@ AND (
 					FROM `طلب الصيانة`
 					WHERE
 					(
-					`حالة_الطلب` = 'مغلق'
-					)
-					AND (
+					`حالة_الطلب`
+					!= 'مغلق'
+					AND
 					`مشكلة_إضافية` IS NOT NULL
 					)";
 					$result=mysql_query($sql);

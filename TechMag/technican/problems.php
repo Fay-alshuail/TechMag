@@ -1,3 +1,10 @@
+<?php
+include 'tech.php';
+$sessionU=$_SESSION['username_s'];
+
+
+ ?>
+
 <html>
 <style type="text/css">
 
@@ -83,7 +90,7 @@
 <th style="border: 1px solid #c2d9ed;"> رقم الطلب </th>
 </tr>
   <td style="border: 1px solid #073660;"></td>
-  <td style="border: 1px solid #073660;"><center><input type="button" id="date" value="قبول"><input type="button" value="رفض"></center></td>
+  <td style="border: 1px solid #073660;"><center><input type="button" id="date" value="قبول"></center></td>
   <td style="border: 1px solid #073660;"></td>
   <td style="border: 1px solid #073660;"></td>
   <td style="border: 1px solid #073660;"></td>
