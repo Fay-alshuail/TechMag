@@ -381,7 +381,8 @@ a {
 
 /* Basic */
 
-	@-ms-viewport {
+	@media screen {
+
 		width: device-width;
 	}
 

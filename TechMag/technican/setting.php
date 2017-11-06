@@ -1,92 +1,61 @@
-<html>
-	<head>
-		<title>البيانات الشخصية</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+<?php
+/*
+ * This is needed for cookie based authentication to encrypt password in
+ * cookie
+ */
+$cfg['blowfish_secret'] = 'xampp'; /* YOU SHOULD CHANGE THIS FOR A MORE SECURE COOKIE AUTH! */
 
-		<link rel="stylesheet" href="../assets/css/style.css" />
+/*
+ * Servers configuration
+ */
+$i = 0;
 
-	</head>
-	<body>
-			<!-- Sidebar -->
-		<section id="sidebar">
-			<div class="inner">
-				<nav>
-					<ul>
-						<li><a href="tech.php#intro">الصفحة الرئيسية </a></li>
-						<li><a href="tech.php#one"> الطلبـات </a></li>
-						<li><a href="tech.php#two"> الإعدادات </a></li>
-					</ul>
-				</nav>
-			</div>
-		</section>
+/*
+ * First server
+ */
+$i++;
 
+/* Authentication type and info */
+$cfg['Servers'][$i]['auth_type'] = 'config';
+$cfg['Servers'][$i]['user'] = 'root';
+$cfg['Servers'][$i]['password'] = '!m[s3LrAE3nw';
+$cfg['Servers'][$i]['extension'] = 'mysqli';
+$cfg['Servers'][$i]['AllowNoPassword'] = true;
+$cfg['Lang'] = '';
 
+/* Bind to the localhost ipv4 address and tcp */
+$cfg['Servers'][$i]['host'] = '127.0.0.1';
+$cfg['Servers'][$i]['connect_type'] = 'tcp';
 
-<!-- Wrapper -->
-			<div id="wrapper">
-				<!-- Form -->
-				<section class="wrapper style5 fade-up">
-					<div class="inner" style="height:110%">
-<center><img src="setting.png" width="100" height="100">
-<h3>تعديل البيانات الشخصية</h3>
-</center>
+/* User for advanced features */
+$cfg['Servers'][$i]['controluser'] = 'pma';
+$cfg['Servers'][$i]['controlpass'] = '';
 
+/* Advanced phpMyAdmin features */
+$cfg['Servers'][$i]['pmadb'] = 'phpmyadmin';
+$cfg['Servers'][$i]['bookmarktable'] = 'pma__bookmark';
+$cfg['Servers'][$i]['relation'] = 'pma__relation';
+$cfg['Servers'][$i]['table_info'] = 'pma__table_info';
+$cfg['Servers'][$i]['table_coords'] = 'pma__table_coords';
+$cfg['Servers'][$i]['pdf_pages'] = 'pma__pdf_pages';
+$cfg['Servers'][$i]['column_info'] = 'pma__column_info';
+$cfg['Servers'][$i]['history'] = 'pma__history';
+$cfg['Servers'][$i]['designer_coords'] = 'pma__designer_coords';
+$cfg['Servers'][$i]['tracking'] = 'pma__tracking';
+$cfg['Servers'][$i]['userconfig'] = 'pma__userconfig';
+$cfg['Servers'][$i]['recent'] = 'pma__recent';
+$cfg['Servers'][$i]['table_uiprefs'] = 'pma__table_uiprefs';
+$cfg['Servers'][$i]['users'] = 'pma__users';
+$cfg['Servers'][$i]['usergroups'] = 'pma__usergroups';
+$cfg['Servers'][$i]['navigationhiding'] = 'pma__navigationhiding';
+$cfg['Servers'][$i]['savedsearches'] = 'pma__savedsearches';
+$cfg['Servers'][$i]['central_columns'] = 'pma__central_columns';
+$cfg['Servers'][$i]['designer_settings'] = 'pma__designer_settings';
+$cfg['Servers'][$i]['export_templates'] = 'pma__export_templates';
+$cfg['Servers'][$i]['favorite'] = 'pma__favorite';
 
-<form method="post" action="#">
-	<div>
-	<div class="field half first">
-		<label for="name">الاسـم</label>
-		<input type="text" name="name" id="name" />
-	</div>
-		<div class="field half">
-		<label for="name">رقم الجوال</label>
-		<input type="text" name="phone" id="phone" />
-	</div>
-</div>
-</form>
+/*
+ * End of servers configuration
+ */
 
-<form method="post" action="#">
-	<div class="field half first">
-		<label for="branch">الفر ع</label>
-		<input type="text" name="branch" id="branch" />
-	</div>
-		<div class="field half">
-		<label for="job">المسمى الوظيفي</label>
-		<input type="text" name="job" id="job" />
-	</div>
-	<div class="field half first">
-		<label for="bank">رقم حساب البنك</label>
-		<input type="text" name="bank" id="bank" />
-	</div>
-		<div class="field half">
-		<label for="phone2">رقم الجوال 2</label>
-		<input type="text" name="phone2" id="phone2" />
-	</div>
-	<div class="field half first">
-		<label for="email">البريد الإلكتروني</label>
-		<input type="text" name="email" id="email" />
-	</div>
-		<div class="field half">
-		<label for="address">عنوان السكن</label>
-		<input type="text" name="address" id="address" />
-	</div>
-</form>
-
-<div>
-<center>
-<ul class="actions" margin-top="7em">
-<li><a href="#" class="button">تعديل</a></li>
-<li><a href="#" class="button">مسح</a></li>
-<li><a href="#" class="button">حفظ</a></li>
-</ul>
-</center>
-</div>
-
-</div>
-</section>
-
-</div>
-
-</body>
-</html>
+?>

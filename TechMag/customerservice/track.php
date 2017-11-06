@@ -1,5 +1,4 @@
 <html>
-
 	<head>
 		<title>تتبع الطلب</title>
 		<meta charset="utf-8" />
@@ -31,42 +30,71 @@
 						<div id="wrapper">
 							<!-- Form -->
 							<section class="wrapper style2 fade-up">
-								<div class="inner" style="height:240%">
+								<div class="inner" style="height:100%">
+													<h2>تتبع طلب الصيانة</h2>
 
-											<label>تتبع الطلبات</label>
+													<section style="text-align=right">
+														<table><form method="post" action="#">
+															<th><input type="submit" name="searchbtn" id="searchbtn"  value="بحث"></th>
+												<th><input type="text" name="searchtxt" id="searchtxt" placeholder=" ... ادخل رقم الطلب" style="text-align :right"></th>
+												</tr>
+											</form></table>
+											<div id="searchresult" >
+												<form>
+												<?php
+												include '../config.php';
+												mysql_query("SET NAMES 'utf8'");
+												mysql_query('SET CHARACTER SET utf8');
+											$trackno=filter_input(INPUT_POST,"searchtxt");
+											$sql="SELECT * FROM `طلب الصيانة` WHERE `رقم_الطلب` ='$trackno'";
+											$result= mysql_query($sql) or die($sql);
+												while($row=mysql_fetch_array($result))
+												{?>
 
-											<table  style="border: 1px solid black;">
-															<tr >
-															<th><input type="button" name="" id=""value="" onclick=""></th>
-															<th><input type="text" name="search" placeholder=" ... ادخل رقم الطلب" style="text-align :right"></th>
-															</tr>
-															<tr >
-															<th style="border: 1px solid #c2d9ed;"></th>
-															<th style="border: 1px solid #c2d9ed;"></th>
-															</tr>
-											</table>
+												<div class="field half first">
+													<label for="date">التاريخ</label>
+													<input type="text" name="date" id="date" value="<?php echo $row["تاريخ_الاستلام"];?>" />
+												</div>
+												<div class="field half">
+													<label for="order">حالة الطلب</label>
+													<input type="text" name="order" id="order" value="<?php echo $row["حالة_الطلب"];?>"/>
+												</div>
+												<div class="field half first">
+													<label for="descrip">الوصف</label>
+													<input type="text" name="descrip" id="descrip"value="<?php echo $row["التفصيل"];?>" />
+												</div>
+												<?php
+											}
 
-																<form method="" action="" style="border: 1px solid #c2d9ed; padding: 10px;">
-																<label> </label>
-																	<div class="field half first">
-																		<label for=""></label>
-																		<input type="text" name="" id=""/>
-																	</div>
-																		<div class="field half ">
-																		<label for=""></label>
-																		<input type="text" name="" id="" />
-																	</div>
-																	<div>
-																		<center>
-																	<ul class="actions" margin-top="4em">
-																		<li><a href="#" class="button" > </a></li>
-																	</ul>
-																</center>
-																	</div>
-																</form>
+											$sql2="SELECT `الاسم` FROM `الفني` WHERE `البريد` = (SELECT `بريد_الفني`FROM `طلب الصيانة` WHERE `رقم_الطلب`='$trackno')";
+											$result2= mysql_query($sql2) or die($sql2);
+											while($row2=mysql_fetch_array($result2))
+											{?>
+												<div class="field half">
+													<label for="tech">اسم الفني</label>
+													<input type="text" name="tech" id="tech"value="<?php echo $row2["الاسم"];?>" />
+												</div>
+											<?php
+											}
+											$sql3="SELECT * FROM `العميل` WHERE `اسم_العميل`=(SELECT `اسم_العميل` FROM `الطلب` WHERE `رقم_الطلب`='$trackno')";
+											$result3= mysql_query($sql3) or die($sql3);
+											while($row3=mysql_fetch_array($result3))
+											{?>
+
+												<div class="field half first">
+													<label for="phone">رقم التواصل</label>
+													<input type="text" name="phone" id="phone" value="<?php echo $row3["الجوال"];?>"/>
+												</div>
+												<div class="field half">
+													<label for="customer">اسم العميل</label>
+													<input type="text" name="customer" id="customer"value="<?php echo $row3["اسم_العميل"];?>" />
+												</div>
+											<?php }?>
+											</form>
+											</div>
+										</section>
 
 								</div>
 							</section>
-						</div>
-
+					 </div>
 </html>

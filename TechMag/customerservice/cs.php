@@ -138,7 +138,7 @@ while($row=mysql_fetch_array($result))
 													<section id="info" class="wrapper style5 fade-up">
 														<div class="inner">
 															<center>
-															 <img src="images/pic11.png" width="100" height="100">
+															 <img src="img/edit.png" width="100" height="100">
 														 </center>
 						<h2>البيانات الشخصية</h2>
 						<form action="updatecs.php" method="post">
@@ -187,7 +187,7 @@ while($row=mysql_fetch_array($result))
 
 
 					<!-- zero -->
-					<section id="zero" class="wrapper style5 fade-up">
+					<section id="zero" class="wrapper style1 fade-up">
 						<div class="inner">
 							<center>
 							 <img src="img/customer.png" width="100" height="100">
@@ -300,48 +300,13 @@ while($rows = mysql_fetch_assoc($result))
 				<th><center><a href = "newprob.php"><h3>مشكلة جديدة</h3><img src="img/newprob.png" width="100" height="100"></a></center></th>
 				<th><center><a href="arrived.php"><h3>الطلبات المستلمة</h3><img src="img/arrived.png" width="100" height="100"></a></center></th>
 				<th><center><a href = " "><h3>طلب بيع جديد</h3><img src="img/new.png" width="100" height="100"></a></center></th>
-				<th><center><h3>تتبع طلب صيانة</h3><img src="img/track.png" width="100" height="100" id="track"></center></th>
+				<th><center><a href = "track.php"><h3>تتبع طلب صيانة</h3><img src="img/track.png" width="100" height="100"></a></center></th>
         <th><center><a href="fix.php"><h3>طلب صيانة جديد</h3><img src="img/fix.png" width="100" height="100"></a></center></th>
       </tr>
     </table>
-		<!-- The Modal -->
-<div id="mytrack" class="modaltrack">
-  <!-- Modal content -->
-  <div class="modal-contenttrack">
-
-
-<script>
-// Get the modal
-var modal = document.getElementById('mytrack');
-
-// Get the button that opens the modal
-var btn = document.getElementById("track");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("closetrack")[0];
-
-// When the user clicks the button, open the modal
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
+	</section>
+</div>
 </section>
-
-
-									</div>
-						</section>
 
 				<!-- Two -->
 				<section id="two" class="wrapper style3 fade-up">
@@ -355,8 +320,8 @@ window.onclick = function(event) {
 																	<tr>
 															<th style="padding: 0 0 0 0 ;" ><input type="submit" value=" بحث"></th>
 															<th style="padding: 0 0 0 0 ;" ><input type="button" id="st" onclick=showhidestatus() value=" بحث حسب حالة الطلب"></th>
-															<th style="padding: 0 0 0 0 ;" ><input type="button"   id="br"onclick=showhidebranches() value=" بحث حسب الفرع "></th>
-															<th style="padding: 0 0 0 0 ;" ><input type="button"   id="myorder" value=" تكليف "></th>
+															<th style="padding: 0 0 0 0 ;" ><input type="button" id="br"onclick=showhidebranches() value=" بحث حسب الفرع "></th>
+															<th style="padding: 0 0 0 0 ;" ><input type="button"  id="myorder" value=" تكليف" action="mytech.php"></th>
 
 			<th>
 			<select name="status" id="status" style="display:none;">
@@ -573,65 +538,6 @@ window.onclick = function(event) {
 									</section>
 									</div>
 														</section>
-
-
-					<!-- The Modal -->
-			<div id="mytech" class="modal">
-			  <!-- Modal content -->
-			  <div class="modal-content">
-					<section class="wrapper style3 fade-up" style="width:40%; height: 80%;">
-						<div class="inner">
-			    <span class="close">&times;</span>
-							<h2>تكليف الفني</h2>
-							<section style="text-align=right">
-
-			<form method="get" action="#" >
-				<center>
-						<div class="field half first">
-							<label for="date">الفني</label>
-							<select name="tech">
-							<option value="" style="display:none">تكليف</option>
-							<option> </option>
-							<option> </option>
-							</select></th>
-						</div>
-						<ul class="actions">
-							<li><a href="#" class="button">Learn more</a></li>
-						</ul>
-					</center>
-					</form>
-					</section>
-			  </div>
-			</section>
-			</div>
-			<script>
-			// Get the modal
-			var techmodal = document.getElementById('mytech');
-
-			// Get the button that opens the modal
-			var techbtn = document.getElementById("myorder");
-
-			// Get the <span> element that closes the modal
-			var techspan = document.getElementsByClassName("close")[0];
-
-			// When the user clicks the button, open the modal
-			techbtn.onclick = function() {
-			    techmodal.style.display = "block";
-			}
-
-			// When the user clicks on <span> (x), close the modal
-			techspan.onclick = function() {
-			    techmodal.style.display = "none";
-			}
-
-			// When the user clicks anywhere outside of the modal, close it
-			window.onclick = function(event) {
-			    if (event.target == techmodal) {
-			        techmodal.style.display = "none";
-			    }
-			}
-			</script>
-			</section>
 				</div>
 
 				<!-- Three -->
@@ -739,7 +645,7 @@ while($rows = mysql_fetch_assoc($result))
 					<section id="four" class="wrapper style4 fade-up">
 						<div class="inner">
 								<center>
-								 <img src="images/pic17.png" width="100" height="100">
+								 <img src="img/report.png" width="100" height="100">
 							 </center>
 								<h2>التقارير</h2>
 

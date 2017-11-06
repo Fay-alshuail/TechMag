@@ -1,4 +1,5 @@
 <?php
+include 'config.php';
 session_start();
 
 
@@ -10,7 +11,7 @@ $selectOption = $_POST['users'];
 $message = " خطأ في اسم المستخدم أو الرقم السري أو نوع الدخول";
 $_SESSION['username_s']=$username;
 
- include 'config.php';
+
  mysql_query("SET NAMES 'utf8'");
  mysql_query('SET CHARACTER SET utf8');
 

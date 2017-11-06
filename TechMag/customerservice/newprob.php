@@ -46,7 +46,8 @@
 FROM `طلب الصيانة`
 WHERE
 
-`حالة_الطلب` !='مغلق'
+`حالة_الطلب` =
+'مقبول'
 AND
 `مشكلة_إضافية` IS NOT NULL
 "
@@ -88,7 +89,7 @@ AND
 					WHERE
 					(
 					`حالة_الطلب`
-					!= 'مغلق'
+					= 'مقبول'
 					AND
 					`مشكلة_إضافية` IS NOT NULL
 					)";
@@ -130,7 +131,7 @@ mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', 
 
 $sql="UPDATE `fixmin`.`طلب الصيانة` SET `مشكلة_إضافية` =
 '
-المشكلة:$newprob & السعر: $price
+المشكلة:$newprob - السعر: $price
 ',
 `المجموع`='$price'
 WHERE `طلب الصيانة`.`رقم_الطلب` = '$requestno'";
