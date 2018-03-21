@@ -111,75 +111,13 @@ ul h4 {
 
 #banner {
 	position: relative;
-	padding: 35px;
-	height: 150px;
-	width: 700px;
-	margin: 20px 150px 20px 100px;
+	padding: 20px;
+	height: 225px;
+	width: 940px;
+	margin: 0 0 35px 0;
 	background: #FFF;
 }
-.slider-holder
-        {
-            width: 400px;
-            height: 600px;
-            background-color:red;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 0px;
-            text-align: center;
-            overflow: hidden;
-        }
 
-        .image-holder
-        {
-            width: 400px;
-            background-color:yellow;
-            height: 600px;
-            clear: both;
-            position: relative;
-
-            -webkit-transition: left 2s;
-            -moz-transition: left 2s;
-            -o-transition: left 2s;
-            transition: left 2s;
-        }
-
-        .slider-image
-        {
-            float: left;
-            margin: 0px;
-            padding: 0px;
-            position: relative;
-        }
-
-        #slider-image-1:target ~ .image-holder
-        {
-            left: 0px;
-        }
-
-        #slider-image-2:target ~ .image-holder
-        {
-            left: -800px;
-        }
-
-        #slider-image-3:target ~ .image-holder
-        {
-            left: -1600px;
-        }
-
-        .button-holder
-        {
-            position: relative;
-            top: -20px;
-        }
-
-        .slider-change
-        {
-            display: inline-block;
-            height: 50px;
-            width: 50px;
-            border-radius: 15px;
-            background-color:white;
-        }
 #box1 {
 	width: 505px;
 	overflow: hidden;
@@ -226,7 +164,6 @@ ul h4 {
 
 #header {
 	position: relative;
-	padding: 35px;
 	height: 140px;
 	width: 910px;
 }
@@ -333,8 +270,8 @@ ul h4 {
 	width: 300px;
 	float: left;
 	padding: 35px;
-	background: #724C31;
-	color: #E8D6C9;
+	background: #c6b99f;
+	color: #eaeced;
 }
 
 #sidebar a {
@@ -346,7 +283,7 @@ ul h4 {
 }
 
 #sidebar h3 {
-	background: url(images/headerbg.jpg) repeat-x top left;
+	background: url(images/backg.png) repeat-x top left;
 	height: 40px;
 	font-size: 2em;
 }
